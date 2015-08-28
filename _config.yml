@@ -1,0 +1,14 @@
+# Site settings
+title: SocioCortex
+email: manoj5864@gmail.com
+description: SocioCortex website
+baseurl: "/sociocortex"
+url: ""
+twitter_username: jekyllrb
+github_username:  manoj5864
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+encoding: utf-8

@@ -1,0 +1,72 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="{{ site.description }}">
+    <title>{{site.title}}</title>
+    <link rel="icon" type="image/png" href="{{ "/img/favicons/sc_logo.png" | prepend: site.baseurl }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+    <link rel="stylesheet" href="{{ "/css/theme.css" | prepend: site.baseurl }}" type="text/css" />
+    <link rel="stylesheet" href="https://cdnmedia.readthedocs.org/css/readthedocs-doc-embed.css" type="text/css" />
+    <link rel="top" title="None" href="documentation.html#document-index"/>
+
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="{{ "/css/font-awesome/css/font-awesome.min.css" | prepend: site.baseurl }}">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="_static/js/modernizr.min.js"></script>
+
+    <script type="text/javascript">
+        // This is included here because other places don't have access to the pagename variable.
+        var READTHEDOCS_DATA = {
+            project: "sociocortex",
+            version: "stable",
+            language: "en",
+            page: "documentation",
+            builder: "sphinx",
+            theme: "sphinx_rtd_theme",
+            docroot: "/",
+            source_suffix: ".rst",
+            api_host: "https://readthedocs.org",
+            commit: ""
+        }
+        // Old variables
+        var doc_version = "stable";
+        var doc_slug = "sociocortex";
+        var page_name = "documentation";
+        var html_theme = "sphinx_rtd_theme";
+    </script>
+    <!-- RTD Analytics Code -->
+    <!-- Included in the header because you don't have a footer block. -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-17997319-1']);
+        _gaq.push(['_trackPageview']);
+
+        // User Analytics Code
+        _gaq.push(['user._setAccount', 'None']);
+        _gaq.push(['user._trackPageview']);
+        // End User Analytics Code
+
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
