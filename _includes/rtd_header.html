@@ -8,7 +8,7 @@
         <div class="rst-content">
             <div role="navigation" aria-label="breadcrumbs navigation">
                 <ul class="wy-breadcrumbs">
-                    <li><a href="documentation.html#document-index">Docs</a> &raquo;</li>
+                    <li><a href={{"/documentation" | prepend: site.baseurl}}>Docs</a> &raquo;</li>
                     <li>SocioCortex documentation</li>
                     <li class="wy-breadcrumbs-aside">
                         <a href="#" class="fa fa-github"> Edit on GitHub</a>
@@ -19,6 +19,11 @@
 
             <div role="main" class="document">
                 <div class="section" id="welcome-to-read-the-docs">
+                    <div class="page-content">
+                        <div class="wrapper">
+                            {{ content }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
