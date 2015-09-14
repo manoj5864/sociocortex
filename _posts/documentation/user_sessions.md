@@ -1,6 +1,4 @@
 
-----------
-
 Initializing Session
 --------------------
 
@@ -9,6 +7,7 @@ Returns the properties of the current session.
 Session identification in SocioCortex is done via a session cookie. Thereby, in each request to SocioCortex, you have to add a cookie with a certain name and the corresponding session ID as value. Both of them are included in the response of this REST operation ("cookie-name" and "id").
 
 **Resource Information**
+
 |  Resource URL | http://vmmatthes21.informatik.tu-muenchen.de/api/0.1/session       |
 | ------------- |:-------------:|
 | Response formats | JSON       |
