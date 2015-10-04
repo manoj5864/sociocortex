@@ -21,7 +21,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Overview</a>
+                        <a class="page-scroll" href="#overview">Overview</a>
                     </li>
                     <li>
                         <a class="page-scroll" href={{"/documentation" | prepend: site.baseurl}} target="_blank" >Documentation</a>
@@ -29,9 +29,9 @@
                     <li>
                         <a class="page-scroll" href="#about">Examples</a>
                     </li>
-                    <li>
+                    <!--<li>
                         <a class="page-scroll" href="#team">Installation</a>
-                    </li>
+                    </li> -->
                     <li>
                         <a class="page-scroll" href="#contact">Rest API</a>
                     </li>
@@ -47,14 +47,8 @@
         <div class="container">
             <div class="intro-text">
                 <div class="intro-heading">{{site.title}}</div>
-                <div class="intro-lead-in">Tag line...</div>
-                <a href="#" class="page-scroll btn btn-xl">Tell Me More</a>
+                <div class="intro-lead-in">{{site.tagline}}</div>
+                <a class="page-scroll btn btn-xl" href="#overview">Tell Me More</a>
             </div>
         </div>
     </header>
-<!--
-        {% for page in site.pages %}
-          {% if page.title %}<a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}
-        {% endfor %}
- -->
-
