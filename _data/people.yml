@@ -3,25 +3,46 @@
   name: "Florian Matthes"
   pic: "fm"
   social:
-    - {name: "google-plus", link: "https://google.com/+fm"}
-    - {name: "twitter", link: "https://twitter.com/fm"}
-    - {name: "github", link: "https://github.com/fm"}
-    - {name: "site", link: "http://fm.com/"}
+    - {title: "github", link: "https://github.com/f1matthes"}
+    - {title: "twitter", link: "https://twitter.com/matthes"}
+    - {title: "user", link: "https://wwwmatthes.in.tum.de/pages/88bkmvw6y7gx/sebis%20Public%20Website/Team/Prof.%20Dr.%20Florian%20Matthes"}
 -
   id: 1
-  name: "Thomas"
+  name: "Thomas Reschenhofer"
   pic: "tr"
   social:
-    - {name: "google-plus", link: "https://google.com/+fm"}
-    - {name: "twitter", link: "https://twitter.com/fm"}
-    - {name: "github", link: "https://github.com/fm"}
-    - {name: "site", link: "http://fm.com/"}
+    - {title: "twitter", link: "https://twitter.com/fm"}
+    - {title: "github", link: "https://github.com/fm"}
+    - {title: "user", link: "http://fm.com/"}
 -
   id: 2
-  name: "Manoj"
+  name: "Matheus Hauder"
+  pic: "mh"
+  social:
+    - {title: "twitter", link: "https://twitter.com/fm"}
+    - {title: "github", link: "https://github.com/fm"}
+    - {title: "user", link: "http://fm.com/"}
+-
+  id: 3
+  name: "Adrian Hernandez-Mendez"
+  pic: "ahm"
+  social:
+    - {title: "twitter", link: "https://twitter.com/fm"}
+    - {title: "github", link: "https://github.com/fm"}
+    - {title: "user", link: "http://fm.com/"}
+-
+  id: 4
+  name: "Klym Shumaiev"
+  pic: "ks"
+  social:
+    - {title: "twitter", link: "https://twitter.com/fm"}
+    - {title: "github", link: "https://github.com/fm"}
+    - {title: "user", link: "http://fm.com/"}
+-
+  id: 6
+  name: "Manoj Bhat"
   pic: "mm"
   social:
-    - {name: "google-plus", link: "https://google.com/+fm"}
-    - {name: "twitter", link: "https://twitter.com/fm"}
-    - {name: "github", link: "https://github.com/fm"}
-    - {name: "site", link: "http://fm.com/"}
+    - {title: "twitter", link: "https://twitter.com/fm"}
+    - {title: "github", link: "https://github.com/fm"}
+    - {title: "user", link: "http://fm.com/"}

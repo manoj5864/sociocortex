@@ -1,0 +1,79 @@
+body {
+    overflow-x: hidden;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.jumbotron {
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+h2.section-heading {
+    color:darkblue;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 50px;
+}
+
+h3.section-subheading {
+    color:darkblue;
+    margin-bottom: 75px;
+    text-transform: none;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 26px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.75;
+    text-align: justify;
+}
+
+ul.social-buttons {
+    margin-bottom: 0;
+}
+
+ul.social-buttons li a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    outline: 0;
+    color: #fff;
+    background-color: #222;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus,
+
+.team-member {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.team-member img {
+    margin: 0 auto;
+    border: 7px solid #fff;
+}
+
+.team-member h4 {
+    margin-top: 25px;
+    margin-bottom: 0;
+    text-transform: none;
+}
+
+.team-member p {
+    margin-top: 0;
+}
