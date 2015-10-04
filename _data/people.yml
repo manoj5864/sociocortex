@@ -1,0 +1,27 @@
+-
+  id: 0
+  name: "Florian Matthes"
+  pic: "fm"
+  social:
+    - {name: "google-plus", link: "https://google.com/+fm"}
+    - {name: "twitter", link: "https://twitter.com/fm"}
+    - {name: "github", link: "https://github.com/fm"}
+    - {name: "site", link: "http://fm.com/"}
+-
+  id: 1
+  name: "Thomas"
+  pic: "tr"
+  social:
+    - {name: "google-plus", link: "https://google.com/+fm"}
+    - {name: "twitter", link: "https://twitter.com/fm"}
+    - {name: "github", link: "https://github.com/fm"}
+    - {name: "site", link: "http://fm.com/"}
+-
+  id: 2
+  name: "Manoj"
+  pic: "mm"
+  social:
+    - {name: "google-plus", link: "https://google.com/+fm"}
+    - {name: "twitter", link: "https://twitter.com/fm"}
+    - {name: "github", link: "https://github.com/fm"}
+    - {name: "site", link: "http://fm.com/"}
