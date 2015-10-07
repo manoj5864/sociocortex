@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html>
-
 {% include head.html %}
-
 <body id="page-top" class="index">
-
 {% include header.html %}
-{% include applications.html %}
-{% include js.html %}
 
+<div class="row">
+    <div class="col-lg-2">
+        {% include application_sidebar.html %}
+    </div>
+    <div class="col-lg-10 application">
+        {% for post in site.categories['application'] limit:1 %}
+        {{ post.content }}
+        {% endfor %}
+    </div>
+</div>
+
+{% include js.html %}
 </body>
 </html>
