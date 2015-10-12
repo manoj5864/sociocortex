@@ -3,7 +3,7 @@ title: SocioCortex
 tagline: A Social Information Hub
 email: manoj5864@gmail.com
 description: SocioCortex website
-baseurl: "www.sociocortex.com"
+baseurl: "/sociocortex_web"
 url: ""
 twitter_username: jekyllrb
 github_username:  manoj5864
