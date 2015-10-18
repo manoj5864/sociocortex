@@ -1,6 +1,6 @@
 <nav data-toggle="wy-nav-shift" class="wy-nav-side">
     <div class="wy-side-nav-search">
-        <a href={{"/" | prepend: site.baseurl}} class="icon icon-home"> SocioCortex</a>
+        <a href={{"/" }} class="icon icon-home"> SocioCortex</a>
         <div role="search">
             <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
                 <input type="text" name="q" placeholder="Search docs" />
@@ -13,7 +13,7 @@
         <div class="local-toc">
             <ul>
                 {% for post in site.categories.documentation %}
-                    <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+                    <li><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></li>
                 {% endfor %}
             </ul>
         </div>

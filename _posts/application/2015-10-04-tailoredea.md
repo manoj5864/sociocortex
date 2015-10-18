@@ -5,7 +5,7 @@ date:   2015-10-04 13:50:09
 category: "application"
 ---
 
-![Tailored EA Visualizations]({{ "/img/ea.png" | prepend: site.baseurl }}){:width="80%"}
+![Tailored EA Visualizations]({{ "/img/ea.png" }}){:width="80%"}
 
 * Highly customizedand configurablevisualizations of the application landscapes
 * Data connectors for multiple data sources
@@ -13,4 +13,4 @@ category: "application"
 
 ##### View-Driven Approach
 
-![View-Driven Approach]({{ "/img/vdapproach.png" | prepend: site.baseurl }}){:width="60%"}
+![View-Driven Approach]({{ "/img/vdapproach.png" }}){:width="60%"}

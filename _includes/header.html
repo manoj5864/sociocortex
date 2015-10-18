@@ -9,8 +9,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href={{"/" | prepend: site.baseurl}}>
-                    <img class="img-responsive" src={{ "/img/favicons/sc_logo_plain.png" | prepend: site.baseurl }} />
+                <a class="navbar-brand" href={{"/"}}> <!--  | prepend: site.baseurl -->
+                    <img class="img-responsive" src={{ "/img/favicons/sc_logo_plain.png" }} />
                 </a>
             </div>
 
@@ -21,13 +21,13 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href={{"/#overview" | prepend: site.baseurl}}>Overview</a>
+                        <a class="page-scroll" href="/">Overview</a> <!-- | prepend: site.baseurl -->
                     </li>
                     <li>
-                        <a class="page-scroll" href={{"/applications" | prepend: site.baseurl}}>Applications</a>
+                        <a class="page-scroll" href="/applications">Applications</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href={{"/documentation" | prepend: site.baseurl}} target="_blank" >Documentation</a>
+                        <a href="/documentation" target="_blank" >Documentation</a>
                     </li>
                     <!--<li>
                         <a class="page-scroll" href="#team">Installation</a>

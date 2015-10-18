@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="{{ site.description }}">
     <title>{{site.title}}</title>
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="icon" type="image/png" href="{{ "/img/favicons/sc_logo.png" | prepend: site.baseurl }}">
-    <link rel="stylesheet" href="{{ "/css/style.css" | prepend: site.baseurl }}">
-    <link rel="stylesheet" href="{{ "/css/font-awesome/css/font-awesome.min.css" | prepend: site.baseurl }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' }}"> <!-- prepend: site.baseurl | prepend: site.url -->
+    <link rel="icon" type="image/png" href="{{ "/img/favicons/sc_logo.png" | prepend: site.url }}"> <!--  | prepend: site.baseurl -->
+    <link rel="stylesheet" href="{{ "/css/style.css" }}"> <!--  | prepend: site.baseurl -->
+    <link rel="stylesheet" href="{{ "/css/font-awesome/css/font-awesome.min.css" }}"> <!--  | prepend: site.baseurl -->
 </head>
