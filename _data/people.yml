@@ -16,8 +16,8 @@
     - {title: "user", link: "http://fm.com/"}
 -
   id: 2
-  name: "Matheus Hauder"
-  pic: "mh"
+  name: "Felix Michel"
+  pic: "fmi"
   social:
     - {title: "twitter", link: "https://twitter.com/fm"}
     - {title: "github", link: "https://github.com/fm"}
