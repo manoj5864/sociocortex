@@ -1,3 +1,12 @@
 _site
 .sass-cache
 .idea/
+bin/
+obj/
+Properties/
+SCWebsite.csproj
+SCWebsite.csproj.user
+.vs/config/applicationhost.config
+test.html
+test/
+.vs/SCWebsite/v14/.suo
