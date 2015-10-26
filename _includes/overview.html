@@ -39,11 +39,13 @@
             
             {% else %}
 
-            <div class="col-lg-12 text-left auto-col-2">
+            <div class="col-lg-12 text-left">
                 <h2 class="section-subheading">
                     {{post.title}}
-                </h2>               
-                {{ post.content }}
+                </h2>     
+                <div class="auto-col-2">
+                    {{ post.content }}
+                </div> 
             </div>
 
             {% endif %}
