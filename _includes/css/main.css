@@ -16,10 +16,10 @@
     color:white!important;
 }
 
-.navbar-nav a{
-    font-family:'Merriweather', serif!important;
-    font-size:16pt!important;
-
+.navbar-nav a {
+    font-family: 'Merriweather', serif !important;
+    font-size: 14pt !important;
+}
 
 body {
     overflow-x: hidden;
