@@ -1,5 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather);
 
+
+.team-member h4{
+    height:90px;
+}
+
+
 .auto-col-2 {
    -webkit-column-count: 2;
       -moz-column-count: 2;
@@ -23,6 +29,8 @@
 .navbar-nav li a{
     color:white!important;
 }
+
+
 
 .navbar-nav a {
     font-family: 'Merriweather', serif !important;
