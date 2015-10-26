@@ -27,13 +27,13 @@
                 <img src="{{ post.pic }}" width="100%" />
             </div>
 
-            {% else %}
+            {% elsif post.mode == "full" %}
 
             <div class="col-lg-12 text-left">
                 <h2 class="section-subheading">
                     {{post.title}}
                 </h2>
-                <img src="{{ post.pic }}" width="100%" /><br />
+                <img src="{{ post.pic }}" width="80%" /><br />
                 {{ post.content }}
             </div>
 
