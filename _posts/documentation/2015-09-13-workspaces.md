@@ -32,7 +32,7 @@ Returns an JSONarray with all the workspaces.
     ]
 
 ----------
-**Java Example**
+{% highlight java %}
 
     System.out.println("Get workspaces:");
     URL url = new URL("http://vmmatthes21.informatik.tu-muenchen.de/api/0.1/workspaces");
@@ -53,3 +53,5 @@ Returns an JSONarray with all the workspaces.
     }
     
     conn.disconnect();
+
+{% endhighlight %}
