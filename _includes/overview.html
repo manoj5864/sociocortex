@@ -36,6 +36,15 @@
                 <img src="{{ post.pic }}" width="80%" /><br />
                 {{ post.content }}
             </div>
+            
+            % else %}
+
+            <div class="col-lg-12 text-left">
+                <h2 class="section-subheading">
+                    {{post.title}}
+                </h2>               
+                {{ post.content }}
+            </div>
 
             {% endif %}
 
