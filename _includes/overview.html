@@ -1,11 +1,19 @@
 <section>
     <div class="container">
+        {% for post in site.categories.overview %}
         <div class="row">
-            <div class="col-lg-12">
-                {% for post in site.categories.overview %}
-                <div>{{ post.content }}</div>
-                {% endfor %}
+            <div class="col-lg-6">
+                <img src="{{ post.pic }}" width="100%" />
             </div>
+            <div class="col-lg-6 text-left">
+                <h2 class="section-subheading">
+                    {{post.title}}
+                </h2>
+                {{ post.content }}
+
+            </div>
+            <
         </div>
+        {% endfor %}
     </div>
 </section>
