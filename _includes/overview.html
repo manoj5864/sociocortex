@@ -12,7 +12,9 @@
                 <h2 class="section-subheading">
                     {{post.title}}
                 </h2>
-                {{ post.content }}
+                <p>
+                    {{ post.content }}
+                </p>
             </div>
             {% elsif post.mode == "right" %}
 
@@ -21,7 +23,9 @@
                 <h2 class="section-subheading">
                     {{post.title}}
                 </h2>
-                {{ post.content }}
+                <p>
+                    {{ post.content }}
+                </p>
             </div>
             <div class="col-lg-6">
                 <img src="{{ post.pic }}" width="100%" />
@@ -34,7 +38,11 @@
                     {{post.title}}
                 </h2>
                 <img src="{{ post.pic }}" width="80%" /><br />
-                {{ post.content }}
+                <div class="auto-col-2">
+                    <p>
+                        {{ post.content }}
+                    </p>
+                </div> 
             </div>
             
             {% else %}
@@ -44,7 +52,9 @@
                     {{post.title}}
                 </h2>     
                 <div class="auto-col-2">
-                    {{ post.content }}
+                    <p>
+                        {{ post.content }}
+                    </p>
                 </div> 
             </div>
 
