@@ -11,38 +11,34 @@
   name: "Thomas Reschenhofer"
   pic: "tr"
   social:
-    - {title: "twitter", link: "https://twitter.com/fm"}
-    - {title: "github", link: "https://github.com/fm"}
-    - {title: "user", link: "http://fm.com/"}
+    - {title: "github", link: "https://github.com/treschenhofer"}
+    - {title: "user", link: "https://wwwmatthes.in.tum.de/pages/gbocu2jbwx6a/Thomas-Reschenhofer"}
 -
   id: 2
   name: "Felix Michel"
   pic: "fmi"
   social:
-    - {title: "twitter", link: "https://twitter.com/fm"}
-    - {title: "github", link: "https://github.com/fm"}
-    - {title: "user", link: "http://fm.com/"}
+    - {title: "user", link: https://wwwmatthes.in.tum.de/pages/1pvf6y6f97alz/Felix-Michel"}
 -
   id: 3
   name: "Adrian Hernandez-Mendez"
   pic: "ahm"
   social:
-    - {title: "twitter", link: "https://twitter.com/fm"}
-    - {title: "github", link: "https://github.com/fm"}
-    - {title: "user", link: "http://fm.com/"}
+    - {title: "twitter", link: "https://twitter.com/adrianhdez85"}
+    - {title: "github", link: "https://github.com/adrianhdezm"}
+    - {title: "user", link: "https://wwwmatthes.in.tum.de/pages/mhxylzrbb5n6/Adrian-Hernandez-Mendez"}
 -
   id: 4
   name: "Klym Shumaiev"
   pic: "ks"
   social:
-    - {title: "twitter", link: "https://twitter.com/fm"}
-    - {title: "github", link: "https://github.com/fm"}
-    - {title: "user", link: "http://fm.com/"}
+    - {title: "twitter", link: "https://twitter.com/klimksh"}
+    - {title: "github", link: "https://github.com/klimksh"}
+    - {title: "user", link: "https://wwwmatthes.in.tum.de/pages/fr7cn5ldohhj/Klym-Shumaiev"}
 -
   id: 6
   name: "Manoj Bhat"
   pic: "mm"
   social:
-    - {title: "twitter", link: "https://twitter.com/fm"}
-    - {title: "github", link: "https://github.com/fm"}
-    - {title: "user", link: "http://fm.com/"}
+    - {title: "github", link: "https://github.com/manoj5864"}
+    - {title: "user", link: "https://wwwmatthes.in.tum.de/pages/1fvry8wl9dcmd/Manoj-Mahabaleshwar"}
