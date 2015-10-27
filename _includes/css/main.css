@@ -9,8 +9,13 @@
     border-bottom:5px solid #D20015;
 }
 
-.sidebar-navbar-collapse .nav-active{
+.sidebar-nav .nav-active{
     border-right:5px solid #D20015;
+}
+
+
+.sidebar-nav li :hover{
+   color:#D20015!important;
 }
 
 
