@@ -10,7 +10,7 @@ category: "application"
 * Customizable dashboards consisting of multiple visualizations
 * Analyzability to foster transparency of information flow
 
-![Customizable and Analyzable Dashboards]({{ "/img/sh1.png" }}){:width="80%"}
+![Customizable and Analyzable Dashboards]({{ "/img/sh1.png" }}){:width="60%" :style="float:right;"}
 
 #### Customizing and Configuring a Dashboard and its Visualizations
 
