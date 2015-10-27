@@ -19,6 +19,12 @@
    color:#D20015!important;
 }
 
+.application-screenshot{
+    width:50%;
+    float:right;
+    margin:10px;
+}
+
 
 .auto-col-2 {
    -webkit-column-count: 2;
