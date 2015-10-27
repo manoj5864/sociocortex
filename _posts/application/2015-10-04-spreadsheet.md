@@ -10,12 +10,12 @@ category: "application"
 * Customizable dashboards consisting of multiple visualizations
 * Analyzability to foster transparency of information flow
 
-![Customizable and Analyzable Dashboards]({{ "/img/sh1.png" }}){:width="60%" :style="float:right;"}
+![Customizable and Analyzable Dashboards]({{ "/img/sh1.png" }}){: .application-screenshot }
 
 #### Customizing and Configuring a Dashboard and its Visualizations
 
-![Customizing and Configuring a Dashboard and its Visualizations]({{ "/img/sh2.png" }}){:width="80%"}
+![Customizing and Configuring a Dashboard and its Visualizations]({{ "/img/sh2.png" }}){: .application-screenshot }
 
 #### Making the Information Flow Transparent
 
-![Making the Information Flow Transparent]({{ "/img/sh3.png" }}){:width="80%"}
+![Making the Information Flow Transparent]({{ "/img/sh3.png" }}){: .application-screenshot }
