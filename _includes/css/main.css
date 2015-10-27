@@ -5,7 +5,7 @@
     height:90px;
 }
 
-.nav-active{
+.navbar-fixed-top .nav-active{
     border-bottom:5px solid #D20015;
 }
 
