@@ -10,9 +10,10 @@
 }
 
 .sidebar-nav .nav-active{
-    border-right:5px solid #D20015;
+    border-left:5px solid #D20015;
+    background-color:#eee;
+    color:black!important;
 }
-
 
 .sidebar-nav li :hover{
    color:#D20015!important;
