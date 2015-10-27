@@ -6,7 +6,7 @@
 }
 
 .nav-active{
-    border-bottom:5px solid #1166A5;
+    border-bottom:5px solid #D20015;
 }
 
 .auto-col-2 {
@@ -24,7 +24,7 @@
 
 
 .navbar-fixed-top .navbar-nav li :hover{
-    background-color:#D20015!important;
+    background-color:#1166A5!important;
     color:white!important;
 }
 
