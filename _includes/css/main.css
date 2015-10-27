@@ -5,6 +5,9 @@
     height:90px;
 }
 
+.nav-active{
+    border-bottom:5px solid #1166A5;
+}
 
 .auto-col-2 {
    -webkit-column-count: 2;
