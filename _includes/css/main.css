@@ -9,6 +9,11 @@
     border-bottom:5px solid #D20015;
 }
 
+.sidebar-navbar-collapse .nav-active{
+    border-right:5px solid #D20015;
+}
+
+
 .auto-col-2 {
    -webkit-column-count: 2;
       -moz-column-count: 2;
