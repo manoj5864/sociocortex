@@ -23,7 +23,7 @@
 }
 
 
-.navbar-nav li :hover{
+.navbar-fixed-top .navbar-nav li :hover{
     background-color:#D20015!important;
     color:white!important;
 }
@@ -32,13 +32,13 @@
     background-color:#003359;
 }
 
-.navbar-nav li a{
+.navbar-fixed-top .navbar-nav li a{
     color:white!important;
 }
 
 
 
-.navbar-nav a {
+.navbar-fixed-top .navbar-nav a {
     font-family: 'Merriweather', serif !important;
     font-size: 14pt !important;
 }

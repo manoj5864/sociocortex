@@ -4,7 +4,7 @@ function updateContent(post) {
 
 $(document).ready(function () {
     $(".navbar-nav>li>a").each(function () {
-        if (this.href == window.location.href) {
+        if (window.location.href.startsWith(this.href)) {
             $(this).addClass("nav-active");
         }
     });
