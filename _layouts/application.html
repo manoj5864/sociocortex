@@ -15,7 +15,8 @@ layout: application
                     {% include application_sidebar.html %}
                 </div>
                 <div class="col-lg-9 application">
-                    <h2 class="section-heading">{{ title }}</h2>
+                    <h2 class="section-heading">{{ page.title }}</h2>
+                    <p class="lead">{{ page.teaser }}</p>
                     {{ content }}
                 </div>
             </div>
