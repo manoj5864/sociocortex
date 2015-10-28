@@ -12,15 +12,17 @@
                 </div>
                 <div class="col-lg-8">
 
-                    {% for post in site.categories.application %}
-                    <a href="{{ post.url }}" class="list-group">
-                        <h4 class="list-group-item-heading">{{ post.title }}</h4>
-                        <p class="list-group-item-text">
-                            {{ post.teaser }}
-                        </p>
-                    </a>
-                    {% endfor %}
+                    <div class="list-group">
 
+                        {% for post in site.categories.application %}
+                        <a href="{{ post.url }}" class="list-group-item">
+                            <h4 class="list-group-item-heading">{{ post.title }}</h4>
+                            <p class="list-group-item-text">
+                                {{ post.teaser }}
+                            </p>
+                        </a>
+                        {% endfor %}
+                    </div>
 
 
                 </div>
