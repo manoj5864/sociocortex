@@ -11,3 +11,6 @@ test.html
 test/
 .vs/SCWebsite/v14/.suo
 SCWebsite.sln
+web.config
+web.Debug.config
+web.Release.config
