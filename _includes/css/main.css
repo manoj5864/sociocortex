@@ -9,6 +9,10 @@
     border-bottom:5px solid #D20015;
 }
 
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white!important;
+}
+
 .sidebar-nav .nav-active{
     border-left:5px solid #D20015;
     background-color:#eee;
