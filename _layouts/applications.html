@@ -6,21 +6,20 @@
     <br /><br />
     <section>
         <div class="container">
+            <h2 class="section-subheading">Applications</h2>
             <div class="row">
-                <div class="col-lg-3">
-                    <h2 class="section-subheading">Applications</h2>
+                <div class="col-md-4">
+                   
                     <p>SocioCortex already forms the foundation for multiple projects, ranging from configurable visualizations to text analysis workbenches.</p>
                     <p>Those projects are presented on this website, i.e., we demonstrate how the respective applications look like, and how they benefit from the features of SocioCortex.</p>
                 </div>
-                <div class="col-lg-1">
 
-                </div>
-                <div class="col-lg-8">
+                <div class="col-md-8">
 
-                    <div class="list-group">
+                    <div class="list-group" style="margin:5px;">
 
                         {% for post in site.categories.application %}
-                        <a href="{{ post.url }}" class="list-group-item col-lg-5" style="margin:5px;">
+                        <a href="{{ post.url }}" class="list-group-item col-md-5" style="margin:5px;">
                             <h4 class="list-group-item-heading">{{ post.title }}</h4>
                             <span class="list-group-item-text">
                                 {{ post.teaser }}
