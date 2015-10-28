@@ -11,17 +11,17 @@
                     <p>SocioCortex already forms the foundation for multiple projects, ranging from configurable visualizations to text analysis workbenches.</p>
                 </div>
                 <div class="col-lg-8">
-                    <a href="{{ post.url }}" class="list-group">
-                        {% for post in site.categories.application %}
-                        
-                            <h4 class="list-group-item-heading">{{ post.title }}</h4>
-                            <p class="list-group-item-text">
-                                {{ post.teaser }}
-                            </p>                            
-                        {% endfor %}
 
+                    {% for post in site.categories.application %}
+                    <a href="{{ post.url }}" class="list-group">
+                        <h4 class="list-group-item-heading">{{ post.title }}</h4>
+                        <p class="list-group-item-text">
+                            {{ post.teaser }}
+                        </p>
                     </a>
-                   
+                    {% endfor %}
+
+
 
                 </div>
             </div>
