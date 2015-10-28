@@ -3,26 +3,25 @@
 {% include head.html %}
 <body id="page-top" class="index">
     {% include header.html %}
-
+    <br /><br />
     <section>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    SocioCortex already forms the foundation for multiple projects, ranging from configurable visualizations to text analysis workbenches.
+                    <p>SocioCortex already forms the foundation for multiple projects, ranging from configurable visualizations to text analysis workbenches.</p>
                 </div>
                 <div class="col-lg-8">
+                    <a href="{{ post.url }}" class="list-group">
+                        {% for post in site.categories.application %}
+                        
+                            <h4 class="list-group-item-heading">{{ post.title }}</h4>
+                            <p class="list-group-item-text">
+                                {{ post.teaser }}
+                            </p>                            
+                        {% endfor %}
 
-
-                    {% for post in site.categories.application %}
-                    <div class="col-lg-6">
-                        <a href="{{ post.url }}">
-                            <h4>{{ post.title }}</h4>
-                        </a>
-                        <p>
-                            {{ post.teaser }}
-                        </p>
-                    </div>
-                    {% endfor %}
+                    </a>
+                   
 
                 </div>
             </div>
