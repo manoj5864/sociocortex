@@ -28,6 +28,9 @@
     margin: 10px;
 }
 
+h3.section-heading {
+    color: #003359!important;
+ }
 
 .auto-col-2 {
     -webkit-column-count: 2;
