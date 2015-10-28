@@ -25,7 +25,7 @@
 
 .sidebar-nav{
     position: fixed;
-    z-index: 1030;
+    z-index: 1000;
 }
 
 .screenshot {
@@ -151,7 +151,7 @@ ul.social-buttons {
 
 .sidebar-nav .navbar .navbar-collapse {
     padding: 0;
-    margin-top: 50px;
+    margin-top: 40px;
     z-index: 1000;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -178,5 +178,5 @@ ul.social-buttons {
     }
 
 .application {
-    margin-top: 50px;
+    margin-top: 70px;
 }
