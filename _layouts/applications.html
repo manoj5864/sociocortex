@@ -6,20 +6,26 @@
 
     <section>
         <div class="container">
-
-
             <div class="row">
-                <div class="col-lg-2">
-                    {% include application_sidebar.html %}
+                <div class="col-lg-6">
+                    SocioCortex already forms the foundation for multiple projects, ranging from configurable visualizations to text analysis workbenches.
                 </div>
-                <div class="col-lg-10 application">
-                    {% for post in site.categories['application'] limit:1 %}
-                    {{ post.content }}
+                <div class="col-lg-6">
+
+
+                    {% for post in site.categories.application %}
+                    <div class="col-lg-6">
+                        <a href="{{ post.url }}">
+                            <h4>{{ post.title }}</h4>
+                        </a>
+                        <p>
+                            {{ post.teaser }}
+                        </p>
+                    </div>
                     {% endfor %}
+
                 </div>
             </div>
-
-
         </div>
     </section>
 

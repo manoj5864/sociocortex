@@ -3,6 +3,7 @@ layout: application
 title:  "Spreadsheet 2.0 Visualizer"
 date:   2015-10-04 13:50:09
 category: "application"
+teaser:   "A configurable dashboard solution which is extendible by custom visualization types on the one hand, and analyzable to foster the transparency of the information flow on the other."
 ---
 
 #### Customizable and Analyzable Dashboards

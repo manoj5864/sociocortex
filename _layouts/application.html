@@ -5,16 +5,22 @@ layout: application
 <!DOCTYPE html>
 <html>
     {% include head.html %}
-    <body id="page-top" class="index">
-        {% include header.html %}
-        <div class="row">
-            <div class="col-lg-2">
-                {% include application_sidebar.html %}
-            </div>
-            <div class="col-lg-10 application">
-                {{ content }}
+<body id="page-top" class="index">
+    {% include header.html %}
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    {% include application_sidebar.html %}
+                </div>
+                <div class="col-lg-9 application">
+                    {{ content }}
+                </div>
             </div>
         </div>
-        {% include js.html %}
-    </body>
+    </section>
+    {% include footer.html %}
+    {% include js.html %}
+</body>
 </html>
