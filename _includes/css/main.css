@@ -23,6 +23,11 @@
     color: #D20015 !important;
 }
 
+.sidebar-nav{
+    position: fixed;
+    z-index: 1030;
+}
+
 .screenshot {
     width: 80%;
     margin: 10px;
