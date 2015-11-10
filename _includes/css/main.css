@@ -180,3 +180,9 @@ ul.social-buttons {
 .application {
     margin-top: 70px;
 }
+
+.application ul {
+    font-size: 16px;
+    line-height: 1.75;
+    text-align: justify;
+}
