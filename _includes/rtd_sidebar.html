@@ -1,23 +1,16 @@
 <nav data-toggle="wy-nav-shift" class="wy-nav-side">
     <div class="wy-side-nav-search">
         <a href={{"/" }} class="icon icon-home"> SocioCortex</a>
-        <!--<div role="search">
+       <div role="search">
             <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
                 <input type="text" name="q" placeholder="Search docs" />
                 <input type="hidden" name="check_keywords" value="yes" />
                 <input type="hidden" name="area" value="default" />
             </form>
-        </div>-->
+        </div>
     </div>
     <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <div class="local-toc">
-            <p class="caption"><span class="caption-text">Documentation</span></p>
-
-            <ul>
-                <li><a class="post-link" href="/documentation/">SC REST API</a></li>
-            </ul>
-
-            <p class="caption"><span class="caption-text">Tutorial</span></p>
+        <div class="local-toc">           
             <ul>
                 {% for post in site.categories.lesson %}
                     <li><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></li>
