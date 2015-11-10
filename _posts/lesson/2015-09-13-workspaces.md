@@ -2,7 +2,7 @@
 layout: post
 title:  "Workspaces"
 date:   2015-08-28 14:32:09
-category: "documentation"
+category: "lesson"
 ---
 
 Getting all workspaces
