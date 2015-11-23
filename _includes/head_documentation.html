@@ -79,6 +79,9 @@
                 var basicAuthHeader = 'Basic ' + window.btoa('' + jQuery("#swaggerUsername").val() + ':' + jQuery("#swaggerPassword").val());
                 swaggerUi.api.clientAuthorizations.add("basicAuth", new SwaggerClient.ApiKeyAuthorization("Authorization", basicAuthHeader, "header"));
             }
+
+            $("#swagger-ui-container>.info").hide();
+            $("#swagger-ui-container form.sandbox").hide();
         });
     </script>
 </head>
