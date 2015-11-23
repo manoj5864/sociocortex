@@ -260,6 +260,34 @@
             "description": "ID of the workspace that is fetched",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "attributes",
+            "in": "query",
+            "description": "A comma-seperated list of attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "description": "An indication if the rich-text content of the entity should be included in the response",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "tasks",
+            "in": "query",
+            "description": "An indication if the tasks of the entity should be included in the response",
+            "required": false,
+            "type": "boolean"
           }
         ],
         "security": [
@@ -969,6 +997,34 @@
             "description": "ID of the entity type that is fetched",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "attributes",
+            "in": "query",
+            "description": "A comma-seperated list of attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "description": "An indication if the rich-text content of the entity should be included in the response",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "tasks",
+            "in": "query",
+            "description": "An indication if the tasks of the entity should be included in the response",
+            "required": false,
+            "type": "boolean"
           }
         ],
         "security": [
@@ -1113,6 +1169,34 @@
             "description": "ID of the entity type that is fetched",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "attributes",
+            "in": "query",
+            "description": "A comma-seperated list of attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "description": "An indication if the rich-text content of the entity should be included in the response",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "tasks",
+            "in": "query",
+            "description": "An indication if the tasks of the entity should be included in the response",
+            "required": false,
+            "type": "boolean"
           }
         ],
         "security": [
@@ -2124,6 +2208,34 @@
         ],
         "parameters": [
           {
+            "name": "attributes",
+            "in": "query",
+            "description": "A comma-seperated list of attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "description": "An indication if the rich-text content of the entity should be included in the response",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "tasks",
+            "in": "query",
+            "description": "An indication if the tasks of the entity should be included in the response",
+            "required": false,
+            "type": "boolean"
+          },
+          {
             "in": "body",
             "name": "mxlBody",
             "description": "The standard body for MxL requests is a JSON object which can contain the attributes 'expression', 'parameterDefinitions', and 'expressionType'",
@@ -2173,6 +2285,34 @@
             "description": "ID of the workspace in which the MxL query has to be performed",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "attributes",
+            "in": "query",
+            "description": "A comma-seperated list of attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "description": "An indication if the rich-text content of the entity should be included in the response",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "tasks",
+            "in": "query",
+            "description": "An indication if the tasks of the entity should be included in the response",
+            "required": false,
+            "type": "boolean"
           },
           {
             "in": "body",
@@ -2231,7 +2371,34 @@
             "required": true,
             "type": "string"
           },
-
+          {
+            "name": "attributes",
+            "in": "query",
+            "description": "A comma-seperated list of attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "description": "An indication if the rich-text content of the entity should be included in the response",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "tasks",
+            "in": "query",
+            "description": "An indication if the tasks of the entity should be included in the response",
+            "required": false,
+            "type": "boolean"
+          },
           {
             "in": "body",
             "name": "mxlBody",
@@ -2288,6 +2455,34 @@
             "description": "ID of the entity in which the MxL query has to be performed",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "attributes",
+            "in": "query",
+            "description": "A comma-seperated list of attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "description": "An indication if the rich-text content of the entity should be included in the response",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "tasks",
+            "in": "query",
+            "description": "An indication if the tasks of the entity should be included in the response",
+            "required": false,
+            "type": "boolean"
           },
           {
             "in": "body",
@@ -2724,15 +2919,15 @@
         "summary": "Retrieves a list of search hints for the given prefix",
         "description": "Retrieves a list of search hints for the given prefix",
         "operationId": "searchHints",
-        "parameters": {
-          "prefix": {
+        "parameters": [
+          {
             "name": "q",
             "in": "query",
             "description": "search prefix",
             "required": false,
             "type": "string"
           },
-          "limitParam": {
+          {
             "name": "n",
             "in": "query",
             "description": "max search hints to return",
@@ -2740,7 +2935,7 @@
             "type": "integer",
             "format": "int32"
           }
-        },
+        ],
         "produces": [
           "application/json"
         ],
