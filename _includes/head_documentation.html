@@ -1,14 +1,19 @@
-﻿<head>
+﻿
+<!DOCTYPE html>
+<html>
+
+﻿
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title>SocioCortex Documentation</title>
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="{{ site.description }}">
-    <title>{{site.title}}</title>
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' }}"> <!-- prepend: site.baseurl | prepend: site.url -->
-    <link rel="icon" type="image/png" href="{{ "/img/favicons/sc_logo_transparent.png" | prepend: site.url }}"> <!--  | prepend: site.baseurl -->
-    <link rel="stylesheet" href="{{ "/css/style.css" }}"> <!--  | prepend: site.baseurl -->
-    <link rel="stylesheet" href="{{ "/css/font-awesome/css/font-awesome.min.css" }}"> <!--  | prepend: site.baseurl -->
+    <meta name="description" content="SocioCortex website">
+    <title>SocioCortex</title>
+    <link rel="canonical" href="/documentation/"> <!-- prepend: site.baseurl | prepend: site.url -->
+    <link rel="icon" type="image/png" href="/img/favicons/sc_logo_transparent.png"> <!--  | prepend: site.baseurl -->
+    <link rel="stylesheet" href="/css/style.css"> <!--  | prepend: site.baseurl -->
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css"> <!--  | prepend: site.baseurl -->
 
 
 
@@ -58,6 +63,13 @@
 
                     $("#swagger-ui-container>.info").hide();
                     $("#swagger-ui-container form.sandbox .sandbox_header").hide();
+
+                    $("#swagger-ui-container form.sandbox .operation-params").each(function () {
+                        $(this).parent().find("thead th:eq(1)").remove();
+                    });
+                    $("#swagger-ui-container form.sandbox .operation-params tr").each(function () {
+                        $(this).find("td:eq(1)").remove();
+                    });
                 },
                 onFailure: function (data) {
                     log("Unable to Load SwaggerUI");
@@ -85,3 +97,98 @@
         });
     </script>
 </head>
+
+<body id="page-top" class="index">
+
+    <div class="header">
+        <nav class="navbar navbar-default navbar-fixed-top clearfix">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href= /> <!--  | prepend: site.baseurl -->
+                    <img class="img-responsive" style="float:left;height:35px;" src=/img/favicons/sc_logo_blue.png /><span style="position:relative;top:6px;margin:5px;"><span style="color:white;">Socio</span><span style="color:#D20015;">Cortex</span></span>
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li>
+                            <a href= />Overview</a> <!-- | prepend: site.baseurl -->
+                        </li>
+                        <li>
+                            <a href="/applications/">Applications</a>
+                        </li>
+                        <li>
+                            <a href=/documentation />Documentation</a>
+                        </li>
+                        <li>
+                            <a href=/tutorial />Tutorial</a>
+                        </li>
+                        <!--<li>
+                            <a class="page-scroll" href="#team">Installation</a>
+                        </li> -->
+                        <!--<li>
+                            <a href="http://sebischair.github.io/restapi/dist/index.html" target="_blank">Rest API</a>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br /> <br />
+    </div>
+
+    <div class="wrapper swagger-section">
+        <div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
+        <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+    </div>
+    <footer>
+        <br /><br />
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; SocioCortex 2014</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons"></ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/agency.js"></script>
+
+    <script src="/js/main.js"></script>
+
+
+</body>
+</html>
