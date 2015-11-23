@@ -27,8 +27,8 @@
         "tags": [
           "workspace"
         ],
-        "summary": "Return the list of workspaces",
-        "description": "Return the list of workspaces",
+        "summary": "Returns a list of all workspaces",
+        "description": "Returns a list of all workspaces",
         "operationId": "workspaces",
         "produces": [
           "application/json"
@@ -54,8 +54,8 @@
         "tags": [
           "workspace"
         ],
-        "summary": "Create a new Workspace",
-        "description": "Create a new Workspace",
+        "summary": "Creates a new workspace",
+        "description": "Creates a new workspace",
         "operationId": "createWorkspace",
         "produces": [
           "application/json"
@@ -103,8 +103,8 @@
         "tags": [
           "workspace"
         ],
-        "summary": "Get an Workspace by ID",
-        "description": "Get an Workspace by ID",
+        "summary": "Returns the workspace with the given ID",
+        "description": "Returns the workspace with the given ID",
         "operationId": "getWorkspace",
         "produces": [
           "application/json"
@@ -148,8 +148,8 @@
         "tags": [
           "workspace"
         ],
-        "summary": "Update an Workspace by ID",
-        "description": "Update an Workspace by ID",
+        "summary": "Incrementally updates the workspace with the given ID",
+        "description": "Incrementally updates the workspace with the given ID",
         "operationId": "updateWorkspace",
         "produces": [
           "application/json"
@@ -202,8 +202,8 @@
         "tags": [
           "workspace"
         ],
-        "summary": "Delete an Workspace by ID",
-        "description": "Delete an Workspace by ID",
+        "summary": "Deletes the workspace with the given ID",
+        "description": "Deletes the workspace with the given ID",
         "operationId": "deleteWorkspace",
         "produces": [
           "application/json"
@@ -247,8 +247,8 @@
           "workspace",
           "entity"
         ],
-        "summary": "Returns all the entities in the Workspace",
-        "description": "Returns all the entities in the Workspace",
+        "summary": "Returns all the entities in the workspace with the given ID",
+        "description": "Returns all the entities in the workspace with the given ID",
         "operationId": "workspaceEntities",
         "produces": [
           "application/json"
@@ -290,8 +290,8 @@
           "workspace",
           "entity"
         ],
-        "summary": "Creates an entity in the Workspace",
-        "description": "Creates an entity in the Workspace",
+        "summary": "Creates an entity in the workspace with the given ID",
+        "description": "Creates an entity in the workspace with the given ID",
         "operationId": "createEntityInWorkspace",
         "produces": [
           "application/json"
@@ -341,8 +341,8 @@
           "workspace",
           "entityType"
         ],
-        "summary": "Returns all the entity types in the Workspace",
-        "description": "Returns all the entity types in the Workspace",
+        "summary": "Returns all the entity types in the workspace with the given ID",
+        "description": "Returns all the entity types in the workspace with the given ID",
         "operationId": "workspaceTypes",
         "produces": [
           "application/json"
@@ -384,8 +384,8 @@
           "workspace",
           "entityType"
         ],
-        "summary": "Create an entity type in the Workspace",
-        "description": "Create an entity type in the Workspace",
+        "summary": "Creates an entity type in the workspace with the given ID",
+        "description": "Creates an entity type in the workspace with the given ID",
         "operationId": "createEntityTypeInWorkspace",
         "produces": [
           "application/json"
@@ -434,8 +434,8 @@
         "tags": [
           "entity"
         ],
-        "summary": "Creates a new Entity",
-        "description": "Creates a new Entity",
+        "summary": "Creates a new entity",
+        "description": "Creates a new entity",
         "operationId": "createEntity",
         "produces": [
           "application/json"
@@ -483,8 +483,8 @@
         "tags": [
           "entity"
         ],
-        "summary": "Gets an Entity by ID",
-        "description": "Gets an Entity by ID",
+        "summary": "Returns the entity with the given ID",
+        "description": "Returns the entity with the given ID",
         "operationId": "getEntity",
         "produces": [
           "application/json"
@@ -523,8 +523,8 @@
         "tags": [
           "entity"
         ],
-        "summary": "Update an Entity by ID",
-        "description": "Update an Entity by ID",
+        "summary": "Incrementally updates the entity with the given ID",
+        "description": "Incrementally updates the entity with the given ID",
         "operationId": "updateEntity",
         "produces": [
           "application/json"
@@ -577,8 +577,8 @@
         "tags": [
           "entity"
         ],
-        "summary": "Delete an Entity by ID",
-        "description": "Delete an Entity by ID",
+        "summary": "Deletes the entity with the given ID",
+        "description": "Deletes the entity with the given ID",
         "operationId": "deleteEntity",
         "produces": [
           "application/json"
@@ -622,8 +622,8 @@
           "entity",
           "attribute"
         ],
-        "summary": "Return a list of Entity attributes",
-        "description": "Return a list of Entity attributes",
+        "summary": "Returns the attributes of the entity with the given ID",
+        "description": "Returns the attributes of the entity with the given ID",
         "operationId": "attributes",
         "produces": [
           "application/json"
@@ -670,8 +670,8 @@
         "tags": [
           "entity"
         ],
-        "summary": "Add a new  Entity attribute",
-        "description": "Add a new Entity attribute",
+        "summary": "Creates an attribute for the entity with the given ID",
+        "description": "Creates an attribute for the entity with the given ID",
         "operationId": "newAttributeForEntity",
         "produces": [
           "application/json"
@@ -726,8 +726,8 @@
         "tags": [
           "attribute"
         ],
-        "summary": "Create a new attribute",
-        "description": "Create a new attribute",
+        "summary": "Creates a new attribute",
+        "description": "Creates a new attribute",
         "operationId": "newAttribute",
         "produces": [
           "application/json"
@@ -775,8 +775,8 @@
         "tags": [
           "attribute"
         ],
-        "summary": "Gets an Attribute by ID",
-        "description": "Gets an Attribute by ID",
+        "summary": "Returns the attribute with the given ID",
+        "description": "Returns the attribute with the given ID",
         "operationId": "getAttribute",
         "produces": [
           "application/json"
@@ -815,8 +815,8 @@
         "tags": [
           "attribute"
         ],
-        "summary": "Update an Attribute by ID",
-        "description": "Update an Attribute by ID",
+        "summary": "Incrementally updates the attribute with the given ID",
+        "description": "Incrementally updates the attribute with the given ID",
         "operationId": "updateAttribute",
         "produces": [
           "application/json"
@@ -869,8 +869,8 @@
         "tags": [
           "attribute"
         ],
-        "summary": "Delete an Attribute by ID",
-        "description": "Delete an Attribute by ID",
+        "summary": "Deletes the attribute with the given ID",
+        "description": "Deletes the attribute with the given ID",
         "operationId": "deleteAttribute",
         "produces": [
           "application/json"
@@ -909,39 +909,12 @@
       }
     },
     "/entityTypes": {
-      "get": {
-        "tags": [
-          "entityType"
-        ],
-        "summary": "Return the list of entity types",
-        "description": "Return the list of entity types",
-        "operationId": "getEntityTypes",
-        "produces": [
-          "application/json"
-        ],
-        "security": [
-          {
-            "basicAuth": [ ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/link"
-              }
-            }
-          }
-        }
-      },
       "post": {
         "tags": [
           "entityType"
         ],
-        "summary": "Create a new entity type",
-        "description": "Create a new entity type",
+        "summary": "Creates a new entity type",
+        "description": "Creates a new entity type",
         "operationId": "createEntityType",
         "produces": [
           "application/json"
@@ -983,8 +956,8 @@
         "tags": [
           "entityType"
         ],
-        "summary": "Get a EntityType by ID",
-        "description": "Get an EntityType by ID",
+        "summary": "Returns the entity type with the given ID",
+        "description": "Returns the entity type with the given ID",
         "operationId": "getEntityType",
         "produces": [
           "application/json"
@@ -1028,8 +1001,8 @@
         "tags": [
           "entityType"
         ],
-        "summary": "Update an EntityType by ID",
-        "description": "Update an EntityType by ID",
+        "summary": "Incrementally updates the entity type with the given ID",
+        "description": "Incrementally updates the entity type with the given ID",
         "operationId": "updateEntityType",
         "produces": [
           "application/json"
@@ -1082,8 +1055,8 @@
         "tags": [
           "entityType"
         ],
-        "summary": "Delete an EntityType by ID",
-        "description": "Delete an EntityType by ID",
+        "summary": "Deletes the entity type with the given ID",
+        "description": "Deletes the entity type with the given ID",
         "operationId": "deleteEntityType",
         "produces": [
           "application/json"
@@ -1127,8 +1100,8 @@
           "entityType",
           "entity"
         ],
-        "summary": "Return all the entities of entity type",
-        "description": "Return all the entities of entity type",
+        "summary": "Returns all entities of the entity type with the given ID",
+        "description": "Returns all entities of the entity type with the given ID",
         "operationId": "typeEntities",
         "produces": [
           "application/json"
@@ -1176,8 +1149,8 @@
           "entityType",
           "entity"
         ],
-        "summary": "Add a new Entity of Entity Type",
-        "description": "Add a new Entity of Entity Type",
+        "summary": "Creates an entities for the entity type with the given ID",
+        "description": "Creates an entities for the entity type with the given ID",
         "operationId": "newEntityForEntityType",
         "produces": [
           "application/json"
@@ -1233,7 +1206,7 @@
           "entityType",
           "attributeDefinition"
         ],
-        "summary": "Return all attribute definitions of entity type",
+        "summary": "Returns all attribute definitions of the entity type with the given ID",
         "description": "Return all attribute definitions of entity type",
         "operationId": "getAttributeDefinitionsOfType",
         "produces": [
@@ -1282,8 +1255,8 @@
           "entityType",
           "attributeDefinition"
         ],
-        "summary": "Create a new attribute definition for entity type",
-        "description": "Create a new attribute definition for entity type",
+        "summary": "Creates an attribute definition for the entity type with the given ID",
+        "description": "Creates an attribute definition for the entity type with the given ID",
         "operationId": "createAttributeDefinitionForEntityType",
         "produces": [
           "application/json"
@@ -1341,8 +1314,8 @@
         "tags": [
           "attributeDefinition"
         ],
-        "summary": "Create a new attribute definition",
-        "description": "Create a new attribute definition",
+        "summary": "Creates a new attribute definition",
+        "description": "Creates a new attribute definition",
         "operationId": "createAttributeDefinition",
         "produces": [
           "application/json"
@@ -1384,8 +1357,8 @@
         "tags": [
           "attributeDefinition"
         ],
-        "summary": "Get an attribute definition by ID",
-        "description": "Get an attribute definition by ID",
+        "summary": "Returns the attribute definition with the given ID",
+        "description": "Returns the attribute definition with the given ID",
         "operationId": "getAttributeDefinition",
         "produces": [
           "application/json"
@@ -1429,8 +1402,8 @@
         "tags": [
           "attributeDefinition"
         ],
-        "summary": "Update an attribute definition by ID",
-        "description": "Update an attribute definition by ID",
+        "summary": "Incrementally updates the attribute definition with the given ID",
+        "description": "Incrementally updates the attribute definition with the given ID",
         "operationId": "updateAttributeDefinition",
         "produces": [
           "application/json"
@@ -1483,8 +1456,8 @@
         "tags": [
           "attributeDefinition"
         ],
-        "summary": "Delete an attribute definition by ID",
-        "description": "Delete an attribute definition by ID",
+        "summary": "Deletes the attribute definition with the given ID",
+        "description": "Deletes the attribute definition with the given ID",
         "operationId": "deleteAttributeDefinition",
         "produces": [
           "application/json"
@@ -1522,8 +1495,8 @@
         "tags": [
           "group"
         ],
-        "summary": "Return the list of groups",
-        "description": "Return the list of groups",
+        "summary": "Returns all groups",
+        "description": "Returns all groups",
         "operationId": "groups",
         "produces": [
           "application/json"
@@ -1549,8 +1522,8 @@
         "tags": [
           "group"
         ],
-        "summary": "Create a new Group",
-        "description": "Create a new Group",
+        "summary": "Creates a new group",
+        "description": "Creates a new group",
         "operationId": "createGroup",
         "produces": [
           "application/json"
@@ -1610,8 +1583,8 @@
         "tags": [
           "group"
         ],
-        "summary": "Get an Group by ID",
-        "description": "Get an Group by ID",
+        "summary": "Returns the group with the given ID",
+        "description": "Returns the group with the given ID",
         "operationId": "getGroup",
         "produces": [
           "application/json"
@@ -1667,8 +1640,8 @@
         "tags": [
           "group"
         ],
-        "summary": "Update an Group by ID",
-        "description": "Update an Group by ID",
+        "summary": "Incrementally updates the group with the given ID",
+        "description": "Incrementally updates the group with the given ID",
         "operationId": "updateGroup",
         "produces": [
           "application/json"
@@ -1733,8 +1706,8 @@
         "tags": [
           "group"
         ],
-        "summary": "Delete an Group by ID",
-        "description": "Delete an Group by ID",
+        "summary": "Deletes the group with the given ID",
+        "description": "Deletes the group with the given ID",
         "operationId": "deleteGroup",
         "produces": [
           "application/json"
@@ -1789,8 +1762,8 @@
         "tags": [
           "user"
         ],
-        "summary": "Return the list of users",
-        "description": "Return the list of users",
+        "summary": "Returns all users",
+        "description": "Returns all users",
         "operationId": "users",
         "produces": [
           "application/json"
@@ -1816,8 +1789,8 @@
         "tags": [
           "user"
         ],
-        "summary": "Create a new User",
-        "description": "Create a new User",
+        "summary": "Creates a new user",
+        "description": "Creates a new user",
         "operationId": "createUser",
         "produces": [
           "application/json"
@@ -1865,8 +1838,8 @@
         "tags": [
           "user"
         ],
-        "summary": "Get an User by ID",
-        "description": "Get an User by ID",
+        "summary": "Returns the user with the given ID",
+        "description": "Returns the user with the given ID",
         "operationId": "getUser",
         "produces": [
           "application/json"
@@ -1905,8 +1878,8 @@
         "tags": [
           "user"
         ],
-        "summary": "Update an User by ID",
-        "description": "Update an User by ID",
+        "summary": "Incrementally updates the user with the given ID",
+        "description": "Incrementally updates the user with the given ID",
         "operationId": "updateUser",
         "produces": [
           "application/json"
@@ -1959,8 +1932,8 @@
         "tags": [
           "user"
         ],
-        "summary": "Delete an User by ID",
-        "description": "Delete an User by ID",
+        "summary": "Deletes the user with the given ID",
+        "description": "Deletes the user with the given ID",
         "operationId": "deleteUser",
         "produces": [
           "application/json"
@@ -2006,8 +1979,8 @@
         "tags": [
           "user"
         ],
-        "summary": "Get the profile picture of the User by ID",
-        "description": "Get the profile picture of the User by ID",
+        "summary": "Returns the profile picture of the user with the given ID",
+        "description": "Returns the profile picture of the user with the given ID",
         "operationId": "getUserPicture",
         "produces": [
           "image/png"
@@ -2052,8 +2025,8 @@
         "tags": [
           "user"
         ],
-        "summary": "Update the profile picture of the User by ID",
-        "description": "Update the profile picture of the User by ID",
+        "summary": "Updates the profile picture of the user with the given ID",
+        "description": "Updates the profile picture of the user with the given ID",
         "operationId": "updateUserPicture",
         "produces": [
           "image/png"
@@ -2105,8 +2078,8 @@
         "tags": [
           "user"
         ],
-        "summary": "Gets the current User",
-        "description": "Gets the current User",
+        "summary": "Returns the current user",
+        "description": "Returns the current user",
         "operationId": "me",
         "produces": [
           "application/json"
