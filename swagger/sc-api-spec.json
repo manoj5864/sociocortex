@@ -2753,494 +2753,505 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/mxlHints"
-            }
-          },
-          "400": {
-            "description": "Invalid ID supplied",
-            "schema": {
-              "$ref": "#/definitions/error"
-            }
-          }
-        }
-      }
-    }
-  },
-  "definitions": {
-    "attribute": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "attributeDefinition": {
-          "$ref": "#/definitions/attributeDefinition",
-          "readOnly": true
-        },
-        "values": {
-          "type": "array",
-          "items": { }
-        },
-        "conversionErrors": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "change": {
-      "type": "object",
-      "properties": {
-        "date": {
-          "type": "string"
-        },
-        "user": {
-          "$ref": "#/definitions/link"
-        },
-        "action": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string"
-        },
-        "changes": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "from": {
-
-              },
-              "to": {
-
+              "type": "object",
+              "properties": {
+                "totalCount": {
+                  "type": "string",
+                  "format": "int32"
+                },
+                "hints": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/link"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid ID supplied",
+              "schema": {
+                "$ref": "#/definitions/error"
               }
             }
           }
         }
       }
     },
-    "entity": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "href": {
-          "type": "string",
-          "readOnly": true
-        },
-        "content": {
-          "type": "string"
-        },
-        "parent": {
-          "$ref": "#/definitions/link"
-        },
-        "permissions": {
-          "$ref": "#/definitions/permissions",
-          "readOnly": true
-        },
-        "incomingReferences": {
-          "type": "array",
-          "readOnly": true,
-          "items": {
+    "definitions": {
+      "attribute": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "attributeDefinition": {
+            "$ref": "#/definitions/attributeDefinition",
+            "readOnly": true
+          },
+          "values": {
+            "type": "array",
+            "items": { }
+          },
+          "conversionErrors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "change": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "user": {
+            "$ref": "#/definitions/link"
+          },
+          "action": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "changes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "from": {
+
+                },
+                "to": {
+
+                }
+              }
+            }
+          }
+        }
+      },
+      "entity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string",
+            "readOnly": true
+          },
+          "content": {
+            "type": "string"
+          },
+          "parent": {
+            "$ref": "#/definitions/link"
+          },
+          "permissions": {
+            "$ref": "#/definitions/permissions",
+            "readOnly": true
+          },
+          "incomingReferences": {
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "type": "object"
+            }
+
+          },
+          "history": {
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/definitions/change"
+            }
+          },
+          "entityType": {
+            "$ref": "#/definitions/link"
+          },
+          "workspace": {
+            "$ref": "#/definitions/workspace"
+          },
+          "attributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/attribute"
+            }
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/link"
+            }
+          },
+          "mayEdit": {
+            "type": "boolean"
+          }
+        }
+      },
+      "error": {
+        "type": "object",
+        "properties": {
+          "statusCode": {
+            "type": "number"
+          },
+          "message": {
+            "type": "string"
+          },
+          "cause": {
+            "type": "string"
+          },
+          "additionalInformation": {
             "type": "object"
           }
+        }
+      },
+      "picture": {
+        "type": "string",
+        "format": "binary"
+      },
+      "group": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string",
+            "readOnly": true
+          },
+          "description": {
+            "type": "string"
+          },
+          "administrators": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/link"
+            }
+          },
+          "mayEdit": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        }
+      },
+      "link": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string",
+            "readOnly": true
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "mxlBody": {
+        "type": "object",
+        "properties": {
+          "expression": {
+            "type": "string"
+          },
+          "expectedType": {
+            "type": "string"
+          },
+          "parameterDefinitions": {
+            "type": "string"
+          }
+        }
+      },
+      "mxlHint": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "helpHeader": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "addOpeningBracket": {
+            "type": "boolean"
+          },
+          "addApostrophes": {
+            "type": "boolean"
+          }
+        }
+      },
+      "mxlHints": {
+        "type": "object",
+        "properties": {
+          "staticFunctions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/mxlHint"
+            }
+          },
+          "memberFunctions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/mxlHint"
+            }
+          },
+          "globalIdentifiers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/mxlHint"
+            }
+          },
+          "basicTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/mxlHint"
+            }
+          },
+          "customTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/mxlHint"
+            }
+          },
+          "workspaces": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/mxlHint"
+            }
+          },
+          "attributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/mxlHint"
+            }
+          },
+          "builtinAttributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/mxlHint"
+            }
+          }
+        }
+      },
+      "mxlResponse": {
+        "type": "object",
+        "properties": {
+          "value": { },
+          "type": {
+            "type": "object"
+          },
+          "expression": {
+            "type": "object"
+          },
+          "dependencies": {
+            "type": "object"
+          }
+        }
+      },
+      "attributeDefinition": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string",
+            "readOnly": true
+          },
+          "multiplicity": {
+            "type": "string",
+            "enum": [ "any", "atLeastOne", "maxOne", "exacltyOne" ]
+          },
+          "entityType": {
+            "$ref": "#/definitions/link"
+          },
+          "options": {
+            "type": "object"
+          },
+          "description": {
+            "type": "string"
+          },
+          "readOnly": {
+            "type": "string"
+          },
+          "defaultValues": {
+            "type": "array",
+            "items": { }
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/change"
+            }
+          },
+          "mayEdit": {
+            "type": "boolean",
+            "readOnly": true
 
-        },
-        "history": {
-          "type": "array",
-          "readOnly": true,
-          "items": {
-            "$ref": "#/definitions/change"
           }
-        },
-        "entityType": {
-          "$ref": "#/definitions/link"
-        },
-        "workspace": {
-          "$ref": "#/definitions/workspace"
-        },
-        "attributes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/attribute"
-          }
-        },
-        "children": {
-          "type": "array",
-          "items": {
+        }
+      },
+      "entityType": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string",
+            "readOnly": true
+          },
+          "workspace": {
             "$ref": "#/definitions/link"
+          },
+          "namePlural": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "allowFreeAttributes": {
+            "type": "boolean"
+          },
+          "attributeDefinitions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/link"
+            }
+          },
+          "processes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/link"
+            }
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/change"
+            }
+          },
+          "mayEdit": {
+            "type": "boolean",
+            "readOnly": true
           }
-        },
-        "mayEdit": {
-          "type": "boolean"
         }
-      }
-    },
-    "error": {
-      "type": "object",
-      "properties": {
-        "statusCode": {
-          "type": "number"
-        },
-        "message": {
-          "type": "string"
-        },
-        "cause": {
-          "type": "string"
-        },
-        "additionalInformation": {
-          "type": "object"
+      },
+      "user": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string",
+            "readOnly": true
+          },
+          "email": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "lastLoginDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/link"
+            }
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/change"
+            }
+          },
+          "mayEdit": {
+            "type": "boolean",
+            "readOnly": true
+          }
         }
-      }
-    },
-    "picture": {
-      "type": "string",
-      "format": "binary"
-    },
-    "group": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "href": {
-          "type": "string",
-          "readOnly": true
-        },
-        "description": {
-          "type": "string"
-        },
-        "administrators": {
-          "type": "array",
-          "items": {
+      },
+      "workspace": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string",
+            "readOnly": true
+          },
+          "rootEntity": {
             "$ref": "#/definitions/link"
-          }
-        },
-        "mayEdit": {
-          "type": "boolean",
-          "readOnly": true
-        }
-      }
-    },
-    "link": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "href": {
-          "type": "string",
-          "readOnly": true
-        },
-        "name": {
-          "type": "string"
-        }
-      }
-    },
-    "mxlBody": {
-      "type": "object",
-      "properties": {
-        "expression": {
-          "type": "string"
-        },
-        "expectedType": {
-          "type": "string"
-        },
-        "parameterDefinitions": {
-          "type": "string"
-        }
-      }
-    },
-    "mxlHint": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "helpHeader": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string"
-        },
-        "addOpeningBracket": {
-          "type": "boolean"
-        },
-        "addApostrophes": {
-          "type": "boolean"
-        }
-      }
-    },
-    "mxlHints": {
-      "type": "object",
-      "properties": {
-        "staticFunctions": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/mxlHint"
-          }
-        },
-        "memberFunctions": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/mxlHint"
-          }
-        },
-        "globalIdentifiers": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/mxlHint"
-          }
-        },
-        "basicTypes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/mxlHint"
-          }
-        },
-        "customTypes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/mxlHint"
-          }
-        },
-        "workspaces": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/mxlHint"
-          }
-        },
-        "attributes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/mxlHint"
-          }
-        },
-        "builtinAttributes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/mxlHint"
+          },
+          "permissions": {
+            "$ref": "#/definitions/permissions",
+            "readOnly": true
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/change"
+            }
+          },
+          "entityTree": {
+            "$ref": "#/definitions/link"
+          },
+          "mayEdit": {
+            "type": "boolean",
+            "readOnly": true
           }
         }
-      }
-    },
-    "mxlResponse": {
-      "type": "object",
-      "properties": {
-        "value": { },
-        "type": {
-          "type": "object"
-        },
-        "expression": {
-          "type": "object"
-        },
-        "dependencies": {
-          "type": "object"
-        }
-      }
-    },
-    "attributeDefinition": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "href": {
-          "type": "string",
-          "readOnly": true
-        },
-        "multiplicity": {
-          "type": "string",
-          "enum": [ "any", "atLeastOne", "maxOne", "exacltyOne" ]
-        },
-        "entityType": {
-          "$ref": "#/definitions/link"
-        },
-        "options": {
-          "type": "object"
-        },
-        "description": {
-          "type": "string"
-        },
-        "readOnly": {
-          "type": "string"
-        },
-        "defaultValues": {
-          "type": "array",
-          "items": { }
-        },
-        "history": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/change"
+      },
+      "permissions": {
+        "type": "object",
+        "properties": {
+          "readers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/link"
+            }
+          },
+          "writers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/link"
+            }
           }
-        },
-        "mayEdit": {
-          "type": "boolean",
-          "readOnly": true
+        }
 
-        }
       }
-    },
-    "entityType": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "href": {
-          "type": "string",
-          "readOnly": true
-        },
-        "workspace": {
-          "$ref": "#/definitions/link"
-        },
-        "namePlural": {
-          "type": "string"
-        },
-        "icon": {
-          "type": "string"
-        },
-        "allowFreeAttributes": {
-          "type": "boolean"
-        },
-        "attributeDefinitions": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        },
-        "processes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        },
-        "history": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/change"
-          }
-        },
-        "mayEdit": {
-          "type": "boolean",
-          "readOnly": true
-        }
-      }
-    },
-    "user": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "href": {
-          "type": "string",
-          "readOnly": true
-        },
-        "email": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "lastLoginDate": {
-          "type": "string",
-          "format": "date"
-        },
-        "groups": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        },
-        "history": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/change"
-          }
-        },
-        "mayEdit": {
-          "type": "boolean",
-          "readOnly": true
-        }
-      }
-    },
-    "workspace": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "href": {
-          "type": "string",
-          "readOnly": true
-        },
-        "rootEntity": {
-          "$ref": "#/definitions/link"
-        },
-        "permissions": {
-          "$ref": "#/definitions/permissions",
-          "readOnly": true
-        },
-        "history": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/change"
-          }
-        },
-        "entityTree": {
-          "$ref": "#/definitions/link"
-        },
-        "mayEdit": {
-          "type": "boolean",
-          "readOnly": true
-        }
-      }
-    },
-    "permissions": {
-      "type": "object",
-      "properties": {
-        "readers": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        },
-        "writers": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        }
-      }
-
     }
   }
-}
