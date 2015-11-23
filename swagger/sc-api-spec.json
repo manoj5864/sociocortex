@@ -2715,6 +2715,55 @@
           }
         }
       }
+    },
+    "/searchHints": {
+      "get": {
+        "tags": [
+          "search"
+        ],
+        "summary": "Retrieves a list of search hints for the given prefix",
+        "description": "Retrieves a list of search hints for the given prefix",
+        "operationId": "searchHints",
+        "parameters": {
+          "prefix": {
+            "name": "q",
+            "in": "query",
+            "description": "search prefix",
+            "required": false,
+            "type": "string"
+          },
+          "limitParam": {
+            "name": "n",
+            "in": "query",
+            "description": "max search hints to return",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/mxlHints"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
