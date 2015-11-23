@@ -1231,7 +1231,7 @@
       "get": {
         "tags": [
           "entityType",
-          "attributeDefinitions"
+          "attributeDefinition"
         ],
         "summary": "Return all attribute definitions of entity type",
         "description": "Return all attribute definitions of entity type",
@@ -1280,7 +1280,7 @@
       "post": {
         "tags": [
           "entityType",
-          "attributeDefinitions"
+          "attributeDefinition"
         ],
         "summary": "Create a new attribute definition for entity type",
         "description": "Create a new attribute definition for entity type",
