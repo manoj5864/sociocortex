@@ -148,8 +148,8 @@
         "tags": [
           "workspace"
         ],
-        "summary": "Incrementally updates the workspace with the given ID",
-        "description": "Incrementally updates the workspace with the given ID",
+        "summary": "Does an incremental update of the workspace with the given ID",
+        "description": "Does an incremental update of the workspace with the given ID",
         "operationId": "updateWorkspace",
         "produces": [
           "application/json"
@@ -551,8 +551,8 @@
         "tags": [
           "entity"
         ],
-        "summary": "Incrementally updates the entity with the given ID",
-        "description": "Incrementally updates the entity with the given ID",
+        "summary": "Does an incremental update of the entity with the given ID",
+        "description": "Does an incremental update of the entity with the given ID",
         "operationId": "updateEntity",
         "produces": [
           "application/json"
@@ -843,8 +843,8 @@
         "tags": [
           "attribute"
         ],
-        "summary": "Incrementally updates the attribute with the given ID",
-        "description": "Incrementally updates the attribute with the given ID",
+        "summary": "Does an incremental update of the attribute with the given ID",
+        "description": "Does an incremental update of the attribute with the given ID",
         "operationId": "updateAttribute",
         "produces": [
           "application/json"
@@ -1057,8 +1057,8 @@
         "tags": [
           "entityType"
         ],
-        "summary": "Incrementally updates the entity type with the given ID",
-        "description": "Incrementally updates the entity type with the given ID",
+        "summary": "Does an incremental update of the entity type with the given ID",
+        "description": "Does an incremental update of the entity type with the given ID",
         "operationId": "updateEntityType",
         "produces": [
           "application/json"
@@ -1486,8 +1486,8 @@
         "tags": [
           "attributeDefinition"
         ],
-        "summary": "Incrementally updates the attribute definition with the given ID",
-        "description": "Incrementally updates the attribute definition with the given ID",
+        "summary": "Does an incremental update of the attribute definition with the given ID",
+        "description": "Does an incremental update of the attribute definition with the given ID",
         "operationId": "updateAttributeDefinition",
         "produces": [
           "application/json"
@@ -1724,8 +1724,8 @@
         "tags": [
           "group"
         ],
-        "summary": "Incrementally updates the group with the given ID",
-        "description": "Incrementally updates the group with the given ID",
+        "summary": "Does an incremental update of the group with the given ID",
+        "description": "Does an incremental update of the group with the given ID",
         "operationId": "updateGroup",
         "produces": [
           "application/json"
@@ -1962,8 +1962,8 @@
         "tags": [
           "user"
         ],
-        "summary": "Incrementally updates the user with the given ID",
-        "description": "Incrementally updates the user with the given ID",
+        "summary": "Does an incremental update of the user with the given ID",
+        "description": "Does an incremental update of the user with the given ID",
         "operationId": "updateUser",
         "produces": [
           "application/json"
