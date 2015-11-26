@@ -3086,6 +3086,20 @@
             "$ref": "#/definitions/link"
           }
         },
+        "createdAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "lastModifiedAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "creator": {
+          "$ref": "#/definitions/link"
+        },
+        "lastModifier": {
+          "$ref": "#/definitions/link"
+        },
         "mayEdit": {
           "type": "boolean"
         }
