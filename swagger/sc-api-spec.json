@@ -3289,11 +3289,13 @@
         },
         "multiplicity": {
           "type": "string",
-          "enum": [ "any", "atLeastOne", "maxOne", "exacltyOne" ]
+          "enum": [ "any", "atLeastOne", "maxOne", "exacltyOne" ],
+          "default":  "any"
         },
         "attributeType": {
           "type": "string",
-          "enum": [ "boolean", "date", "enumeration", "link", "notype", "number", "text" ]
+          "enum": [ "boolean", "date", "enumeration", "link", "notype", "number", "text" ],
+          "default":  "notype"
         },
         "entityType": {
           "$ref": "#/definitions/link"
