@@ -3291,6 +3291,10 @@
           "type": "string",
           "enum": [ "any", "atLeastOne", "maxOne", "exacltyOne" ]
         },
+        "attributeType": {
+          "type": "string",
+          "enum": [ "boolean", "date", "enumeration", "link", "notype", "number", "text" ]
+        },
         "entityType": {
           "$ref": "#/definitions/link"
         },
