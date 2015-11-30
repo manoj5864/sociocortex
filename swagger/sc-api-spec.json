@@ -2981,7 +2981,7 @@
           "type": "string"
         },
         "attributeDefinition": {
-          "$ref": "#/definitions/attributeDefinition",
+          "$ref": "#/definitions/link",
           "readOnly": true
         },
         "values": {
@@ -3072,7 +3072,7 @@
           "$ref": "#/definitions/link"
         },
         "workspace": {
-          "$ref": "#/definitions/workspace"
+          "$ref": "#/definitions/link"
         },
         "attributes": {
           "type": "array",
