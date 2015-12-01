@@ -2849,7 +2849,7 @@
           {
             "in": "query",
             "name": "restrict",
-            "description": "A optional type declaration for which the auto completion hints should be generated",
+            "description": "An optional MxL type declaration for which the auto completion hints should be generated",
             "required": false,
             "type": "string"
           }
@@ -2898,7 +2898,7 @@
           {
             "in": "query",
             "name": "restrict",
-            "description": "A optional type declaration for which the auto completion hints should be generated",
+            "description": "An optional MxL type declaration for which the auto completion hints should be generated",
             "required": false,
             "type": "string"
           }
@@ -2953,7 +2953,7 @@
           {
             "in": "query",
             "name": "restrict",
-            "description": "A optional type declaration for which the auto completion hints should be generated",
+            "description": "An optional MxL type declaration for which the auto completion hints should be generated",
             "required": false,
             "type": "string"
           }
@@ -3008,7 +3008,7 @@
           {
             "in": "query",
             "name": "restrict",
-            "description": "A optional type declaration for which the auto completion hints should be generated",
+            "description": "An optional MxL type declaration for which the auto completion hints should be generated",
             "required": false,
             "type": "string"
           }
