@@ -1,6 +1,11 @@
 <div class="col-lg-10">
     <section id="overview">
         <h1 class="post-title">SocioCortex Tutorial</h1>
-        The tutorial should make you familiar with the SocioCortex concepts and its REST API.
+        <p>The tutorial makes you familiar with the SocioCortex concepts and its REST API:</p>
+        <ul>
+            {% for post in site.categories.tutorial | sort:'nr' %}
+            <li><a class="post-link" href="{{ post.url }}">{{ post.title }}</a>: {{ post.description }}</li>
+            {% endfor %}
+        </ul>
     </section>
 </div>
