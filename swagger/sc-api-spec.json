@@ -33,6 +33,15 @@
         "produces": [
           "application/json"
         ],
+        "parameters": [
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "security": [
           {
             "basicAuth": [ ]
@@ -115,6 +124,13 @@
             "name": "workspaceId",
             "description": "ID of the workspace that is fetched",
             "required": true,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
             "type": "string"
           }
         ],
@@ -382,6 +398,13 @@
             "description": "ID of the workspace that is fetched",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
           }
         ],
         "security": [
@@ -524,6 +547,34 @@
             "description": "ID of the entity that is fetched",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "attributes",
+            "in": "query",
+            "description": "A comma-seperated list of attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "in": "query",
+            "description": "An indication if the rich-text content of the entity should be included in the response",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "tasks",
+            "in": "query",
+            "description": "An indication if the tasks of the entity should be included in the response",
+            "required": false,
+            "type": "boolean"
           }
         ],
         "responses": {
@@ -662,6 +713,13 @@
             "name": "entityId",
             "description": "ID of the entity that is fetched",
             "required": true,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
             "type": "string"
           }
         ],
@@ -815,6 +873,13 @@
             "name": "attributeId",
             "description": "ID of the attribute that is fetched",
             "required": true,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
             "type": "string"
           }
         ],
@@ -999,32 +1064,11 @@
             "type": "string"
           },
           {
-            "name": "attributes",
-            "in": "query",
-            "description": "A comma-seperated list of attribute names which should be included in the response (or * for all)",
-            "required": false,
-            "type": "string"
-          },
-          {
             "name": "meta",
             "in": "query",
             "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
             "required": false,
             "type": "string"
-          },
-          {
-            "name": "content",
-            "in": "query",
-            "description": "An indication if the rich-text content of the entity should be included in the response",
-            "required": false,
-            "type": "boolean"
-          },
-          {
-            "name": "tasks",
-            "in": "query",
-            "description": "An indication if the tasks of the entity should be included in the response",
-            "required": false,
-            "type": "boolean"
           }
         ],
         "security": [
@@ -1303,6 +1347,13 @@
             "description": "ID of the type that is fetched",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
           }
         ],
         "security": [
@@ -1454,6 +1505,13 @@
             "description": "ID of the attribute definition that is fetched",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
           }
         ],
         "security": [
@@ -1585,6 +1643,15 @@
         "produces": [
           "application/json"
         ],
+        "parameters": [
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "security": [
           {
             "basicAuth": [ ]
@@ -1679,6 +1746,13 @@
             "name": "groupId",
             "description": "ID of the group that is fetched",
             "required": true,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
             "type": "string"
           }
         ],
@@ -1852,6 +1926,15 @@
         "produces": [
           "application/json"
         ],
+        "parameters": [
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "security": [
           {
             "basicAuth": [ ]
@@ -1934,6 +2017,13 @@
             "name": "userId",
             "description": "ID of the user that is fetched",
             "required": true,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
             "type": "string"
           }
         ],
@@ -2167,6 +2257,15 @@
         "operationId": "me",
         "produces": [
           "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          }
         ],
         "security": [
           {
@@ -2746,6 +2845,15 @@
         "produces": [
           "application/json"
         ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "restrict",
+            "description": "A optional type declaration for which the auto completion hints should be generated",
+            "required": false,
+            "type": "string"
+          }
+        ],
         "security": [
           {
             "basicAuth": [ ]
@@ -2785,6 +2893,13 @@
             "name": "workspaceId",
             "description": "ID of the workspace for which the hints should be generated",
             "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "restrict",
+            "description": "A optional type declaration for which the auto completion hints should be generated",
+            "required": false,
             "type": "string"
           }
         ],
@@ -2834,6 +2949,13 @@
             "description": "ID of the type for which the hints should be generated",
             "required": true,
             "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "restrict",
+            "description": "A optional type declaration for which the auto completion hints should be generated",
+            "required": false,
+            "type": "string"
           }
         ],
         "security": [
@@ -2881,6 +3003,13 @@
             "name": "entityId",
             "description": "ID of the entity for which the hints should be generated",
             "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "restrict",
+            "description": "A optional type declaration for which the auto completion hints should be generated",
+            "required": false,
             "type": "string"
           }
         ],
@@ -3290,12 +3419,12 @@
         "multiplicity": {
           "type": "string",
           "enum": [ "any", "atLeastOne", "maxOne", "exacltyOne" ],
-          "default":  "any"
+          "default": "any"
         },
         "attributeType": {
           "type": "string",
           "enum": [ "boolean", "date", "enumeration", "link", "notype", "number", "text" ],
-          "default":  "notype"
+          "default": "notype"
         },
         "entityType": {
           "$ref": "#/definitions/link"
