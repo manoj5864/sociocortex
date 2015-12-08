@@ -22,6 +22,18 @@
                 <li><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></li>
                 {% endfor %}
             </ul>
+            third try
+            <ul>
+                {% for post in site.categories.tutorial|sort:"nr" %}
+                <li><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
+            fourth try
+            <ul>
+                {% for post in site.categories.tutorial|dictsort:"nr"  %}
+                <li><a class="post-link" href="{{ post.url }}">{{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
     &nbsp;
