@@ -11,11 +11,26 @@
     </div>
     <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         <div class="local-toc">
+            <p class="caption">
+                <span class="caption-text">Basics of the SocioCortex API</span>
+            </p>
             <ul>
-                {% for suite in (1..10) %}
+                {% for lesson in (1..10) %}
                 {% for post in site.categories.tutorial %}
-                {% if post.nr == suite %}                
+                {% if post.nr == lesson && post.tutorial == 1 %}                
                 <li><a href="{{ post.url }}">{{ post.title }}</a></li>                
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+            </ul>
+            <p class="caption">
+                <span class="caption-text">SC Visualizer</span>
+            </p>
+            <ul>
+                {% for lesson in (1..10) %}
+                {% for post in site.categories.tutorial %}
+                {% if post.nr == lesson && post.tutorial == 2 %}
+                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
                 {% endif %}
                 {% endfor %}
                 {% endfor %}
