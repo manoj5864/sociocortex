@@ -18,10 +18,12 @@
     jQuery(function () {
         SphinxRtdTheme.StickyNav.enable();
 
-        jQuery(".wy-menu-vertical li a").each(function () {
-            if (window.location.href == this.href) {
-                jQuery(this).addClass("nav-active");
-            }
-        });
+        (function () {
+            jQuery(".wy-menu-vertical li a").each(function () {
+                if (window.location.href == this.href) {
+                    jQuery(this).addClass("nav-active");
+                }
+            });
+        })();
     });
 </script>
