@@ -1,10 +1,10 @@
 <script type="text/javascript">
     var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:'./',
-        VERSION:'latest',
-        COLLAPSE_INDEX:false,
-        FILE_SUFFIX:'.html',
-        HAS_SOURCE:  true
+        URL_ROOT: './',
+        VERSION: 'latest',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE: true
     };
 </script>
 <!-- jQuery Version 1.11.0 -->
@@ -17,5 +17,11 @@
 <script type="text/javascript">
     jQuery(function () {
         SphinxRtdTheme.StickyNav.enable();
+
+        jQuery(".wy-side-nav-search li a").each(function () {
+            if (window.location.href == this.href) {
+                jQuery(this).addClass("nav-active");
+            }
+        });
     });
 </script>
