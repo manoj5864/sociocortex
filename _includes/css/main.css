@@ -1,13 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather);
 
-.post-content th{
-    text-align:left;
-}
-
-.post-content td{
-    margin: 2px 5px 2px 5px;
-}
-
 .team-member h4 {
     height: 90px;
 }
