@@ -13,6 +13,16 @@
             {% endfor %}
             {% endfor %}
         </ul>
+        <h2>Model-based Expression Language</h2>
+        <ul>
+            {% for lesson in (1..10) %}
+            {% for post in site.categories.tutorial %}
+            {% if post.nr == lesson and post.tutorial == "MxL" %}
+            <li><a class="post-link" href="{{ post.url }}">{{ post.title }}</a>: {{ post.description }}</li>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </ul>
         <h2>SC Visualizer</h2>
         <ul>
             {% for lesson in (1..10) %}
