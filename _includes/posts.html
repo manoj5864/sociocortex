@@ -4,7 +4,7 @@
         <p>The tutorial makes you familiar with the SocioCortex concepts and its REST API.</p>
 
         <h2>Basics of the SocioCortex API</h2>
-        <ul>
+        <ol>
             {% for lesson in (1..10) %}
             {% for post in site.categories.tutorial %}
             {% if post.nr == lesson and post.tutorial == "Basics of the SocioCortex API" %}
@@ -12,9 +12,9 @@
             {% endif %}
             {% endfor %}
             {% endfor %}
-        </ul>
+        </ol>
         <h2>Model-based Expression Language</h2>
-        <ul>
+        <ol>
             {% for lesson in (1..10) %}
             {% for post in site.categories.tutorial %}
             {% if post.nr == lesson and post.tutorial == "MxL" %}
@@ -22,9 +22,9 @@
             {% endif %}
             {% endfor %}
             {% endfor %}
-        </ul>
+        </ol>
         <h2>SC Visualizer</h2>
-        <ul>
+        <ol>
             {% for lesson in (1..10) %}
             {% for post in site.categories.tutorial %}
             {% if post.nr == lesson and post.tutorial == "SC Visualizer" %}
@@ -32,6 +32,6 @@
             {% endif %}
             {% endfor %}
             {% endfor %}
-        </ul>
+        </ol>
     </section>
 </div>

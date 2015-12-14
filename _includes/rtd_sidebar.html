@@ -14,7 +14,7 @@
             <p class="caption">
                 <span class="caption-text">Basics of the SocioCortex API</span>
             </p>
-            <ul>
+            <ol>
                 {% for lesson in (1..10) %}
                 {% for post in site.categories.tutorial %}
                 {% if post.nr == lesson and post.tutorial == "Basics of the SocioCortex API" %}                
@@ -22,12 +22,12 @@
                 {% endif %}
                 {% endfor %}
                 {% endfor %}
-            </ul>
+            </ol>
             
             <p class="caption">
                 <span class="caption-text">Model-based Expression Language</span>
             </p>
-            <ul>
+            <ol>
                 {% for lesson in (1..10) %}
                 {% for post in site.categories.tutorial %}
                 {% if post.nr == lesson and post.tutorial == "MxL" %}
@@ -35,11 +35,11 @@
                 {% endif %}
                 {% endfor %}
                 {% endfor %}
-            </ul>
+            </ol>
             <p class="caption">
                 <span class="caption-text">SC Visualizer</span>
             </p>
-            <ul>
+            <ol>
                 {% for lesson in (1..10) %}
                 {% for post in site.categories.tutorial %}
                 {% if post.nr == lesson and post.tutorial == "SC Visualizer" %}
@@ -47,7 +47,7 @@
                 {% endif %}
                 {% endfor %}
                 {% endfor %}
-            </ul>
+            </ol>
         </div>
     </div>
     &nbsp;
