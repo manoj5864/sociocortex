@@ -50,6 +50,7 @@ h3.section-heading {
 
 .navbar-brand{
     font-size:25px;
+    font-family: 'Merriweather Sans', sans-serif !important;
 }
 
 .navbar-fixed-top .navbar-nav li :hover {
