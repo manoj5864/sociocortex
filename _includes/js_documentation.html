@@ -8,3 +8,67 @@
 <script src='/swagger/lib/swagger-ui.js' type='text/javascript'></script>
 <script src='/swagger/lib/highlight.7.3.pack.js' type='text/javascript'></script>
 <script src='/swagger/lib/marked.js' type='text/javascript'></script>
+
+<script type="text/javascript">
+        $(function () {
+
+            //var url = window.location.protocol +
+            //        "//" + window.location.hostname +
+            //        (window.location.port ? ':' + window.location.port : '') +
+            //        "/swagger/sc-api-spec.json";
+            var url = "/swagger/sc-api-spec.json";
+
+            window.swaggerUi = new SwaggerUi({
+                url: url,
+                dom_id: "swagger-ui-container",
+                supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
+                onComplete: function (swaggerApi, swaggerUi) {
+                    if (typeof initOAuth == "function") {
+                        /*
+                        initOAuth({
+                          clientId: "your-client-id",
+                          realm: "your-realms",
+                          appName: "your-app-name"
+                        });
+                        */
+                    }
+
+                    $('pre code').each(function (i, e) {
+                        hljs.highlightBlock(e)
+                    });
+
+                    $("#swagger-ui-container>.info").hide();
+                    $("#swagger-ui-container form.sandbox .sandbox_header").hide();
+
+                    $("#swagger-ui-container form.sandbox .operation-params").each(function () {
+                        $(this).parent().find("thead th:eq(1)").remove();
+                    });
+                    $("#swagger-ui-container form.sandbox .operation-params tr").each(function () {
+                        $(this).find("td:eq(1)").remove();
+                    });
+                },
+                onFailure: function (data) {
+                    log("Unable to Load SwaggerUI");
+                },
+                docExpansion: "list",
+                sorter: "alpha"
+            });
+
+            window.swaggerUi.load();
+
+            function log() {
+                if ('console' in window) {
+                    console.log.apply(console, arguments);
+                }
+            }
+
+            function removeBasicAuthHeaderFromSwagger() {
+                swaggerUi.api.clientAuthorizations.remove("basicAuth");
+            }
+
+            function addBasicAuthHeaderToSwagger() {
+                var basicAuthHeader = 'Basic ' + window.btoa('' + jQuery("#swaggerUsername").val() + ':' + jQuery("#swaggerPassword").val());
+                swaggerUi.api.clientAuthorizations.add("basicAuth", new SwaggerClient.ApiKeyAuthorization("Authorization", basicAuthHeader, "header"));
+            }
+        });
+</script>
