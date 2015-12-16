@@ -3,7 +3,7 @@ layout: application
 title:  "SocioCortex Visualizer"
 date:   2015-10-04 13:50:09
 category: "application"
-teaser:   "A configurable dashboard solution which analyzable to foster the transparency of the information flow."
+teaser:   "A configurable model-based data dashboard solution which fosters transparency of the information flows from the enterprise data sources to the numerous stakeholder-specific dashboards in the organization."
 ---
 
 The SocioCortex Visualizer as part of the umbrella project [Spreadsheet 2.0](https://wwwmatthes.in.tum.de/pages/7hfq7554s6yv/Spreadsheet-2.0-User-Oriented-Tools-for-Analyzing-Complex-linked-Data) is a web-based tool access the data in SocioCortex and visualizing it in dashboards. In this context, a dashboard describes one web-based view consisting of one of more visualizations of potentially different types.
