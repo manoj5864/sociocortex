@@ -1,11 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather);
+@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans);
 
 .team-member h4 {
     height: 90px;
 }
 
 .navbar-fixed-top .nav-active {
-    border-bottom: 5px solid #D20015;
+    border-bottom: 5px solid #FF5252;
 }
 
 .header .navbar-default .navbar-toggle .icon-bar {
@@ -13,13 +14,13 @@
 }
 
 .sidebar-nav .nav-active {
-    border-left: 5px solid #D20015;
+    border-left: 5px solid #FF5252;
     background-color: #eee;
     color: black !important;
 }
 
 .sidebar-nav li :hover {
-    color: #D20015 !important;
+    color: #FF5252 !important;
 }
 
 .sidebar-nav{
@@ -48,13 +49,16 @@ h3.section-heading {
     column-gap: 20px;
 }
 
+.navbar-brand{
+    font-size:30px;
+}
 
 .navbar-fixed-top .navbar-nav li :hover {
     color: #88C0E8 !important;
 }
 
 .navbar-fixed-top {
-    background-color: #003359;
+    background-color: #195B8B;
 }
 
     .navbar-fixed-top .navbar-nav li a {
@@ -64,14 +68,18 @@ h3.section-heading {
 
 
     .navbar-fixed-top .navbar-nav a {
-        font-family: 'Merriweather', serif !important;
+        font-family: 'Merriweather Sans', sans-serif !important;
         font-size: 12pt !important;
     }
 
 body {
     overflow-x: hidden;
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather Sans', sans-serif;
     height: 100%;
+}
+
+a{
+    color:#003359;
 }
 
 .jumbotron {
@@ -80,29 +88,28 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Merriweather', serif;
-    font-weight: 700;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: 100 !important;
 }
 
-    h2.section-heading {
-        color: darkblue;
-        margin-top: 0;
+    h2.section-subheading {
+        color: #195B8B;
+        margin-top: 15px;
         margin-bottom: 15px;
-        font-size: 50px;
+        font-size: 30px;
     }
 
     h3.section-subheading {
         color: darkblue;
         margin-bottom: 75px;
         text-transform: none;
-        font-family: 'Merriweather', serif;
+        font-family: 'Merriweather Sans', sans-serif;
         font-size: 26px;
         font-style: italic;
-        font-weight: 400;
     }
 
 p {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.75;
     text-align: justify;
 }
