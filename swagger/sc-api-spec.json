@@ -53,7 +53,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/workspace"
+                "$ref": "#/definitions/link"
               }
             }
           }
@@ -469,6 +469,107 @@
             "description": "Successful operation",
             "schema": {
               "$ref": "#/definitions/entityType"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/workspaces/{workspaceId}/customFunctions": {
+      "get": {
+        "tags": [
+          "workspace",
+          "customFunction"
+        ],
+        "summary": "Returns all the static custom functions in the workspace with the given ID",
+        "description": "Returns all the static custom functions in the workspace with the given ID",
+        "operationId": "workspaceCustomFunctions",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "description": "ID of the workspace that is fetched",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/link"
+              }
+            }
+          },
+          "404": {
+            "description": "Workspace not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "workspace",
+          "customFunction"
+        ],
+        "summary": "Creates a static custom function in the workspace with the given ID",
+        "description": "Creates a static custom function in the workspace with the given ID",
+        "operationId": "createCustomFunctionInWorkspace",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "workspaceId",
+            "description": "ID of the workspace that is fetched",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "CustomFunction",
+            "description": "New CustomFunction in JSON",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customFunction"
+            }
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/customFunction"
             }
           },
           "400": {
@@ -1001,6 +1102,313 @@
         }
       }
     },
+    "/entities/{entityId}/files": {
+      "get": {
+        "tags": [
+          "entity",
+          "file"
+        ],
+        "summary": "Returns the files of the entity with the given ID",
+        "description": "Returns the files of the entity with the given ID",
+        "operationId": "filesByEntity",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entityId",
+            "description": "ID of the entity that is fetched",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/file"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "Entity not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "entity",
+          "file"
+        ],
+        "summary": "Creates a file for the entity with the given ID",
+        "description": "Creates a file for the entity with the given ID",
+        "operationId": "newFileForEntity",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entityId",
+            "description": "ID of the entity that is fetched",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "File Attributes",
+            "description": "File Attributes in JSON",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/file"
+            }
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/file"
+            }
+          },
+          "400": {
+            "description": "Invalid ID or File Name supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "Entity or File not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/files": {
+      "post": {
+        "tags": [
+          "file"
+        ],
+        "summary": "Creates a new file",
+        "description": "Creates a new file",
+        "operationId": "newFile",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "File Attributes",
+            "description": "File Attributes in JSON",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/file"
+            }
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/file"
+            }
+          },
+          "400": {
+            "description": "Invalid ID or File Name supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "Entity or File not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/files/{fileId}": {
+      "get": {
+        "tags": [
+          "file"
+        ],
+        "summary": "Returns the file with the given ID",
+        "description": "Returns the file with the given ID",
+        "operationId": "getFile",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "fileId",
+            "description": "ID of the file that is fetched",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/file"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "File not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "file"
+        ],
+        "summary": "Does an incremental update of the file with the given ID",
+        "description": "Does an incremental update of the file with the given ID",
+        "operationId": "updateFile",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "fileId",
+            "description": "ID of the file that is fetched",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "Attribute",
+            "description": "Updated File in JSON",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/file"
+            }
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/file"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "File not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "file"
+        ],
+        "summary": "Deletes the file with the given ID",
+        "description": "Deletes the file with the given ID",
+        "operationId": "deleteFile",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "fileId",
+            "description": "ID of the file that is fetched",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "File not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
     "/entityTypes": {
       "post": {
         "tags": [
@@ -1367,7 +1775,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/definitions/attributeDefinition"
+                "$ref": "#/definitions/link"
               }
             }
           },
@@ -1426,6 +1834,238 @@
               "type": "array",
               "items": {
                 "$ref": "#/definitions/attributeDefinition"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "Type not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/entityTypes/{entityTypeId}/derivedAttributeDefinitions": {
+      "get": {
+        "tags": [
+          "entityType",
+          "derivedAttributeDefinition"
+        ],
+        "summary": "Returns all derived attribute definitions of the entity type with the given ID",
+        "description": "Return all derived attribute definitions of entity type",
+        "operationId": "getDerivedAttributeDefinitionsOfType",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entityTypeId",
+            "description": "ID of the type that is fetched",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/link"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "Type not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "entityType",
+          "derivedAttributeDefinition"
+        ],
+        "summary": "Creates a derived attribute definition for the entity type with the given ID",
+        "description": "Creates a derived attribute definition for the entity type with the given ID",
+        "operationId": "createDerivedAttributeDefinitionForEntityType",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entityTypeId",
+            "description": "ID of the entity type that is fetched",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "Derived Attribute Definition",
+            "description": "Updated Derived Attribute Definition in JSON",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/derivedAttributeDefinition"
+            }
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/derivedAttributeDefinition"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "Type not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/entityTypes/{entityTypeId}/customFunctions": {
+      "get": {
+        "tags": [
+          "entityType",
+          "customFunction"
+        ],
+        "summary": "Returns all custom functions of the entity type with the given ID",
+        "description": "Return all custom functions of entity type",
+        "operationId": "getCustomFunctionsOfType",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entityTypeId",
+            "description": "ID of the type that is fetched",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/link"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "Type not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "entityType",
+          "customFunction"
+        ],
+        "summary": "Creates a custom function for the entity type with the given ID",
+        "description": "Creates a custom function for the entity type with the given ID",
+        "operationId": "createCustomFunctionForEntityType",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entityTypeId",
+            "description": "ID of the entity type that is fetched",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "Custom Function",
+            "description": "Updated Custom Function in JSON",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customFunction"
+            }
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/customFunction"
               }
             }
           },
@@ -1609,6 +2249,418 @@
             "in": "path",
             "name": "attributeDefinitionId",
             "description": "ID of the attribute definition that is fetched",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "Type not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/derivedAttributeDefinitions": {
+      "post": {
+        "tags": [
+          "derivedAttributeDefinition"
+        ],
+        "summary": "Creates a new derived attribute definition",
+        "description": "Creates a new derived attribute definition",
+        "operationId": "createDerivedAttributeDefinition",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "DerivedAttributeDefinition",
+            "description": "New DerivedAttributeDefinition in JSON",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/derivedAttributeDefinition"
+            }
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/derivedAttributeDefinition"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/derivedAttributeDefinitions/{derivedAttributeDefinitionId}": {
+      "get": {
+        "tags": [
+          "derivedAttributeDefinition"
+        ],
+        "summary": "Returns the derived attribute definition with the given ID",
+        "description": "Returns the derived attribute definition with the given ID",
+        "operationId": "getDerivedAttributeDefinition",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "derivedAttributeDefinitionId",
+            "description": "ID of the derived attribute definition that is fetched",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/derivedAttributeDefinition"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "Derived attribute definition not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "derivedAttributeDefinition"
+        ],
+        "summary": "Does an incremental update of the derived attribute definition with the given ID",
+        "description": "Does an incremental update of the derived attribute definition with the given ID",
+        "operationId": "updateDerivedAttributeDefinition",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "derivedAttributeDefinitionId",
+            "description": "ID of the derived attribute definition that is fetched",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "Type",
+            "description": "Updated derived attribute definition in JSON",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/derivedAttributeDefinition"
+            }
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/derivedAttributeDefinition"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "Type not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "derivedAttributeDefinition"
+        ],
+        "summary": "Deletes the derived attribute definition with the given ID",
+        "description": "Deletes the derived attribute definition with the given ID",
+        "operationId": "deleteDerivedAttributeDefinition",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "derivedAttributeDefinitionId",
+            "description": "ID of the derived attribute definition that is fetched",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "Type not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/customFunctions": {
+      "get": {
+        "tags": [
+          "customFunction"
+        ],
+        "summary": "Returns a list of all global static functions",
+        "description": "Returns a list of all global static functions",
+        "operationId": "globalStaticFunctions",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/link"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "customFunction"
+        ],
+        "summary": "Creates a new custom function",
+        "description": "Creates a new custom function",
+        "operationId": "createCustomFunction",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "CustomFunction",
+            "description": "New CustomFunction in JSON",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customFunction"
+            }
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/customFunction"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/customFunctions/{customFunctionId}": {
+      "get": {
+        "tags": [
+          "customFunction"
+        ],
+        "summary": "Returns the custom function with the given ID",
+        "description": "Returns the custom function with the given ID",
+        "operationId": "getCustomFunction",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customFunctionId",
+            "description": "ID of the custom function that is fetched",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "meta",
+            "in": "query",
+            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/customFunction"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "Custom function not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "customFunction"
+        ],
+        "summary": "Does an incremental update of the custom function with the given ID",
+        "description": "Does an incremental update of the custom function with the given ID",
+        "operationId": "updateCustomFunction",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customFunctionId",
+            "description": "ID of the custom function that is fetched",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "Type",
+            "description": "Updated custom function in JSON",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customFunction"
+            }
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/customFunction"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "Custom function not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "customFunction"
+        ],
+        "summary": "Deletes the custom function with the given ID",
+        "description": "Deletes the custom function with the given ID",
+        "operationId": "deleteCustomFunction",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "customFunctionId",
+            "description": "ID of the custom function that is fetched",
             "required": true,
             "type": "string"
           }
@@ -3106,8 +4158,15 @@
     "attribute": {
       "type": "object",
       "properties": {
+        "id": {
+          "type": "string"
+        },
         "name": {
           "type": "string"
+        },
+        "href": {
+          "type": "string",
+          "readOnly": true
         },
         "attributeDefinition": {
           "$ref": "#/definitions/link",
@@ -3122,6 +4181,64 @@
           "items": {
             "type": "string"
           }
+        }
+      }
+    },
+    "file": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string",
+          "readOnly": true
+        },
+        "entity": {
+          "$ref": "#/definitions/link",
+          "readOnly": true
+        },
+        "summary": {
+          "type": "string"
+        },
+        "permissions": {
+          "$ref": "#/definitions/permissions",
+          "readOnly": true
+        },
+        "incomingReferences": {
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "type": "object"
+          }
+
+        },
+        "history": {
+          "type": "array",
+          "readOnly": true,
+          "items": {
+            "$ref": "#/definitions/change"
+          }
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "lastModifiedAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "creator": {
+          "$ref": "#/definitions/link"
+        },
+        "lastModifier": {
+          "$ref": "#/definitions/link"
+        },
+        "mayEdit": {
+          "type": "boolean"
         }
       }
     },
@@ -3455,6 +4572,88 @@
         }
       }
     },
+    "derivedAttributeDefinition": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string",
+          "readOnly": true
+        },
+        "inferredAttributeType": {
+          "type": "string"
+        },
+        "explicitAttributeType": {
+          "type": "string"
+        },
+        "entityType": {
+          "$ref": "#/definitions/link"
+        },
+        "expression": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "history": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/change"
+          }
+        },
+        "mayEdit": {
+          "type": "boolean",
+          "readOnly": true
+
+        }
+      }
+    },
+    "customFunction": {
+      "type": "object",      
+      "required": [ "name" ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string",
+          "readOnly": true
+        },
+        "inferredReturnType": {
+          "type": "string"
+        },
+        "explicitReturnType": {
+          "type": "string"
+        },
+        "entityType": {
+          "$ref": "#/definitions/link"
+        },
+        "workspace": {
+          "$ref": "#/definitions/link"
+        },
+        "expression": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "parameters": {
+          "type": "string"
+        },
+        "mayEdit": {
+          "type": "boolean",
+          "readOnly": true
+        }
+      }
+    },
     "entityType": {
       "type": "object",
       "properties": {
@@ -3481,6 +4680,18 @@
           "type": "boolean"
         },
         "attributeDefinitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "derivedAttributeDefinitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "customFunctions": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/link"
@@ -3569,6 +4780,12 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/change"
+          }
+        },
+        "customFunctions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
           }
         },
         "entityTree": {
