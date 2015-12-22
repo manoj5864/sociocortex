@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans);
 
+#swagger-ui-container .signature-container .snippet pre {
+    max-height: none !important;
+}
+
 .team-member h4 {
     height: 90px;
 }
@@ -22,7 +26,7 @@
     color: #FF5252 !important;
 }
 
-.sidebar-nav{
+.sidebar-nav {
     position: fixed;
     z-index: 1000;
 }
@@ -33,8 +37,8 @@
 }
 
 h3.section-heading {
-    color: #003359!important;
- }
+    color: #003359 !important;
+}
 
 .auto-col-2 {
     -webkit-column-count: 2;
@@ -48,8 +52,8 @@ h3.section-heading {
     column-gap: 20px;
 }
 
-.navbar-brand{
-    font-size:25px;
+.navbar-brand {
+    font-size: 25px;
     font-family: 'Merriweather Sans', sans-serif !important;
 }
 
@@ -77,8 +81,8 @@ body {
     height: 100%;
 }
 
-a{
-    color:#003359;
+a {
+    color: #003359;
 }
 
 .jumbotron {
@@ -186,8 +190,8 @@ ul.social-buttons {
     margin-top: 70px;
 }
 
-.application ul {
-    font-size: 16px;
-    line-height: 1.75;
-    text-align: justify;
-}
+    .application ul {
+        font-size: 16px;
+        line-height: 1.75;
+        text-align: justify;
+    }
