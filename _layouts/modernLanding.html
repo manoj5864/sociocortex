@@ -41,7 +41,499 @@
     <![endif]-->
 </head>
 <body id="home">
-   
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header pull-left">
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <!-- replace with your brand logo/text -->
+                    <h1><span style="color: white;">Socio</span>Cortex</h1>
+                </a>
+            </div>
+            <div class="main-nav pull-right">
+                <div class="button_container toggle">
+                    <span class="top"></span>
+                    <span class="middle"></span>
+                    <span class="bottom"></span>
+                </div>
+            </div>
+            <div class="overlay" id="overlay">
+                <nav class="overlay-menu">
+                    <ul>
+                        <li><a href="#about">About SocioCortex</a></li>
+                        <li><a href="#products">Why use SocioCortex?</a></li>
+                        <li><a href="#services">Key Features</a></li>
+                        <li><a href="#portfolio">Case Studies</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#contact">Contact us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div><!-- /.container -->
+    </nav>
+    <!-- Intro Header -->
+    <!-- Full Page Image Background Carousel Header -->
+    <header id="intro-carousel" class="carousel slide">
+        <!-- Optional Indicators -->
+        <!-- <ol class="carousel-indicators">
+                <li data-target="#intro-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#intro-carousel" data-slide-to="1"></li>
+                <li data-target="#intro-carousel" data-slide-to="2"></li>
+            </ol> -->
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('{{ "/modernAssets/images/cover-one.jpg" | prepend: site.url }}');"></div>
+                <div class="carousel-caption">
+                    <h1 class="wow animated slideInDown">The <span class="highlight">Social Information Modelling Platform</span> for<br />Collaborative, Evolutionary Data and Process Management</span></h1>
+                    <p class="intro-text wow animated slideInUp">Build customized, user-centered social apps that are a delight to use. Without reinventing the wheel.</p>
+                </div>
+                <div class="overlay-detail"></div>
+            </div><!-- /.item -->
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('{{ "/modernAssets/images/cover-two.jpg" | prepend: site.url }}');"></div>
+                <div class="carousel-caption">
+                    <h1 class="wow animated slideInDown"><span class="highlight">Tailor-made Social Apps</span><br />for your specific Use Case</h1>
+                    <p class="intro-text wow animated slideInUp">Users benefit from social apps that are tailored to their specific needs and will get the job done.</p>
+                </div>
+                <div class="overlay-detail"></div>
+            </div><!-- /.item -->
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('{{ "/modernAssets/images/cover-three.jpg" | prepend: site.url }}');"></div>
+                <div class="carousel-caption">
+                    <h1 class="wow animated slideInDown"><span class="highlight">Build</span> Social Information Apps <span class="highlight">faster</span></h1>
+                    <p class="intro-text wow animated slideInUp">Developers benefit from the powerful and rich REST-API that will accelerate app development.</p>
+                </div>
+                <div class="overlay-detail"></div>
+            </div><!-- /.item -->
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control squared" href="#intro-carousel" data-slide="prev">
+            <i class="fa fa-angle-left fa-2x"></i>
+        </a>
+        <a class="right carousel-control squared" href="#intro-carousel" data-slide="next">
+            <i class="fa fa-angle-right fa-2x"></i>
+        </a>
+        <div class="mouse"></div>
+    </header>
+    <!-- About Section -->
+    <section id="about" class="about content-section alt-bg-light wow fadeInUp" data-wow-offset="10">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Social Information Management for Collaborative Knowledge Work</h2>
+                    <p>Social information management involves multiple users collaborating in the design and creation of information. More than 10 years of research and cooperations with industry partners in this area revealed recurring problems and solution patterns. Therefore, social information management systems share a common set of general capabilities and features.</p><p>SocioCortex integrates those features and exposes them as services to its applications. In this way, domain-specific applications built upon the SocioCortex platform benefit from proven solution patterns for prevalent social information management problems.</p>
+                </div><!-- /.col-md-6 -->
+                <div class="col-md-6">
+                    <!-- Display image -->
+                    <!-- <img src="assets/images/hallooou_template-iphone_sm.png" class="img-responsive"> -->
+                    <!-- Optional video embed code -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="1280" height="720" src="https://www.youtube.com/embed/VI9w3E_69mU" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div><!-- /.col-md-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.section -->
+    <!-- Products Section -->
+    <section id="products" class="products content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="{{ "/modernAssets/images/macbook-sociocortex.png" | prepend: site.url }}" class="center-block img-responsive">
+                </div><!-- /.col-md-4 -->
+                <div class="col-md-8">
+                    <div class="products-container">
+                        <div class="col-md-12">
+                            <h2>Why use SocioCortex?</h2>
+                            <h3 class="caption white">SocioCortex is a great platform for both end-users and developers. Tailor-made social information apps allow end-users to collaborate more effectively . App developers can build custom apps faster using the rich REST-API of the SocioCortex platform.</h3>
+                        </div><!-- /.col-md-12 -->
+                        <div class="col-md-6 product-item wow fadeIn" data-wow-offset="10">
+                            <div class="media-left">
+                                <span class="icon"><i class="fa fa-clock-o fa-3x"></i></span>
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                                <h3 class="media-heading">Proven Solution</h3>
+                                <p>SocioCortex and its predecessors were applied in many social information management use cases for more than 10 years.</p>
+                            </div><!-- /.media-body -->
+                        </div><!-- /.col-md-6 -->
+                        <div class="col-md-6 product-item wow fadeIn" data-wow-offset="10">
+                            <div class="media-left">
+                                <span class="icon"><i class="fa fa-bullseye fa-3x"></i></span>
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                                <h3 class="media-heading">Comprehensive Features</h3>
+                                <p>The SocioCortex Server combines proven solution patterns and features from our experiences in social information management applications.</p>
+                            </div><!-- /.media-body -->
+                        </div><!-- /.col-md-6 -->
+                        <div class="col-md-6 product-item wow fadeIn" data-wow-offset="10">
+                            <div class="media-left">
+                                <span class="icon"><i class="fa fa-fast-forward fa-3x"></i></span>
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                                <h3 class="media-heading">Start Right Away</h3>
+                                <p>SocioCortex already comes with a set of ready-to-use web clients for content management, model management, and visual data analytics.</p>
+                            </div><!-- /.media-body -->
+                        </div><!-- /.col-md-6 -->
+                        <div class="col-md-6 product-item wow fadeIn" data-wow-offset="10">
+                            <div class="media-left">
+                                <span class="icon"><i class="fa fa-toggle-on fa-3x"></i></span>
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                                <h3 class="media-heading">Many Extension Points</h3>
+                                <p>Developers can extend the SocioCortex platform on different levels, e.g., to provide customized visualizations, or to integrate custom data sources.</p>
+                            </div><!-- /.media-body -->
+                        </div><!-- /.col-md-6 -->
+                        <div class="col-md-6 product-item wow fadeIn" data-wow-offset="10">
+                            <div class="media-left">
+                                <span class="icon"><i class="fa fa-code fa-3x"></i></span>
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                                <h3 class="media-heading">Open Source</h3>
+                                <p>The whole SocioCortex platform is OpenSource including the SocioCortex Server and the SocioCortex Genereic Client Suite.</p>
+                            </div><!-- /.media-body -->
+                        </div><!-- /.col-md-6 -->
+                        <div class="col-md-6 product-item wow fadeIn" data-wow-offset="10">
+                            <div class="media-left">
+                                <span class="icon"><i class="fa fa-users fa-3x"></i></span>
+                            </div><!-- /.media-left -->
+                            <div class="media-body">
+                                <h3 class="media-heading">Fast Growing Community</h3>
+                                <p>More and more companies start using SocioCortex for social information management, e.g., in the domain of  Enterprise Architecture Management.</p>
+                            </div><!-- /.media-body -->
+                        </div><!-- /.col-md-6 -->
+                    </div><!-- /.products-container -->
+                </div><!-- /.col-md-8 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.products -->
+    <!-- Services Section -->
+    <section id="services" class="services content-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h2>Key Features</h2>
+                    <h3 class="caption gray">SocioCortex offers a variety of useful features for end-users as well as developers.</h3>
+                </div><!-- /.col-md-12 -->
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <div class="row services-item text-center wow flipInX" data-wow-offset="10">
+                                <i class="fa fa-table fa-3x"></i>
+                                <h4>Flexibility</h4>
+                                <p>Collaborative design approach for dynamic data and process models</p>
+                            </div><!-- /.row -->
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <div class="row services-item text-center wow flipInX" data-wow-offset="10">
+                                <i class="fa fa-puzzle-piece fa-3x"></i>
+                                <h4>Evolution Management</h4>
+                                <p>Data consolidation and alignment support for evolving content</p>
+                            </div><!-- /.row -->
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <div class="row services-item text-center wow flipInX" data-wow-offset="10">
+                                <i class="fa fa-share-alt fa-3x"></i>
+                                <h4>Knowledge Management</h4>
+                                <p>Support for knowledge-intensive, goal-oriented, and data-centric processes</p>
+                            </div><!-- /.row -->
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <div class="row services-item text-center wow flipInX" data-wow-offset="20">
+                                <i class="fa fa-code-fork fa-3x"></i>
+                                <h4>Extensive Versioning</h4>
+                                <p>History for content, files, and processes</p>
+                            </div><!-- /.row -->
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <div class="row services-item text-center wow flipInX" data-wow-offset="20">
+                                <i class="fa fa-key fa-3x"></i>
+                                <h4>Extensive Access Control</h4>
+                                <p>Fine-grained role-based access control for content and files</p>
+                            </div><!-- /.row -->
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <div class="row services-item text-center wow flipInX" data-wow-offset="20">
+                                <i class="fa fa-area-chart fa-3x"></i>
+                                <h4>Data Analytics</h4>
+                                <p>Powerful analytics capabilities for data and meta-data</p>
+                            </div><!-- /.row -->
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <div class="row services-item text-center wow flipInX" data-wow-offset="20">
+                                <i class="fa fa-bookmark fa-3x"></i>
+                                <h4>Notifications</h4>
+                                <p>Tracking elements of interest</p>
+                            </div><!-- /.row -->
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <div class="row services-item text-center wow flipInX" data-wow-offset="20">
+                                <i class="fa fa-users fa-3x"></i>
+                                <h4>Social Awareness</h4>
+                                <p>Data-centric social network analysis</p>
+                            </div><!-- /.row -->
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <div class="row services-item text-center wow flipInX" data-wow-offset="20">
+                                <i class="fa fa-file fa-3x"></i>
+                                <h4>Unstructured Content</h4>
+                                <p>Support for rich-text content and files</p>
+                            </div><!-- /.row -->
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <div class="row services-item text-center wow flipInX" data-wow-offset="20">
+                                <i class="fa fa-dashboard fa-3x"></i>
+                                <h4>Customizable Visualizations</h4>
+                                <p>Configurable and customizable visualization capabilities</p>
+                            </div><!-- /.row -->
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <div class="row services-item text-center wow flipInX" data-wow-offset="20">
+                                <i class="fa fa-exchange fa-3x"></i>
+                                <h4>Data Integration</h4>
+                                <p>Federated integration of data and models from different sources</p>
+                            </div><!-- /.row -->
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <div class="row services-item text-center wow flipInX" data-wow-offset="20">
+                                <i class="fa fa-search fa-3x"></i>
+                                <h4>Powerful Information Retrieval</h4>
+                                <p>Fulltext and facets-based structured search</p>
+                            </div><!-- /.row -->
+                        </div><!-- /.col-md-4 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.section -->
+    <!-- Portfolio/Gallery Section -->
+    <section id="portfolio" class="portfolio content-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h2>Case Studies</h2>
+                    <h3 class="caption white">Various domain-specific Vertical Apps have been developed on top of our platform</h3>
+                </div><!-- /.col-md-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+        <div class="container project-container text-center">
+            <div class="recent-project-carousel owl-carousel owl-theme popup-gallery">
+                <div class="item recent-project wow fadeIn" data-wow-offset="10">
+                    <img src="{{ "/modernAssets/images/projects/spreadsheet20.jpg" | prepend: site.url }}" alt="">
+                    <div class="project-info">
+                        <h3>Spreadsheet 2.0</h3>
+                        <ul class="project-meta">
+                            <p>A configurable and model-based data dashboard solution to visually analyze data through customizable visualizations.</p>
+                        </ul>
+                    </div><!-- /.project-info -->
+                    <div class="full-project">
+                        <a href="{{ "/application/2015/10/04/spreadsheet/" }}" title="Spreadsheet 2.0">View project <i class="fa fa-chevron-right"></i></a>
+                    </div><!-- /.full-project -->
+                </div><!-- /.item -->
+                <div class="item recent-project wow fadeIn" data-wow-offset="10">
+                    <img src="{{ "/modernAssets/images/projects/lexalyze.jpg" | prepend: site.url }}" alt="">
+                    <div class="project-info">
+                        <h3>Lexalyze</h3>
+                        <ul class="project-meta">
+                            <p>A workbench for the legal text analysis to support the drafting process of laws, contracts, and other legal documents.</p>
+                        </ul>
+                    </div><!-- /.project-info -->
+                    <div class="full-project">
+                        <a href="{{ "/application/2015/10/04/lexalyze/"  }}" title="Adam Productions | App Design">View project <i class="fa fa-chevron-right"></i></a>
+                    </div><!-- /.full-project -->
+                </div><!-- /.item -->
+                <div class="item recent-project wow fadeIn" data-wow-offset="10">
+                    <img src="{{ "/modernAssets/images/projects/darwin.png" | prepend: site.url }}" alt="">
+                    <div class="project-info">
+                        <h3>Darwin</h3>
+                        <ul class="project-meta">
+                            <p>oftware support for knowledge-intensive processes based on the Hybrid Wiki approach..</p>
+                        </ul>
+                    </div><!-- /.project-info -->
+                    <div class="full-project">
+                        <a href="{{ "/application/2015/10/04/darwin/" }}" title="Adam Productions | App Design">View project <i class="fa fa-chevron-right"></i></a>
+                    </div><!-- /.full-project -->
+                </div><!-- /.item -->
+            </div><!-- /.recent-project-carousel -->
+            <div class="customNavigation project-navigation text-center">
+                <a class="btn-prev"><i class="fa fa-angle-left fa-2x"></i></a>
+                <a class="btn-next"><i class="fa fa-angle-right fa-2x"></i></a>
+            </div><!-- /.project-navigation -->
+        </div><!-- /.container -->
+    </section><!-- /.portfolio -->
+    <!-- Our team Section -->
+    <section id="team" class="team content-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h2>Our Team</h2>
+                    <h3 class="caption gray">SocioCortex is mainly developed by sebis, Prof. Dr. Florian Matthes' Chair for Software Engineering for Business Information Systems at Technical University of Munich (TUM)</h3>
+                </div><!-- /.col-md-12 -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="team-member wow fadeIn" data-wow-offset="10">
+                                <figure>
+                                    <img src="{{ "/modernAssets/images/team/fm.jpg" | prepend: site.url }}" alt="" class="img-responsive">
+                                    <figcaption>
+                                        <p>Prof. Florian Matthes holds the chair <a href="https://wwwmatthes.in.tum.de">Software Engineering for Business Information Systems</a> at Technical University of Munich (TUM).</p>
+                                        <ul>
+                                            <li><a href="https://wwwmatthes.in.tum.de/pages/88bkmvw6y7gx/" target="_blank"><i class="fa fa-user fa-2x"></i></a></li>
+                                            <li><a href="https://twitter.com/matthes" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+                                            <li><a href="http://de.linkedin.com/pub/florian-matthes/21/52a/855" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
+                                            <li><a href="https://www.xing.com/profile/Florian_Matthes" target="_blank"><i class="fa fa-xing fa-2x"></i></a></li>
+                                        </ul>
+                                    </figcaption>
+                                </figure>
+                                <h4>Florian Matthes</h4>
+                                <p>Director &amp; Supervisor</p>
+                            </div><!-- /.team-member -->
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <div class="team-member wow fadeIn" data-wow-offset="10">
+                                <figure>
+                                    <img src="{{ "/modernAssets/images/team/tr.jpg" | prepend: site.url }}" alt="" class="img-responsive">
+                                    <figcaption>
+                                        <p>Thomas is responsible for the overall architecture of the SocioCortex platform and manages the project as such.</p>
+                                        <ul>
+                                            <li><a href="https://wwwmatthes.in.tum.de/pages/gbocu2jbwx6a/" target="_blank"><i class="fa fa-user fa-2x"></i></a></li>
+                                            <li><a href="https://twitter.com/TReschenhofer" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+                                            <li><a href="https://www.xing.com/profiles/Thomas_Reschenhofer" target="_blank"><i class="fa fa-xing fa-2x"></i></a></li>
+                                        </ul>
+                                    </figcaption>
+                                </figure>
+                                <h4>Thomas Reschenhofer</h4>
+                                <p>Chief Architect &amp; Developer</p>
+                            </div><!-- /.team-member -->
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <div class="team-member wow fadeIn" data-wow-offset="10">
+                                <figure>
+                                    <img src="{{ "/modernAssets/images/team/fmi.jpg" | prepend: site.url }}" alt="" class="img-responsive">
+                                    <figcaption>
+                                        <p>Felix is working on tool-support for knowledge-intensive processes, and thus integrates results from the research project <a href="https://wwwmatthes.in.tum.de/pages/ectby2zxvydw/Darwin-Empowering-Users-to-Collaboratively-Structure-Knowledge-Intensive-Processes" target="_blank">Darwin</a> into SocioCortex.</p>
+                                        <ul>
+                                            <li><a href="https://wwwmatthes.in.tum.de/pages/1pvf6y6f97alz/Felix-Michel" target="_blank"><i class="fa fa-user fa-2x"></i></a></li>
+                                            <li><a href="http://de.linkedin.com/pub/florian-matthes/21/52a/855" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
+                                            <li><a href="https://www.xing.com/profile/Felix_Michel6 " target="_blank"><i class="fa fa-xing fa-2x"></i>
+                                        </ul>
+                                    </figcaption>
+                                </figure>
+                                <h4>Felix Michel</h4>
+                                <p>Developer</p>
+                            </div><!-- /.team-member -->
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <div class="team-member wow fadeIn" data-wow-offset="10">
+                                <figure>
+                                    <img src="{{ "/modernAssets/images/team/ahm.jpg" | prepend: site.url }}" alt="" class="img-responsive">
+                                    <figcaption>
+                                        <p>Adrian's research is about form and UI models, i.e., the automated generation of UI components based on data and view models.</p>
+                                        <ul>
+                                            <li><a href="https://wwwmatthes.in.tum.de/pages/mhxylzrbb5n6/Adrian-Hernandez-Mendez" target="_blank"><i class="fa fa-user fa-2x"></i></a></li>
+                                            <li><a href="https://twitter.com/adrianhdez85" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+                                        </ul>
+                                    </figcaption>
+                                </figure>
+                                <h4>Adrian Hernandez-Mendez</h4>
+                                <p>Developer</p>
+                            </div><!-- /.team-member -->
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <div class="team-member wow fadeIn" data-wow-offset="10">
+                                <figure>
+                                    <img src="{{ "/modernAssets/images/team/ks.jpg" | prepend: site.url }}" alt="" class="img-responsive">
+                                    <figcaption>
+                                        <p>Klym is doing research on software architecture documentation. In the context of SocioCortex, he is in particular responsible for the technical infrastructure and deployment process.</p>
+                                        <ul>
+                                            <li><a href="https://wwwmatthes.in.tum.de/pages/fr7cn5ldohhj/Klym-Shumaiev" target="_blank"><i class="fa fa-user fa-2x"></i></a></li>
+                                            <li><a href="http://www.linkedin.com/pub/klim-shumaiev/31/300/b6" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
+                                            <li><a href="https://twitter.com/klimksh" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
+                                        </ul>
+                                    </figcaption>
+                                </figure>
+                                <h4>Klym Shumaiev</h4>
+                                <p>Developer</p>
+                            </div><!-- /.team-member -->
+                        </div><!-- /.col-md-4 -->
+                        <div class="col-md-4">
+                            <div class="team-member wow fadeIn" data-wow-offset="10">
+                                <figure>
+                                    <img src="{{ "/modernAssets/images/team/mm.jpg" | prepend: site.url }}" alt="" class="img-responsive">
+                                    <figcaption>
+                                        <p>Manoj is mainly working on the question of how to transform and integrate multiple and diverse data sources into SocioCortex.</p>
+                                        <ul>
+                                            <li><a href="https://wwwmatthes.in.tum.de/pages/1fvry8wl9dcmd/Manoj-Mahabaleshwar" target="_blank"><i class="fa fa-user fa-2x"></i></a></li>
+                                            <li><a href="https://www.linkedin.com/in/manojmb" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a></li>
+                                        </ul>
+                                    </figcaption>
+                                </figure>
+                                <h4>Manoj Bhat</h4>
+                                <p>Developer</p>
+                            </div><!-- /.team-member -->
+                        </div><!-- /.col-md-4 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.our-team -->
+    <!-- Call to action - one section -->
+    <section class="cta-one-section content-section alt-bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-6 wow slideInLeft" data-wow-offset="10">
+                    <h2>Start now creating delightful<br />social information apps</h2>
+                    <p>Take a look into the documentation to get to know how to customize the SocioCortex platform in order to adapt it to your specific needs!</p>
+                    <a href="http://www.sociocortex.com/documentation/" class="btn btn-default btn-lg">REST API Reference</a>
+                    <a href="http://www.sociocortex.com/tutorial/" class="btn btn-default btn-lg">Documentation</a>
+                </div><!-- /.col-md-6 -->
+                <div class="col-md-6 wow slideInRight" data-wow-offset="10">
+                    <img src="{{ "/modernAssets/images/buildapps.png" | prepend: site.url }}" class="img-responsive" style="box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.21);">
+                </div><!-- /.col-md-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.cta-one-section -->
+    <!-- Footer -->
+    <footer>
+        <div id="contact" class="container">
+            <div class="row text-center">
+                <div class="col-md-12 segment">
+                    <a href="#" title="Hallooou - HTML5 Template">
+                        <h2>
+                            <!-- replace with your brand logo/text -->
+                            SocioCortex
+                        </h2>
+                    </a>
+                    <p class="white">
+                        Software Engineering for Business Information Systems (Sebis)<br />
+                        Technical University of Munich (TUM)<br />
+                        Boltzmannstrasse 3 <br />
+                        D-85748 Garching bei München <br />
+                        Prof. Dr. Florian Matthes
+                    </p><p>
+                        <a href="Team website">https://wwwmatthes.in.tum.de/</a>
+                    </p><p>
+                        Image credits: <a href="https://www.flickr.com/photos/k2space/14235217851/">K2 Space</a>, <a href="https://www.flickr.com/photos/48126477@N05/7186476574/in/gallery-franjurga-72157630191882672/">Matthew Pierce</a> (<a href="https://creativecommons.org/licenses/by/2.0/">CC 2.0 license</a>)<br />Template based on Hellou by Mauritius D'Silva
+                    </p>
+                </div><!-- /.col-md-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+        <div class="copynote">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        &copy; 2015. sebis. All rights reserved.
+                    </div><!-- /.col-md-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.copynote -->
+        <div class="nav pull-right scroll-top">
+            <a href="#home" title="Scroll to top"><i class="fa fa-angle-up"></i></a>
+        </div>
+    </footer><!-- /.footer -->
     <!-- jQuery -->
     <script src="{{ "/modernAssets/js/jquery.min.js" | prepend: site.url }}"></script>
     <!-- Bootstrap Core JavaScript -->
