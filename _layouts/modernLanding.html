@@ -71,6 +71,54 @@
             </div>
         </div><!-- /.container -->
     </nav>
+    <!-- Intro Header -->
+    <!-- Full Page Image Background Carousel Header -->
+    <header id="intro-carousel" class="carousel slide">
+        <!-- Optional Indicators -->
+        <!-- <ol class="carousel-indicators">
+                <li data-target="#intro-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#intro-carousel" data-slide-to="1"></li>
+                <li data-target="#intro-carousel" data-slide-to="2"></li>
+            </ol> -->
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('{{ "/modernAssets/images/cover-one.jpg" | prepend: site.url }}');"></div>
+                <div class="carousel-caption">
+                    <h1 class="wow animated slideInDown">The <span class="highlight">Social Information Modelling Platform</span> for<br />Collaborative, Evolutionary Data and Process Management</span></h1>
+                    <p class="intro-text wow animated slideInUp">Build customized, user-centered social apps that are a delight to use. Without reinventing the wheel.</p>
+                </div>
+                <div class="overlay-detail"></div>
+            </div><!-- /.item -->
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('{{ "/modernAssets/images/cover-two.jpg" | prepend: site.url }}');"></div>
+                <div class="carousel-caption">
+                    <h1 class="wow animated slideInDown"><span class="highlight">Tailor-made Social Apps</span><br />for your specific Use Case</h1>
+                    <p class="intro-text wow animated slideInUp">Users benefit from social apps that are tailored to their specific needs and will get the job done.</p>
+                </div>
+                <div class="overlay-detail"></div>
+            </div><!-- /.item -->
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('{{ "/modernAssets/images/cover-three.jpg" | prepend: site.url }}');"></div>
+                <div class="carousel-caption">
+                    <h1 class="wow animated slideInDown"><span class="highlight">Build</span> Social Information Apps <span class="highlight">faster</span></h1>
+                    <p class="intro-text wow animated slideInUp">Developers benefit from the powerful and rich REST-API that will accelerate app development.</p>
+                </div>
+                <div class="overlay-detail"></div>
+            </div><!-- /.item -->
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control squared" href="#intro-carousel" data-slide="prev">
+            <i class="fa fa-angle-left fa-2x"></i>
+        </a>
+        <a class="right carousel-control squared" href="#intro-carousel" data-slide="next">
+            <i class="fa fa-angle-right fa-2x"></i>
+        </a>
+        <div class="mouse"></div>
+    </header>
    
     <!-- jQuery -->
     <script src="{{ "/modernAssets/js/jquery.min.js" | prepend: site.url }}"></script>
