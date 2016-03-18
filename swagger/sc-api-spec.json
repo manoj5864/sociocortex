@@ -4547,13 +4547,36 @@
           "$ref": "#/definitions/link"
         },
         "options": {
-          "type": "object"
+          "type": "object",
+          "properties": {
+            "entityType": {
+              "$ref": "#/definitions/link"
+            },
+            "enumerationValues": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "regex": {
+              "type": "string"
+            },
+            "resourceType": {
+              "type": "string"
+            },
+            "inverseRoleName": {
+              "type": "string"
+            },
+            "jsonTypeDefinition": {
+              "type": "string"
+            }
+          }
         },
         "description": {
           "type": "string"
         },
         "readOnly": {
-          "type": "string"
+          "type": "boolean"
         },
         "defaultValues": {
           "type": "array",
@@ -4614,7 +4637,7 @@
       }
     },
     "customFunction": {
-      "type": "object",      
+      "type": "object",
       "required": [ "name" ],
       "properties": {
         "id": {
