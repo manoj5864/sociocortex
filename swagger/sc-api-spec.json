@@ -4732,6 +4732,10 @@
             "$ref": "#/definitions/change"
           }
         },
+        "entitiesCount": {
+          "type": "number",
+          "readOnly": true
+        },
         "mayEdit": {
           "type": "boolean",
           "readOnly": true
