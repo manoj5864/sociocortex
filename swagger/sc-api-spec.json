@@ -4819,15 +4819,18 @@
       }
     },
     "jwtResponse": {
-      "token": {
-        "type": "string"
-      },
-      "payload": {
-        "type": "object",
-        "properties": {
-          "sub": "string",
-          "name": "string",
-          "exp": "integer"
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "sub": "string",
+            "name": "string",
+            "exp": "integer"
+          }
         }
       }
     },
@@ -4891,4 +4894,4 @@
 
     }
   }
-}
+  }
