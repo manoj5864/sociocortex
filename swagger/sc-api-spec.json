@@ -4827,9 +4827,15 @@
         "payload": {
           "type": "object",
           "properties": {
-            "sub": "string",
-            "name": "string",
-            "exp": "integer"
+            "sub": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "exp": {
+              "type": "integer"
+            }
           }
         }
       }
@@ -4894,4 +4900,4 @@
 
     }
   }
-  }
+}
