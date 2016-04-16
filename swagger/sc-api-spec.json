@@ -4152,6 +4152,38 @@
           }
         }
       }
+    },
+    "/jwt": {
+      "get": {
+        "tags": [
+          "authentication"
+        ],
+        "summary": "Generates a signed JSON Web Token based on the credentials provided by Basic Authentication.",
+        "description": "Generates a signed JSON Web Token based on the credentials provided by Basic Authentication.",
+        "operationId": "getJwt",
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/jwtResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -4783,6 +4815,19 @@
         "mayEdit": {
           "type": "boolean",
           "readOnly": true
+        }
+      }
+    },
+    "jwtResponse": {
+      "token": {
+        "type": "string"
+      },
+      "payload": {
+        "type": "object",
+        "properties": {
+          "sub": "string",
+          "name": "string",
+          "exp": "integer"
         }
       }
     },
