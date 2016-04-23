@@ -4097,21 +4097,64 @@
         "tags": [
           "search"
         ],
-        "summary": "Retrieves a list of search hints for the given prefix",
-        "description": "Retrieves a list of search hints for the given prefix",
+        "summary": "Retrieves a list of search hints containing basic information and a disambiguation of search hits.",
+        "description": "Retrieves a list of search hints containing basic information and a disambiguation of search hits.",
         "operationId": "searchHints",
         "parameters": [
           {
-            "name": "q",
+            "name": "text",
             "in": "query",
-            "description": "search prefix",
+            "description": "search text",
             "required": false,
             "type": "string"
+          },
+          {
+            "name": "workspace",
+            "in": "query",
+            "description": "The ID of the workspace the search hits have to be part of",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "entityType",
+            "in": "query",
+            "description": "The ID of the entity type for the search hits",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "resourceType",
+            "in": "query",
+            "description": "The resource type for the search hits",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "invalidValues",
+            "in": "query",
+            "description": "Set to true if the search hits have to contain invalid values",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "invalidLinks",
+            "in": "query",
+            "description": "Set to true if the search hits have to contain invalid links",
+            "required": false,
+            "type": "boolean"
           },
           {
             "name": "n",
             "in": "query",
             "description": "max search hints to return",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "page number",
             "required": false,
             "type": "integer",
             "format": "int32"
@@ -4136,6 +4179,110 @@
                   "format": "int32"
                 },
                 "hints": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/link"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/searchResults": {
+      "get": {
+        "tags": [
+          "search"
+        ],
+        "summary": "Retrieves a list of search hints containing full information, e.g., attributes of entities and meta information.",
+        "description": "Retrieves a list of search hints containing full information, e.g., attributes of entities and meta information.",
+        "operationId": "searchResults",
+        "parameters": [
+          {
+            "name": "text",
+            "in": "query",
+            "description": "search text",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "workspace",
+            "in": "query",
+            "description": "The ID of the workspace the search hits have to be part of",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "entityType",
+            "in": "query",
+            "description": "The ID of the entity type for the search hits",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "resourceType",
+            "in": "query",
+            "description": "The resource type for the search hits",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "invalidValues",
+            "in": "query",
+            "description": "Set to true if the search hits have to contain invalid values",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "invalidLinks",
+            "in": "query",
+            "description": "Set to true if the search hits have to contain invalid links",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "n",
+            "in": "query",
+            "description": "max search results to return",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "page number",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "totalCount": {
+                  "type": "string",
+                  "format": "int32"
+                },
+                "results": {
                   "type": "array",
                   "items": {
                     "$ref": "#/definitions/link"
