@@ -4188,7 +4188,24 @@
                 "hints": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/definitions/link"
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "href": {
+                        "type": "string"
+                      },
+                      "resourceType": {
+                        "type": "string"
+                      },
+                      "disambiguation": {
+                        "type": "string"
+                      }
+                    }
                   }
                 }
               }
@@ -4208,8 +4225,8 @@
         "tags": [
           "search"
         ],
-        "summary": "Retrieves a list of search hints containing full information, e.g., attributes of entities and meta information.",
-        "description": "Retrieves a list of search hints containing full information, e.g., attributes of entities and meta information.",
+        "summary": "Retrieves a list of search hints containing full information, e.g., attributes of entities, meta information, and highlighted search hits.",
+        "description": "Retrieves a list of search hints containing full information, e.g., attributes of entities, meta information, and highlighted search hits.",
         "operationId": "searchResults",
         "parameters": [
           {
@@ -4292,7 +4309,30 @@
                 "results": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/definitions/link"
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "href": {
+                        "type": "string"
+                      },
+                      "resourceType": {
+                        "type": "string"
+                      },
+                      "highlightedName": {
+                        "type": "string"
+                      },
+                      "highlightedDisambiguation": {
+                        "type": "string"
+                      },
+                      "highlightedContent": {
+                        "type": "string"
+                      }
+                    }
                   }
                 }
               }
