@@ -4144,6 +4144,13 @@
             "type": "boolean"
           },
           {
+            "name": "orderBy",
+            "in": "query",
+            "description": "Determines the sort order. Possible values are 'relevance', 'lastModification', or 'alphabetically'.",
+            "required": false,
+            "type": "string"
+          },
+          {
             "name": "n",
             "in": "query",
             "description": "max search hints to return",
