@@ -4965,6 +4965,14 @@
           "type": "number",
           "readOnly": true
         },
+        "consistencyMetric": {
+          "type": "number",
+          "readOnly": true
+        },
+        "structurednessMetric": {
+          "type": "number",
+          "readOnly": true
+        },
         "mayEdit": {
           "type": "boolean",
           "readOnly": true
