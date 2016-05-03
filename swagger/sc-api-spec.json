@@ -5014,6 +5014,17 @@
             "$ref": "#/definitions/change"
           }
         },
+        "expertises": {
+          "type": "object"
+        },
+        "mayCreateWorkspace": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "mayCreateGroup": {
+          "type": "boolean",
+          "readOnly": true
+        },
         "mayEdit": {
           "type": "boolean",
           "readOnly": true
@@ -5076,6 +5087,13 @@
         },
         "entityTree": {
           "$ref": "#/definitions/link"
+        },
+        "mayCreateEntities": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "isFavorite": {
+          "type": "boolean"
         },
         "mayEdit": {
           "type": "boolean",
