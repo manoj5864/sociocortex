@@ -4922,9 +4922,6 @@
         "workspace": {
           "$ref": "#/definitions/link"
         },
-        "namePlural": {
-          "type": "string"
-        },
         "icon": {
           "type": "string"
         },
