@@ -4092,6 +4092,560 @@
         }
       }
     },
+    "/taskDefinitions": {
+      "get": {
+        "tags": [
+          "taskDefinition"
+        ],
+        "summary": "Returns a list of task definitions",
+        "description": "Returns a list of task definitions",
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/link"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "taskDefinition"
+        ],
+        "summary": "Creates a new task definition",
+        "description": "Creates a new task definition and returns it with the new id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "taskDefinitionBody",
+            "description": "The standard body for task definitions",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/taskDefinition"
+            }
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/taskDefinition"
+            }
+          },
+          "400": {
+            "description": "Invalid body in request",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/taskDefinitions/{taskDefinitionId}": {
+      "get": {
+        "tags": [
+          "taskDefinition"
+        ],
+        "summary": "Returns a specific task definition",
+        "description": "Returns a specific task definition",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "taskDefinitionId",
+            "description": "ID of the task definition that is fetched",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/taskDefinition"
+            }
+          },
+          "400": {
+            "description": "the requested id cannot be found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "taskDefinition"
+        ],
+        "summary": "Updates a specific task definition",
+        "description": "Updates a specific task definition. The parameters \"uid\" and \"id\" in the body have no effect.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "taskDefinitionBody",
+            "description": "The standard body for task definitions",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/taskDefinition"
+            }
+          },
+          {
+            "in": "path",
+            "name": "taskDefinitionId",
+            "description": "ID of the task definition that is updated. The parameters \"uid\" and \"id\" in the body have no effect.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/taskDefinition"
+            }
+          },
+          "400": {
+            "description": "Invalid body in request",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "taskDefinition"
+        ],
+        "summary": "Deletes a specific task definition",
+        "description": "Deletes a specific task definition",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "taskDefinitionId",
+            "description": "ID of the task definition that is fetched",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/taskDefinition"
+            }
+          },
+          "400": {
+            "description": "Invalid body in request",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/stages": {
+      "get": {
+        "tags": [
+          "stage"
+        ],
+        "summary": "Returns a list of stages",
+        "description": "Returns a list of stages",
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/link"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "stage"
+        ],
+        "summary": "Creates a new stage",
+        "description": "Creates a new stage and returns it with the new id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "stageBody",
+            "description": "The standard body for stages",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/stage"
+            }
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/stage"
+            }
+          },
+          "400": {
+            "description": "Invalid body in request",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/stages/{stageId}": {
+      "get": {
+        "tags": [
+          "stage"
+        ],
+        "summary": "Returns a specific stage",
+        "description": "Returns a specific stage",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "stageId",
+            "description": "ID of the stage that is fetched",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/stage"
+            }
+          },
+          "400": {
+            "description": "the requested id cannot be found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "stage"
+        ],
+        "summary": "Updates a specific stage",
+        "description": "Updates a specific stage. The parameters \"uid\" and \"id\" in the body have no effect.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "stageBody",
+            "description": "The standard body for stages",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/stage"
+            }
+          },
+          {
+            "in": "path",
+            "name": "stageId",
+            "description": "ID of the stage that is updated. The parameters \"uid\" and \"id\" in the body have no effect.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/stage"
+            }
+          },
+          "400": {
+            "description": "Invalid body in request",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "stage"
+        ],
+        "summary": "Deletes a specific stage",
+        "description": "Deletes a specific stage",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "stageId",
+            "description": "ID of the stage that is fetched",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation. Returns the deleted stage.",
+            "schema": {
+              "$ref": "#/definitions/stage"
+            }
+          },
+          "400": {
+            "description": "Invalid body in request",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/stages/{stageId}/taskDefinitions": {
+      "get": {
+        "tags": [
+          "stage",
+          "taskDefinition"
+        ],
+        "summary": "Returns a list of task definitions which are owned by the specified stage",
+        "description": "Returns a list of task definitions which are owned by the specified stage",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "stageId",
+            "description": "ID of the stage that is fetched",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/link"
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "stage",
+          "taskDefinition"
+        ],
+        "summary": "Creates a new task definition and adds it to the specified stage",
+        "description": "Creates a new task definition, adds it to the specified stage and returns it with the new id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "taskDefinitionBody",
+            "description": "The standard body for task definitions",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/taskDefinition"
+            }
+          },
+          {
+            "in": "path",
+            "name": "stageId",
+            "description": "ID of the stage that is used",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/taskDefinition"
+            }
+          },
+          "400": {
+            "description": "Invalid body in request",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/stages/{stageId}/taskDefinitions/{taskDefinitionId}": {
+      "put": {
+        "tags": [
+          "stage",
+          "taskDefinition"
+        ],
+        "summary": "Adds the specified taskDefinition to the stage",
+        "description": "Adds the specified taskDefinition to the stage",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "stageId",
+            "description": "ID of the stage that is updated",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "taskDefinitionId",
+            "description": "ID of the task definition which is added to the stage",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Invalid body in request",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "stage",
+          "taskDefinition"
+        ],
+        "summary": "Deletes a specific task definition from a stage",
+        "description": "Deletes a specific task definition from a stage",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "taskDefinitionId",
+            "description": "ID of the task definition that removed from the stage",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "stageId",
+            "description": "ID of the stage that is manipulated",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Invalid body in request",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
     "/searchHints": {
       "get": {
         "tags": [
@@ -5097,6 +5651,66 @@
           "readOnly": true
         }
       }
+    },
+    "taskDefinition": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "entityType": {
+          "$ref": "#/definitions/link"
+        },
+        "attributeDefinitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "tasks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "entityType"
+      ]
+    },
+    "stage": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "entityType": {
+          "$ref": "#/definitions/link"
+        },
+        "taskDefinitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "entityType"
+      ]
     },
     "permissions": {
       "type": "object",
