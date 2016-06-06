@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VL/HCC Evaluation - Sales Scenario</title>
+
+    <!-- ensure IE uses the latest version of IE (yes, yes...) -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../vlhccEval/bower_components/joint/dist/joint.css" />
+
+    <link rel="stylesheet" href="../vlhccEval/mxl-angular.css" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <style>
+        #page-top .row {
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #page-top .special-row {
+            background-color: #efdb6c;
+        }
+
+        #page-top .info-row {
+            background-color: #9fd1f5;
+        }
+
+         #page-top hr {
+           border-width:2px;
+           border-color:black;
+        }
+
+        a.solution span {
+            color: black;
+            background-color: black;
+            display:inline-block;
+        }
+
+        a.solution:hover span{
+            background-color: white !important;
+        }
+    </style>
+</head>
+<body id="page-top" class="index" ng-app="vlhccApp">
+
+
+    <div class="container" ng-controller="vlhccController">
+        <div ng-if="step <= 2">
+
+            <div class="row info-row">
+                <h1>{{ scenario.name }} (Step {{step}} of 2)</h1>
+                <p>{{scenario.intro}}</p>
+                <p>Based on those items, you now want to define some metrics using MxL. <span ng-if="showModelView">You can use the augmented model view which shows the current state of the underlying data model.</span></p>
+                <p>The underlying data model can be checked <a href="{{modelV1Url}}" target="_blank">here</a>.</p>
+                <p>
+                    <h5>General Hints: </h5>
+                    <ul>
+                        <li>Use <b>Ctrl+Space</b> in order to explicitly trigger the auto-completion feature and to get a list of hints.</li>
+                        <li>Use <b>Ctrl+Enter</b> in order to evaluate the currently defined query and to check if it returns what you aim for.</li>
+                        <li ng-if="showModelView">You can scroll and zoom the model view in order to focus certain areas of the model.</li>
+
+                    </ul>
+                </p>
+
+            </div>
+
+            <hr class="col-md-12" />
+            <div class="row" ng-repeat="challenge in scenario.challengesBeforeChange">
+                <div class="col-md-12">
+                    <h3>Query {{challenge.nr}}: {{challenge.questionText}}</h3>
+                    <p>
+                        <b>Hints: </b>
+                        <ul>
+                            <li ng-repeat="hint in challenge.hints">
+                                {{hint}}
+                            </li>
+                        </ul>
+                    </p>
+                    <p >
+                        <b>Expected result</b>: {{challenge.resultText}}
+                    </p>
+                   
+                </div>
+
+                <div class="col-md-5">
+                    <mxl-expression class="mxl-form-control" style="height:200px;" mxl-model-elements="challenge.staticSemanticsV1" name="mxlValue" ng-model="challenge.mxlValueV1" sc-workspace="{{scenario.workspaceV1}}" sc-entitytype="{{challenge.thisType}}"></mxl-expression>
+                </div>
+
+                <div class="col-md-7">
+                    <mxl-model-view ng-model="challenge.staticSemanticsV1" width="400" height="250" orientation="TB" ng-if="showModelView"></mxl-model-view>
+                </div>
+
+                <div class="col-md-12" style="text-align:right">
+
+                    <p><b>Solution (hover to reveal)</b>: <a class="solution"><span>{{challenge.solution}}</span></a></p>
+                </div>
+
+                <hr class="col-md-12" />
+            </div>
+
+            <div class="row special-row">
+                <h2>Now we assume that the underlying data model has changed.</h2>
+                <p>The updated underlying data model can be checked <a href="{{modelV2Url}}" target="_blank">here</a>.</p>
+                <p>Please again define the queries / metrics as described in the following.</p>
+
+            </div>
+
+            <hr class="col-md-12" />
+            <div class="row" ng-repeat="challenge in scenario.challengesAfterChange">
+                <div class="col-md-12">
+                    <h3>Query {{challenge.nr}}: {{challenge.questionText}}</h3>
+                    <p>
+                        <b>Hints: </b>
+                        <ul>
+                            <li ng-repeat="hint in challenge.hints">
+                                {{hint}}
+                            </li>
+                        </ul>
+                    </p>
+                    <p>
+                        <b>Expected result</b>: {{challenge.resultText}}
+                    </p>
+                </div>
+
+                <div class="col-md-5">
+                    <mxl-expression class="mxl-form-control" style="height:200px;" mxl-model-elements="challenge.staticSemanticsV2" name="mxlValue" ng-model="challenge.mxlValueV2" sc-workspace="{{scenario.workspaceV2}}" sc-entitytype="{{challenge.thisType}}"></mxl-expression>
+                </div>
+
+                <div class="col-md-7">
+                    <mxl-model-view ng-model="challenge.staticSemanticsV2" width="400" height="250" orientation="TB" ng-if="showModelView"></mxl-model-view>
+                </div>
+
+                <div class="col-md-12" style="text-align:right">
+                   
+                    <p><b>Solution (hover to reveal)</b>: <a class="solution"><span>{{challenge.solution}}</span></a></p>
+                </div>
+
+                <hr class="col-md-12" />
+            </div>
+
+            <div class="row info-row">
+                <a class="btn" href="{{ nextStepUrl }}" target="_self"><h3>Click here to go to the next step...</h3></a>
+            </div>
+
+
+        </div>
+
+        <div ng-if="step > 2">
+
+
+            <div class="row info-row">
+                <h1>Thank you for doing the evaluation!</h1>
+
+                <p>Please briefly answer and submit the following questions (you answer in English or German).</p>
+
+            </div>
+            <hr class="row" />
+
+            <div class="row">
+                <div class="col-md-4">
+                    How you would assess your skills in MxL on a scale from 1 (newbie) to 5 (expert)?
+                </div>
+                <div class="col-md-8">
+                    <textarea type="text" ng-model="answers.answer1" rows="1" cols="50"></textarea>
+                </div>
+            </div>
+            <hr class="row" />
+
+            <div class="row info-row">
+                <h3>The following questions are related to step 1, i.e., formulating queries <b>without the augmented model view</b>.</h3>
+            </div>
+
+            <hr class="col-md-12" />
+            <div class="row">
+                <div class="col-md-4">
+                    Were you able to formulate all queries in step 1 without the augmented model view? If not, what are the reasons?
+                </div>
+                <div class="col-md-8">
+                    <textarea type="text" ng-model="answers.answer2" rows="10" cols="50"></textarea>
+                </div>
+            </div>
+            <hr class="row" />
+
+            <div class="row">
+                <div class="col-md-4">
+                    How did you familiarize yourself with the underlying data model <b>without the augmented model view</b> (in step 1)?
+                </div>
+                <div class="col-md-8">
+                    <textarea type="text" ng-model="answers.answer3" rows="10" cols="50"></textarea>
+                </div>
+            </div>
+            <hr class="row" />
+
+            <div class="row">
+                <div class="col-md-4">
+                    Do you had any problems with reformulating the queries for the changed data model? If yes, which ones?
+                </div>
+                <div class="col-md-8">
+                    <textarea type="text" ng-model="answers.answer4" rows="10" cols="50"></textarea>
+                </div>
+            </div>
+            <hr class="row" />
+
+            <div class="row">
+                <div class="col-md-4">
+                    How useful is the auto-completion feature of the code editor, and if yes, why?
+                </div>
+                <div class="col-md-8">
+                    <textarea type="text" ng-model="answers.answer5" rows="10" cols="50"></textarea>
+                </div>
+            </div>
+            <hr class="row" />
+
+
+            <div class="row info-row">
+                <h3>The following questions are related to step 2, i.e., formulating queries <b>with the augmented model view</b>.</h3>
+            </div>
+            <hr class="row" />
+
+            <div class="row">
+                <div class="col-md-4">
+                    Were you able to formulate all queries in step 2 with the augmented model view? If not, what are the reasons?
+                </div>
+                <div class="col-md-8">
+                    <textarea type="text" ng-model="answers.answer6" rows="10" cols="50"></textarea>
+                </div>
+            </div>
+            <hr class="row" />
+
+            <div class="row">
+                <div class="col-md-4">
+                    How would you rate the difficulty of formulating queries with the augmented model view compared to formulating queries without such a view?
+                </div>
+                <div class="col-md-8">
+                    <textarea type="text" ng-model="answers.answer7" rows="10" cols="50"></textarea>
+                </div>
+            </div>
+            <hr class="row" />
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    What are the most useful aspects of the augmented and integrated model view?
+                </div>
+                <div class="col-md-8">
+                    <textarea type="text" ng-model="answers.answer8" rows="10" cols="50"></textarea>
+                </div>
+            </div>
+            <hr class="row" />
+
+            <div class="row">
+                <div class="col-md-4">
+                    Do you had any problems with reformulating the queries for the changed data model? If yes, which ones?
+                </div>
+                <div class="col-md-8">
+                    <textarea type="text" ng-model="answers.answer9" rows="10" cols="50"></textarea>
+                </div>
+            </div>
+            <hr class="row" />
+
+            <div class="row">
+                <div class="col-md-4">
+                    How useful is the auto-completion feature of the code editor in conjunction with the augmented model view, and if yes, why?
+                </div>
+                <div class="col-md-8">
+                    <textarea type="text" ng-model="answers.answer10" rows="10" cols="50"></textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    What are weaknesses of the current model view, and what do you recommend to fix them?
+                </div>
+                <div class="col-md-8">
+                    <textarea type="text" ng-model="answers.answer11" rows="10" cols="50"></textarea>
+                </div>
+            </div>
+            <hr class="row" />
+
+            <div class="row info-row">
+                <h3>If finished: </h3> <button ng-click="sendAnswers()">Submit answers by mail</button>
+</div>
+
+        </div>
+    </div>
+
+    <script src="../vlhccEval/bower_components/jquery/jquery.js"></script>
+    <script src="../vlhccEval/bower_components/angular/angular.js"></script>
+    <script src="../vlhccEval/bower_components/ngstorage/ngStorage.js"></script>
+    <script src="../vlhccEval/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../vlhccEval/bower_components/sc-angular/dist/sc-angular.js"></script>
+    <script src="../vlhccEval/bower_components/lodash/lodash.js"></script>
+    <script src="../vlhccEval/bower_components/backbone/backbone.js"></script>
+    <script src="../vlhccEval/bower_components/graphlib/dist/graphlib.core.js"></script>
+    <script src="../vlhccEval/bower_components/dagre/dist/dagre.core.js"></script>
+    <script src="../vlhccEval/bower_components/joint/dist/joint.core.js"></script>
+    <script src="../vlhccEval/bower_components/joint/dist/joint.shapes.uml.js"></script>
+    <script src="../vlhccEval/bower_components/joint/dist/joint.layout.DirectedGraph.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="../vlhccEval/sc-angular.js"></script>
+    <script src="../vlhccEval/mxl-angular.js"></script>
+
+    <script type="text/javascript">
+
+        angular.module('vlhccApp', ['sociocortex', 'mxl']).config(function ($locationProvider) {
+            $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false
+            });
+        }).controller('vlhccController', function ($scope, $location, $window, scAuth, scData) {
+            scAuth.login('sociocortex.sebis@tum.de', 'sebis');
+
+
+            var evalCase = $location.search().case;
+
+            if (!evalCase) {
+                evalCase = 'A';
+            }
+
+            var step = parseInt($location.search().step);
+
+            if (!step) {
+                step = 1;
+            }
+
+            $scope.step = step;
+            $scope.answers = {};
+            $scope.evalCase = evalCase;
+
+            $scope.sendAnswers = function () {
+
+                var answers = $scope.answers;
+                answers.case = $scope.evalCase;
+                answers = JSON.stringify(answers);
+                answers = answers.replace("&", "and");
+                console.log(answers);
+                $window.open('mailto:thomas.reschenhofer@tum.de?subject=VLHCC 2016 Evaluation&body=' + encodeURI(JSON.stringify(answers)), "_self");
+            }
+
+            if (step <= 2) {
+                $scope.scenario = cases[evalCase][step - 1].scenario;
+                $scope.showModelView = cases[evalCase][step - 1].showModelView;
+
+                $scope.nextStepUrl = 'vlhcc-eval.html?case=' + evalCase + '&step=' + (step + 1);
+                $scope.modelV1Url = 'https://server.sociocortex.com/page/umlView?id=' + $scope.scenario.workspaceV1;
+                $scope.modelV2Url = 'https://server.sociocortex.com/page/umlView?id=' + $scope.scenario.workspaceV2;
+            }
+        });
+
+        var salesScenario =
+                {
+                    name: 'Sales Scenario',
+                    intro: 'This is a simple Sales Scenario where you have products and customers as well as orders defining which customer ordered which product.',
+                    workspaceV1: 'vqeq4o8kipel',
+                    workspaceV2: '1ouwsn0iv67b5',
+                    challengesBeforeChange: [
+                        {
+                            nr: 1,
+                            questionText: 'Get the total number of products.',
+                            hints: [
+                                "Use the find-construct to get all entities of a given type",
+                                "Use the count-operator to determine the number of elements in a sequence"
+                            ],
+                            resultText: 'The result should be 39.',
+                            solution: 'find Product.count()'
+                        },
+                        {
+                            nr: 2,
+                            questionText: 'Calculate the average number of orders per customer.',
+                            hints: [
+                                 "Start with find operator and the entity type for which you want to calculate something.",
+                                 "Use the select-operator to map each element of a sequence to a certain value",
+                                 "Most operators in MxL expect lambda expressions (functions) as parameters. However, you do not have to use the lambda notation, since MxL can interpret parameters as lambdas implicitly.",
+                                 "You can navigate through the model by relations as defined in the data model.",
+                                 "Take care of multiplicities! Multiple values are presented as sequences of values, to which you have to apply sequence operation again.",
+                                "Use the average-operator to calculate the average value. You can pass a function to this operator in order to map each element of a sequence to a numerical value"
+
+                            ],
+                            resultText: 'The result should be 3.07.',
+                            solution: 'find Customer.average(Orders.count())'
+                        },
+                        {
+
+                            nr: 3,
+                            questionText: 'Based on a customer (accessible via the this-keyword): Calculate the average price of products which were ordered by this customer.',
+                            resultText: 'The result depends on which domain is selected for evaluation.',
+                            hints: [
+                                "For this expression, you can use the this-construct to access a contextual object. Therefore, the find-construct is no longer your starting points!"
+                            ],
+                            thisType: '9yjx9mn7oabc',
+                            solution: 'this.Orders.select(Product).average(Price)'
+                        }
+                    ],
+                    challengesAfterChange: [
+
+                       {
+                           nr: 4,
+                           questionText: 'Calculate the average number of orders per customer.',
+                           hints: [
+                                "Start with find operator and the entity type for which you want to calculate something.",
+                                "Use the select-operator to map each element of a sequence to a certain value",
+                                "Most operators in MxL expect lambda expressions (functions) as parameters. However, you do not have to use the lambda notation, since MxL can interpret parameters as lambdas implicitly.",
+                                "You can navigate through the model by relations as defined in the data model.",
+                                "Take care of multiplicities! Multiple values are presented as sequences of values, to which you have to apply sequence operation again.",
+                               "Use the average-operator to calculate the average value. You can pass a function to this operator in order to map each element of a sequence to a numerical value"
+
+                           ],
+                           resultText: 'The result should be 3.07.',
+                           solution: 'find Customer.average(CustomerOrders.count())'
+                       },
+                       {
+                           nr: 5,
+                           questionText: 'Based on a customer (accessible via the this-keyword): Calculate the average price of products which were ordered by this customer.',
+                           resultText: 'The result depends on which domain is selected for evaluation.',
+                           hints: [
+                               "For this expression, you can use the this-construct to access a contextual object. Therefore, the find-construct is no longer your starting points!"
+                           ],
+                           thisType: '1e6rmawrxmu4e',
+                           solution: 'this.CustomerOrders.select(Product).average(StockPrice)'
+                       }
+                    ]
+                };
+
+        var eamScenario =
+               {
+                   name: 'EAM Scenario',
+                   intro: 'This is a simple EAM scenario including business applications and functional domains as well as business supports defining which applications are supported in which domain.',
+                   workspaceV1: 'zgdj1hdpr9m5',
+                   workspaceV2: '1fzl8a3ktakjn',
+                   challengesBeforeChange: [
+                       {
+                           nr: 1,
+                           questionText: 'Get the total number of applications.',
+                           hints: [
+                               "Use the find-construct to get all entities of a given type",
+                               "Use the count-operator to determine the number of elements in a sequence"
+                           ],
+                           resultText: 'The result should be 39.',
+                           solution: 'find Application.count()'
+                       },
+
+                       {
+                           nr: 2,
+                           questionText: 'Calculate the average number of supports per domain..',
+                           hints: [
+                                "Start with find operator and the entity type for which you want to calculate something.",
+                                "Use the select-operator to map each element of a sequence to a certain value",
+                                "Most operators in MxL expect lambda expressions (functions) as parameters. However, you do not have to use the lambda notation, since MxL can interpret parameters as lambdas implicitly.",
+                                "You can navigate through the model by relations as defined in the data model.",
+                                "Take care of multiplicities! Multiple values are presented as sequences of values, to which you have to apply sequence operation again.",
+                               "Use the average-operator to calculate the average value. You can pass a function to this operator in order to map each element of a sequence to a numerical value"
+
+                           ],
+                           resultText: 'The result should be 3.07.',
+                           solution: 'find Domain.average(Supports.count())'
+                       },
+                       {
+                           nr: 3,
+                           questionText: 'Based on a domain (accessible via the this-keyword): Calculate the average function points of application which support this domain.',
+                           resultText: 'The result depends on which domain is selected for evaluation.',
+                           hints: [
+                               "For this expression, you can use the this-construct to access a contextual object. Therefore, the find-construct is no longer your starting points!"
+                           ],
+                           thisType: '1hef6xl1dgoc6',
+                           solution: 'this.Supports.select(Application).average(FPoints)'
+                       }
+                   ],
+                   challengesAfterChange: [
+
+                       {
+                           nr: 4,
+                           questionText: 'Calculate the average number of supports per domain..',
+                           hints: [
+                                "Start with find operator and the entity type for which you want to calculate something.",
+                                "Use the select-operator to map each element of a sequence to a certain value",
+                                "Most operators in MxL expect lambda expressions (functions) as parameters. However, you do not have to use the lambda notation, since MxL can interpret parameters as lambdas implicitly.",
+                                "You can navigate through the model by relations as defined in the data model.",
+                                "Take care of multiplicities! Multiple values are presented as sequences of values, to which you have to apply sequence operation again.",
+                               "Use the average-operator to calculate the average value. You can pass a function to this operator in order to map each element of a sequence to a numerical value"
+
+                           ],
+                           resultText: 'The result should be 3.07.',
+                           solution: 'find Domain.average(BusinessSupports.count())'
+                       },
+                       {
+                           nr: 5,
+                           questionText: 'Based on a domain (accessible via the this-keyword): Calculate the average function points of application which support this domain.',
+                           resultText: 'The result depends on which domain is selected for evaluation.',
+                           hints: [
+                               "For this expression, you can use the this-construct to access a contextual object. Therefore, the find-construct is no longer your starting points!"
+                           ],
+                           thisType: 'ok5ql6htxeov',
+                           solution: 'this.BusinessSupports.select(Application).average(FunctionPoints)'
+                       }
+                   ]
+               };
+
+        var cases = {
+            A: [{ scenario: salesScenario, showModelView: false }, { scenario: eamScenario, showModelView: true }],
+            B: [{ scenario: salesScenario, showModelView: true }, { scenario: eamScenario, showModelView: false }]
+        };
+    </script>
+</body>
+</html>
