@@ -397,35 +397,19 @@
                             questionText: 'Based on a customer (accessible via the this-keyword): Calculate the average price of products which were ordered by this customer.',
                             resultText: 'The result should be 12.2. However, the actual result depends on which customer is selected for evaluation.',
                             hints: [
-                                "For this expression, you can use the this-construct to access a contextual object. Therefore, the find-construct is no longer your starting points!"
+                                "For this expression, you can use the this-construct to access a contextual object. Therefore, the find-construct is no longer your starting point! Start with 'this.' instead..."
                             ],
                             thisType: '9yjx9mn7oabc',
                             solution: 'this.Orders.select(Product).average(Price)'
                         }
                     ],
-                    challengesAfterChange: [
-
+                    challengesAfterChange: [                      
                        {
                            nr: 4,
-                           questionText: 'Calculate the average number of orders per customer.',
-                           hints: [
-                                "Start with find operator and the entity type for which you want to calculate something.",
-                                "Use the select-operator to map each element of a sequence to a certain value",
-                                "Most operators in MxL expect lambda expressions (functions) as parameters. However, you do not have to use the lambda notation, since MxL can interpret parameters as lambdas implicitly.",
-                                "You can navigate through the model by relations as defined in the data model.",
-                                "Take care of multiplicities! Multiple values are presented as sequences of values, to which you have to apply sequence operation again.",
-                               "Use the average-operator to calculate the average value. You can pass a function to this operator in order to map each element of a sequence to a numerical value"
-
-                           ],
-                           resultText: 'The result should be 3.07.',
-                           solution: 'find Customer.average(CustomerOrders.count())'
-                       },
-                       {
-                           nr: 5,
-                           questionText: 'Based on a customer (accessible via the this-keyword): Calculate the average price of ordered products for this customer.',
+                           questionText: 'Redefine query 3 and calculate again the average price of ordered products for this customer (accessible via the this-keyword).',
                            resultText: 'The result should be 12.2. However, the actual result depends on which customer is selected for evaluation.',
                            hints: [
-                               "For this expression, you can use the this-construct to access a contextual object. Therefore, the find-construct is no longer your starting points!"
+                               "For this expression, you can use the this-construct to access a contextual object. Therefore, the find-construct is no longer your starting point! Start with 'this.' instead..."
                            ],
                            thisType: '1e6rmawrxmu4e',
                            solution: 'this.CustomerOrders.select(Product).average(StockPrice)'
@@ -473,35 +457,19 @@
                            questionText: 'Based on a domain (accessible via the this-keyword): Calculate the average function points of supported applications for this domain.',
                            resultText: 'The result should be 12.2. However, the actual result depends on which domain is selected for evaluation.',
                            hints: [
-                               "For this expression, you can use the this-construct to access a contextual object. Therefore, the find-construct is no longer your starting points!"
+                               "For this expression, you can use the this-construct to access a contextual object. Therefore, the find-construct is no longer your starting point! Start with 'this.' instead..."
                            ],
                            thisType: '1hef6xl1dgoc6',
                            solution: 'this.Supports.select(Application).average(FPoints)'
                        }
                    ],
                    challengesAfterChange: [
-
                        {
                            nr: 4,
-                           questionText: 'Calculate the average number of supports per domain..',
-                           hints: [
-                                "Start with find operator and the entity type for which you want to calculate something.",
-                                "Use the select-operator to map each element of a sequence to a certain value",
-                                "Most operators in MxL expect lambda expressions (functions) as parameters. However, you do not have to use the lambda notation, since MxL can interpret parameters as lambdas implicitly.",
-                                "You can navigate through the model by relations as defined in the data model.",
-                                "Take care of multiplicities! Multiple values are presented as sequences of values, to which you have to apply sequence operation again.",
-                               "Use the average-operator to calculate the average value. You can pass a function to this operator in order to map each element of a sequence to a numerical value"
-
-                           ],
-                           resultText: 'The result should be 3.07.',
-                           solution: 'find Domain.average(BusinessSupports.count())'
-                       },
-                       {
-                           nr: 5,
-                           questionText: 'Based on a domain (accessible via the this-keyword): Calculate the average function points of supported application for this domain.',
+                           questionText: 'Redefine query 3 and calculate again the average function points of supported applications for this domain (accessible via the this-keyword).',
                            resultText: 'The result should be 12.2. However, the actual result depends on which domain is selected for evaluation.',
                            hints: [
-                               "For this expression, you can use the this-construct to access a contextual object. Therefore, the find-construct is no longer your starting points!"
+                               "For this expression, you can use the this-construct to access a contextual object. Therefore, the find-construct is no longer your starting point! Start with 'this.' instead..."
                            ],
                            thisType: 'ok5ql6htxeov',
                            solution: 'this.BusinessSupports.select(Application).average(FunctionPoints)'
