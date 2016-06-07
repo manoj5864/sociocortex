@@ -176,13 +176,13 @@
             <hr class="row" />
 
             <div class="row info-row">
-                <h3>The following questions are related to step 1, i.e., formulating queries <b>without the augmented model view</b>.</h3>
+                <h3>The following questions are related the formulation of queries <b>without the augmented model view</b>.</h3>
             </div>
 
             <hr class="col-md-12" />
             <div class="row">
                 <div class="col-md-4">
-                    Were you able to formulate all queries in step 1 without the augmented model view? If not, what are the reasons?
+                    Were you able to formulate all queries <b>without the augmented model view</b>? If not, what are the reasons?
                 </div>
                 <div class="col-md-8">
                     <textarea type="text" ng-model="answers.answer2" rows="10" cols="50"></textarea>
@@ -202,7 +202,7 @@
 
             <div class="row">
                 <div class="col-md-4">
-                    Do you had any problems with reformulating the queries for the changed data model? If yes, which ones?
+                    Do you had any problems with reformulating the queries for the changed data model <b>without the augmented model view</b>? If yes, which ones?
                 </div>
                 <div class="col-md-8">
                     <textarea type="text" ng-model="answers.answer4" rows="10" cols="50"></textarea>
@@ -212,7 +212,7 @@
 
             <div class="row">
                 <div class="col-md-4">
-                    How useful is the auto-completion feature of the code editor, and if yes, why?
+                    How useful is the auto-completion feature of the code editor, and why?
                 </div>
                 <div class="col-md-8">
                     <textarea type="text" ng-model="answers.answer5" rows="10" cols="50"></textarea>
@@ -222,13 +222,13 @@
 
 
             <div class="row info-row">
-                <h3>The following questions are related to step 2, i.e., formulating queries <b>with the augmented model view</b>.</h3>
+                <h3>The following questions are related the formulation of queries <b>with the augmented model view</b>.</h3>
             </div>
             <hr class="row" />
 
             <div class="row">
                 <div class="col-md-4">
-                    Were you able to formulate all queries in step 2 with the augmented model view? If not, what are the reasons?
+                    Were you able to formulate all queries <b>with the augmented model view</b>? If not, what are the reasons?
                 </div>
                 <div class="col-md-8">
                     <textarea type="text" ng-model="answers.answer6" rows="10" cols="50"></textarea>
@@ -238,7 +238,7 @@
 
             <div class="row">
                 <div class="col-md-4">
-                    How would you rate the difficulty of formulating queries with the augmented model view compared to formulating queries without such a view?
+                    How would you rate the difficulty of formulating queries <b>with the augmented model view</b> compared to formulating queries without such a view?
                 </div>
                 <div class="col-md-8">
                     <textarea type="text" ng-model="answers.answer7" rows="10" cols="50"></textarea>
@@ -259,7 +259,7 @@
 
             <div class="row">
                 <div class="col-md-4">
-                    Do you had any problems with reformulating the queries for the changed data model? If yes, which ones?
+                    Did you have any problems with reformulating the queries for the changed data model <b>with the augmented model view</b>? If yes, which ones?
                 </div>
                 <div class="col-md-8">
                     <textarea type="text" ng-model="answers.answer9" rows="10" cols="50"></textarea>
@@ -269,7 +269,7 @@
 
             <div class="row">
                 <div class="col-md-4">
-                    How useful is the auto-completion feature of the code editor in conjunction with the augmented model view, and if yes, why?
+                    How useful is the auto-completion feature of the code editor in conjunction with the augmented model view, and why?
                 </div>
                 <div class="col-md-8">
                     <textarea type="text" ng-model="answers.answer10" rows="10" cols="50"></textarea>
@@ -279,7 +279,7 @@
 
             <div class="row">
                 <div class="col-md-4">
-                    What are weaknesses of the current model view, and what do you recommend to fix them?
+                    What are weaknesses of the current augmented model view, and what do you recommend to fix them?
                 </div>
                 <div class="col-md-8">
                     <textarea type="text" ng-model="answers.answer11" rows="10" cols="50"></textarea>
@@ -298,7 +298,6 @@
     <script src="../vlhccEval/bower_components/angular/angular.js"></script>
     <script src="../vlhccEval/bower_components/ngstorage/ngStorage.js"></script>
     <script src="../vlhccEval/bower_components/angular-resource/angular-resource.js"></script>
-    <script src="../vlhccEval/bower_components/sc-angular/dist/sc-angular.js"></script>
     <script src="../vlhccEval/bower_components/lodash/lodash.js"></script>
     <script src="../vlhccEval/bower_components/backbone/backbone.js"></script>
     <script src="../vlhccEval/bower_components/graphlib/dist/graphlib.core.js"></script>
@@ -404,7 +403,7 @@
                             solution: 'this.Orders.select(Product).average(Price)'
                         }
                     ],
-                    challengesAfterChange: [                      
+                    challengesAfterChange: [
                        {
                            nr: 4,
                            questionText: 'Redefine query 3 and calculate again the average price of ordered products for this customer (accessible via the this-keyword).',
