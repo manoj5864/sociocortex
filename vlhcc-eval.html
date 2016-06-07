@@ -31,18 +31,18 @@
             background-color: #9fd1f5;
         }
 
-         #page-top hr {
-           border-width:2px;
-           border-color:black;
+        #page-top hr {
+            border-width: 2px;
+            border-color: black;
         }
 
         a.solution span {
             color: black;
             background-color: black;
-            display:inline-block;
+            display: inline-block;
         }
 
-        a.solution:hover span{
+        a.solution:hover span {
             background-color: white !important;
         }
     </style>
@@ -56,7 +56,10 @@
             <div class="row info-row">
                 <h1>{{ scenario.name }} (Step {{step}} of 2)</h1>
                 <p>{{scenario.intro}}</p>
-                <p>Based on those items, you now want to define some metrics using MxL. <span ng-if="showModelView">You can use the augmented model view which shows the current state of the underlying data model.</span></p>
+                <p>
+                    Based on those items, you now want to define some metrics using MxL.
+                    <span ng-if="showModelView">You can use the augmented model view which shows the current state of the underlying data model.</span>
+                </p>
                 <p>The underlying data model can be checked <a href="{{modelV1Url}}" target="_blank">here</a>.</p>
                 <p>
                     <h5>General Hints: </h5>
@@ -82,10 +85,10 @@
                             </li>
                         </ul>
                     </p>
-                    <p >
+                    <p>
                         <b>Expected result</b>: {{challenge.resultText}}
                     </p>
-                   
+
                 </div>
 
                 <div class="col-md-5">
@@ -137,7 +140,7 @@
                 </div>
 
                 <div class="col-md-12" style="text-align:right">
-                   
+
                     <p><b>Solution (hover to reveal)</b>: <a class="solution"><span>{{challenge.solution}}</span></a></p>
                 </div>
 
@@ -285,7 +288,7 @@
 
             <div class="row info-row">
                 <h3>If finished: </h3> <button ng-click="sendAnswers()">Submit answers by mail</button>
-</div>
+            </div>
 
         </div>
     </div>
@@ -341,7 +344,6 @@
                 answers.case = $scope.evalCase;
                 answers = JSON.stringify(answers);
                 answers = answers.replace("&", "and");
-                console.log(answers);
                 $window.open('mailto:thomas.reschenhofer@tum.de?subject=VLHCC 2016 Evaluation&body=' + encodeURI(JSON.stringify(answers)), "_self");
             }
 
@@ -350,8 +352,8 @@
                 $scope.showModelView = cases[evalCase][step - 1].showModelView;
 
                 $scope.nextStepUrl = 'vlhcc-eval.html?case=' + evalCase + '&step=' + (step + 1);
-                $scope.modelV1Url = 'https://server.sociocortex.com/page/umlView?id=' + $scope.scenario.workspaceV1;
-                $scope.modelV2Url = 'https://server.sociocortex.com/page/umlView?id=' + $scope.scenario.workspaceV2;
+                $scope.modelV1Url = 'vlhccEval/img/' + $scope.scenario.modelV1;
+                $scope.modelV2Url = 'vlhccEval/img/' + $scope.scenario.modelV2;
             }
         });
 
@@ -361,6 +363,8 @@
                     intro: 'This is a simple Sales Scenario where you have products and customers as well as orders defining which customer ordered which product.',
                     workspaceV1: 'vqeq4o8kipel',
                     workspaceV2: '1ouwsn0iv67b5',
+                    modelV1: 'salesV1.png',
+                    modelV2: 'salesV2.png',
                     challengesBeforeChange: [
                         {
                             nr: 1,
@@ -435,6 +439,8 @@
                    intro: 'This is a simple EAM scenario including business applications and functional domains as well as business supports defining which applications are supported in which domain.',
                    workspaceV1: 'zgdj1hdpr9m5',
                    workspaceV2: '1fzl8a3ktakjn',
+                   modelV1: 'eamV1.png',
+                   modelV2: 'eamV2.png',
                    challengesBeforeChange: [
                        {
                            nr: 1,
