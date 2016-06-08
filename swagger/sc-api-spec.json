@@ -5865,6 +5865,9 @@
         "description": {
           "type": "string"
         },
+        "locale": {
+          "type": "string"
+        },
         "lastLoginDate": {
           "type": "string",
           "format": "date"
