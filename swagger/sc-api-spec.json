@@ -4282,6 +4282,82 @@
         }
       }
     },
+    "/taskDefinitions/{taskDefinitionId}/preconditions": {
+      "get": {
+        "tags": [
+          "taskDefinition",
+          "sentry"
+        ],
+        "summary": "Returns a list of sentries which represent preconditions of the specified task definition",
+        "description": "Returns a list of sentries which represent preconditions of the specified task definition",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "taskDefinitionId",
+            "description": "ID of the task definition that is fetched",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/link"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/taskDefinitions/{taskDefinitionId}/satisfies": {
+      "get": {
+        "tags": [
+          "taskDefinition",
+          "sentry"
+        ],
+        "summary": "Returns a list of sentries for which the given task definition is a criterium",
+        "description": "Returns a list of sentries for which the given task definition is a criterium",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "taskDefinitionId",
+            "description": "ID of the task definition that is fetched",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/link"
+              }
+            }
+          }
+        }
+      }
+    },
     "/stages": {
       "get": {
         "tags": [
@@ -4467,6 +4543,246 @@
             "description": "Invalid body in request",
             "schema": {
               "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/sentries": {
+      "post": {
+        "tags": [
+          "sentry"
+        ],
+        "summary": "Creates a new sentry",
+        "description": "Creates a new sentry and returns it with the new id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "sentryBody",
+            "description": "The standard body for sentries",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/sentry"
+            }
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/sentry"
+            }
+          },
+          "400": {
+            "description": "Invalid body in request",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/sentries/{sentryId}": {
+      "get": {
+        "tags": [
+          "sentry"
+        ],
+        "summary": "Returns a specific sentry",
+        "description": "Returns a specific sentry",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "sentryId",
+            "description": "ID of the sentry that is fetched",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/sentry"
+            }
+          },
+          "400": {
+            "description": "the requested id cannot be found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "sentry"
+        ],
+        "summary": "Updates a specific sentry",
+        "description": "Updates a specific sentry. The parameter \"id\" in the body have no effect.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "sentryBody",
+            "description": "The standard body for sentries",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/sentry"
+            }
+          },
+          {
+            "in": "path",
+            "name": "sentryId",
+            "description": "ID of the sentry that is updated. The parameters \"id\" in the body have no effect.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/sentry"
+            }
+          },
+          "400": {
+            "description": "Invalid body in request",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "sentry"
+        ],
+        "summary": "Deletes a specific sentry",
+        "description": "Deletes a specific sentry",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "sentryId",
+            "description": "ID of the sentry that is fetched",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation. Returns the deleted sentry.",
+            "schema": {
+              "$ref": "#/definitions/sentry"
+            }
+          },
+          "400": {
+            "description": "Invalid body in request",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
+    "/stages/{stageId}/preconditions": {
+      "get": {
+        "tags": [
+          "stage",
+          "sentry"
+        ],
+        "summary": "Returns a list of sentries which represent preconditions of the specified stage",
+        "description": "Returns a list of sentries which represent preconditions of the specified stage",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "stageId",
+            "description": "ID of the stage that is fetched",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/link"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stages/{stageId}/satisfies": {
+      "get": {
+        "tags": [
+          "stage",
+          "sentry"
+        ],
+        "summary": "Returns a list of sentries for which the given stage is a criterium",
+        "description": "Returns a list of sentries for which the given stage is a criterium",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "stageId",
+            "description": "ID of the stage that is fetched",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/link"
+              }
             }
           }
         }
@@ -5710,6 +6026,34 @@
       "required": [
         "name",
         "entityType"
+      ]
+    },
+    "sentry": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "enables": {
+          "$ref": "#/definitions/link"
+        },
+        "criteria": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "enables",
+        "criteria"
       ]
     },
     "permissions": {
