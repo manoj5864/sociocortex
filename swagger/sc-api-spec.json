@@ -3299,6 +3299,126 @@
         }
       }
     },
+    "/users/{userId}/tasks": {
+      "get": {
+        "tags": [
+          "user",
+          "task"
+        ],
+        "summary": "Returns all tasks for which the given user is the owner",
+        "description": "Returns all tasks for which the given user is the owner",
+        "operationId": "getTasksByUser",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "ID of the user that is fetched",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "isinconsistent",
+            "in": "query",
+            "description": "An indication if only inconsistent tasks should be included in the response",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "isoverdue",
+            "in": "query",
+            "description": "An indication if only isoverdue tasks should be included in the response",
+            "required": false,
+            "type": "boolean"
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/link"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "Type not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "user",
+          "task"
+        ],
+        "summary": "Creates a task with the specified user as its owner",
+        "description": "Creates a task with the specified user as its owner",
+        "operationId": "newTaskForUser",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userId",
+            "description": "ID of the user that is fetched",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "Task",
+            "description": "Task in JSON",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/task"
+            }
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/task"
+            }
+          },
+          "400": {
+            "description": "Invalid ID or Attribute Name supplied",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "Task or User not found",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      }
+    },
     "/users/me": {
       "get": {
         "tags": [
@@ -6084,6 +6204,83 @@
           "readOnly": true
         }
       }
+    },
+     "task": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "entity": {
+          "$ref": "#/definitions/link"
+        },
+        "isProgressCalculated": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "skipped": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "isOverdue": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "isInconsistent": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "skippedAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "finishedAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "skippedBy": {
+          "$ref": "#/definitions/link"
+        },
+        "finishedBy": {
+          "$ref": "#/definitions/link"
+        },
+        "owner": {
+          "$ref": "#/definitions/link"
+        },
+        "start": {
+          "type": "string",
+          "format": "date"
+        },
+        "end": {
+          "type": "string",
+          "format": "date"
+        },
+        "taskDefinition": {
+          "$ref": "#/definitions/link"
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "expertises": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "entity"
+      ]
     },
     "taskDefinition": {
       "type": "object",
