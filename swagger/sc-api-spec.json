@@ -5521,7 +5521,7 @@
           "type": "string"
         },
         "permissions": {
-          "$ref": "#/definitions/permissions",
+          "$ref": "#/definitions/filePermissions",
           "readOnly": true
         },
         "incomingReferences": {
@@ -5612,7 +5612,7 @@
           "$ref": "#/definitions/link"
         },
         "permissions": {
-          "$ref": "#/definitions/permissions",
+          "$ref": "#/definitions/entityPermissions",
           "readOnly": true
         },
         "incomingReferences": {
@@ -6174,7 +6174,7 @@
           "$ref": "#/definitions/link"
         },
         "permissions": {
-          "$ref": "#/definitions/permissions",
+          "$ref": "#/definitions/workspacePermissions",
           "readOnly": true
         },
         "history": {
@@ -6205,7 +6205,7 @@
         }
       }
     },
-     "task": {
+    "task": {
       "type": "object",
       "properties": {
         "id": {
@@ -6370,7 +6370,7 @@
         "criteria"
       ]
     },
-    "permissions": {
+    "entityPermissions": {
       "type": "object",
       "properties": {
         "readers": {
@@ -6380,6 +6380,72 @@
           }
         },
         "writers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "inheritedReaders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "inheritedWriters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        }
+      }
+
+    },
+    "workspacePermissions": {
+      "type": "object",
+      "properties": {
+        "readers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "writers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "administrators": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "contributors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        }
+      }
+
+    },
+    "filePermissions": {
+      "type": "object",
+      "properties": {
+        "readers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "inheritedReaders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "inheritedWriters": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/link"
