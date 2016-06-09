@@ -6024,6 +6024,12 @@
             "$ref": "#/definitions/link"
           }
         },
+        "taskDefinitions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
         "derivedAttributeDefinitions": {
           "type": "array",
           "items": {
