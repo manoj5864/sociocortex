@@ -6320,7 +6320,7 @@
         "name",
         "entityType"
       ]
-    },
+   },
     "stage": {
       "type": "object",
       "properties": {
