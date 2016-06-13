@@ -3299,126 +3299,6 @@
         }
       }
     },
-    "/users/{userId}/tasks": {
-      "get": {
-        "tags": [
-          "user",
-          "task"
-        ],
-        "summary": "Returns all tasks for which the given user is the owner",
-        "description": "Returns all tasks for which the given user is the owner",
-        "operationId": "getTasksByUser",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "userId",
-            "description": "ID of the user that is fetched",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "isinconsistent",
-            "in": "query",
-            "description": "An indication if only inconsistent tasks should be included in the response",
-            "required": false,
-            "type": "boolean"
-          },
-          {
-            "name": "isoverdue",
-            "in": "query",
-            "description": "An indication if only isoverdue tasks should be included in the response",
-            "required": false,
-            "type": "boolean"
-          }
-        ],
-        "security": [
-          {
-            "basicAuth": [ ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/link"
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid ID supplied",
-            "schema": {
-              "$ref": "#/definitions/error"
-            }
-          },
-          "404": {
-            "description": "Type not found",
-            "schema": {
-              "$ref": "#/definitions/error"
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "user",
-          "task"
-        ],
-        "summary": "Creates a task with the specified user as its owner",
-        "description": "Creates a task with the specified user as its owner",
-        "operationId": "newTaskForUser",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "userId",
-            "description": "ID of the user that is fetched",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "Task",
-            "description": "Task in JSON",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/task"
-            }
-          }
-        ],
-        "security": [
-          {
-            "basicAuth": [ ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "schema": {
-              "$ref": "#/definitions/task"
-            }
-          },
-          "400": {
-            "description": "Invalid ID or Attribute Name supplied",
-            "schema": {
-              "$ref": "#/definitions/error"
-            }
-          },
-          "404": {
-            "description": "Task or User not found",
-            "schema": {
-              "$ref": "#/definitions/error"
-            }
-          }
-        }
-      }
-    },
     "/users/me": {
       "get": {
         "tags": [
@@ -5396,78 +5276,6 @@
           }
         }
       }
-    },
-    "/settings": {
-      "get": {
-        "tags": [
-          "settings"
-        ],
-        "summary": "Returns an object which contains basic application settings.",
-        "description": "Returns an object which contains basic application settings.",
-        "operationId": "getSettings",
-        "produces": [
-          "application/json"
-        ],
-        "security": [
-          {
-            "basicAuth": [ ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "schema": {
-              "$ref": "#/definitions/settings"
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "schema": {
-              "$ref": "#/definitions/error"
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "settings"
-        ],
-        "summary": "Updates basic application settings",
-        "description": "Updates basic application settings.",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "settingsBody",
-            "description": "The standard body for settings",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/settings"
-            }
-          }
-        ],
-        "security": [
-          {
-            "basicAuth": [ ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "schema": {
-              "$ref": "#/definitions/settings"
-            }
-          },
-          "400": {
-            "description": "Invalid body in request",
-            "schema": {
-              "$ref": "#/definitions/error"
-            }
-          }
-        }
-      },
     }
   },
   "definitions": {
@@ -5521,7 +5329,7 @@
           "type": "string"
         },
         "permissions": {
-          "$ref": "#/definitions/filePermissions",
+          "$ref": "#/definitions/permissions",
           "readOnly": true
         },
         "incomingReferences": {
@@ -5612,7 +5420,7 @@
           "$ref": "#/definitions/link"
         },
         "permissions": {
-          "$ref": "#/definitions/entityPermissions",
+          "$ref": "#/definitions/permissions",
           "readOnly": true
         },
         "incomingReferences": {
@@ -6143,20 +5951,6 @@
         }
       }
     },
-    "settings": {
-      "type": "object",
-      "properties": {
-        "mayCreateGroups": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        },
-        "defaultWorkspace": {
-          "$ref": "#/definitions/link"
-        }
-      }
-    },
     "workspace": {
       "type": "object",
       "properties": {
@@ -6174,7 +5968,7 @@
           "$ref": "#/definitions/link"
         },
         "permissions": {
-          "$ref": "#/definitions/workspacePermissions",
+          "$ref": "#/definitions/permissions",
           "readOnly": true
         },
         "history": {
@@ -6204,83 +5998,6 @@
           "readOnly": true
         }
       }
-    },
-    "task": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "href": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "entity": {
-          "$ref": "#/definitions/link"
-        },
-        "isProgressCalculated": {
-          "type": "boolean",
-          "readOnly": true
-        },
-        "skipped": {
-          "type": "boolean",
-          "readOnly": true
-        },
-        "isOverdue": {
-          "type": "boolean",
-          "readOnly": true
-        },
-        "isInconsistent": {
-          "type": "boolean",
-          "readOnly": true
-        },
-        "skippedAt": {
-          "type": "string",
-          "format": "date"
-        },
-        "finishedAt": {
-          "type": "string",
-          "format": "date"
-        },
-        "skippedBy": {
-          "$ref": "#/definitions/link"
-        },
-        "finishedBy": {
-          "$ref": "#/definitions/link"
-        },
-        "owner": {
-          "$ref": "#/definitions/link"
-        },
-        "start": {
-          "type": "string",
-          "format": "date"
-        },
-        "end": {
-          "type": "string",
-          "format": "date"
-        },
-        "taskDefinition": {
-          "$ref": "#/definitions/link"
-        },
-        "attributes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        },
-        "expertises": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        }
-      },
-      "required": [
-        "name",
-        "entity"
-      ]
     },
     "taskDefinition": {
       "type": "object",
@@ -6370,7 +6087,7 @@
         "criteria"
       ]
     },
-    "entityPermissions": {
+    "permissions": {
       "type": "object",
       "properties": {
         "readers": {
@@ -6380,72 +6097,6 @@
           }
         },
         "writers": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        },
-        "inheritedReaders": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        },
-        "inheritedWriters": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        }
-      }
-
-    },
-    "workspacePermissions": {
-      "type": "object",
-      "properties": {
-        "readers": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        },
-        "writers": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        },
-        "administrators": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        },
-        "contributors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        }
-      }
-
-    },
-    "filePermissions": {
-      "type": "object",
-      "properties": {
-        "readers": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        },
-        "inheritedReaders": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        },
-        "inheritedWriters": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/link"
