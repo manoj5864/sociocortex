@@ -5156,34 +5156,6 @@
             "required": false,
             "type": "integer",
             "format": "int32"
-          },
-          {
-            "name": "attributes",
-            "in": "query",
-            "description": "A comma-seperated list of attribute names which should be included in the response (or * for all)",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "meta",
-            "in": "query",
-            "description": "A comma-seperated list of meta attribute names which should be included in the response (or * for all)",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "content",
-            "in": "query",
-            "description": "An indication if the rich-text content of entities should be included in the response",
-            "required": false,
-            "type": "boolean"
-          },
-          {
-            "name": "tasks",
-            "in": "query",
-            "description": "An indication if the tasks of entities should be included in the response",
-            "required": false,
-            "type": "boolean"
           }
         ],
         "produces": [
@@ -5891,9 +5863,6 @@
           "type": "string"
         },
         "description": {
-          "type": "string"
-        },
-        "locale": {
           "type": "string"
         },
         "lastLoginDate": {
