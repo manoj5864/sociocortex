@@ -6077,20 +6077,6 @@
         }
       }
     },
-    "settings": {
-      "type": "object",
-      "properties": {
-        "mayCreateGroups": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        },
-        "defaultWorkspace": {
-          "$ref": "#/definitions/link"
-        }
-      }
-    },
     "workspace": {
       "type": "object",
       "properties": {
