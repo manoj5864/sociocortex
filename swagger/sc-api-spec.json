@@ -5417,7 +5417,7 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/appSettings"
+              "$ref": "#/definitions/settings"
             }
           },
           "401": {
@@ -5444,7 +5444,7 @@
             "description": "The standard body for settings",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/appSettings"
+              "$ref": "#/definitions/settings"
             }
           }
         ],
@@ -5457,7 +5457,7 @@
           "200": {
             "description": "Successful operation",
             "schema": {
-              "$ref": "#/definitions/appSettings"
+              "$ref": "#/definitions/settings"
             }
           },
           "400": {
@@ -6149,7 +6149,7 @@
         }
       }
     },
-    "appSettings": {
+    "settings": {
       "type": "object",
       "properties": {
         "mayCreateGroups": {
