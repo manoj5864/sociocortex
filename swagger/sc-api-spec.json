@@ -5396,6 +5396,78 @@
           }
         }
       }
+    },
+    "/settings": {
+      "get": {
+        "tags": [
+          "settings"
+        ],
+        "summary": "Returns an object which contains basic application settings.",
+        "description": "Returns an object which contains basic application settings.",
+        "operationId": "getSettings",
+        "produces": [
+          "application/json"
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/appSettings"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "settings"
+        ],
+        "summary": "Updates basic application settings",
+        "description": "Updates basic application settings.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "settingsBody",
+            "description": "The standard body for settings",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/appSettings"
+            }
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": [ ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/appSettings"
+            }
+          },
+          "400": {
+            "description": "Invalid body in request",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          }
+        }
+      },
     }
   },
   "definitions": {
@@ -6077,6 +6149,20 @@
         }
       }
     },
+    "appSettings": {
+      "type": "object",
+      "properties": {
+        "mayCreateGroups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "defaultWorkspace": {
+          "$ref": "#/definitions/link"
+        }
+      }
+    },
     "workspace": {
       "type": "object",
       "properties": {
@@ -6234,7 +6320,7 @@
         "name",
         "entityType"
       ]
-   },
+    },
     "stage": {
       "type": "object",
       "properties": {
