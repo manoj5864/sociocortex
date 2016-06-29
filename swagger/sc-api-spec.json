@@ -5134,6 +5134,23 @@
             "type": "boolean"
           },
           {
+            "name": "hasAttributes",
+            "in": "query",
+            "description": "A JSON Array containing attribute names the result has to include",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "hasAttributeValues",
+            "in": "query",
+            "description": "A JSON Object containing attributes and values the result has to comply to. Values of attributes always have be defined as arrays",
+            "required": false,
+            "type": "object"
+          },
+          {
             "name": "orderBy",
             "in": "query",
             "description": "Determines the sort order. Possible values are 'relevance', 'lastModification', or 'alphabetically'.",
@@ -5274,6 +5291,23 @@
             "description": "Set to true if the search hits have to contain invalid links",
             "required": false,
             "type": "boolean"
+          },
+          {
+            "name": "hasAttributes",
+            "in": "query",
+            "description": "A JSON Array containing attribute names the result has to include",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "hasAttributeValues",
+            "in": "query",
+            "description": "A JSON Object containing attributes and values the result has to comply to. Values of attributes always have be defined as arrays",
+            "required": false,
+            "type": "object"
           },
           {
             "name": "orderBy",
@@ -6112,7 +6146,7 @@
         }
       }
     },
-   
+
     "workspace": {
       "type": "object",
       "properties": {
