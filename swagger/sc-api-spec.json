@@ -5146,7 +5146,7 @@
           {
             "name": "hasAttributeValues",
             "in": "query",
-            "description": "A JSON Object containing attributes and values the result has to comply to. Values of attributes always have be defined as arrays",
+            "description": "A JSON Object containing attributes and values the result has to comply to. Values of attributes always have be defined as arrays. For example 'hasAttributeValues={ 'Company': ['sebis']}' would return all objects whose attribute 'Company' has at least one value 'sebis'",
             "required": false,
             "type": "object"
           },
@@ -5305,7 +5305,7 @@
           {
             "name": "hasAttributeValues",
             "in": "query",
-            "description": "A JSON Object containing attributes and values the result has to comply to. Values of attributes always have be defined as arrays",
+            "description": "A JSON Object containing attributes and values the result has to comply to. Values of attributes always have be defined as arrays. For example 'hasAttributeValues={ 'Company': ['sebis']}' would return all objects whose attribute 'Company' has at least one value 'sebis'",
             "required": false,
             "type": "object"
           },
