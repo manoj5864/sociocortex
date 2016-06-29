@@ -5141,6 +5141,20 @@
             "type": "string"
           },
           {
+            "name": "orderByAttribute",
+            "in": "query",
+            "description": "Determines the sort order by the value of the specified attribute. If the orderBy parameter is already set, this parameter is ignored.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "descending",
+            "in": "query",
+            "description": "If this parameter is true, the search results are sorted in descending order.",
+            "required": false,
+            "type": "boolean"
+          },
+          {
             "name": "n",
             "in": "query",
             "description": "max search hints to return",
@@ -5258,6 +5272,27 @@
             "name": "invalidLinks",
             "in": "query",
             "description": "Set to true if the search hits have to contain invalid links",
+            "required": false,
+            "type": "boolean"
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "description": "Determines the sort order. Possible values are 'relevance', 'lastModification', or 'alphabetically'.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "orderByAttribute",
+            "in": "query",
+            "description": "Determines the sort order by the value of the specified attribute. If the orderBy parameter is already set, this parameter is ignored.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "descending",
+            "in": "query",
+            "description": "If this parameter is true, the search results are sorted in descending order.",
             "required": false,
             "type": "boolean"
           },
