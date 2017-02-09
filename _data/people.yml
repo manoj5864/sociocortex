@@ -7,13 +7,6 @@
     - {title: "twitter", link: "https://twitter.com/matthes"}
     - {title: "user", link: "https://wwwmatthes.in.tum.de/pages/88bkmvw6y7gx/sebis%20Public%20Website/Team/Prof.%20Dr.%20Florian%20Matthes"}
 -
-  id: 1
-  name: "Thomas Reschenhofer"
-  pic: "tr"
-  social:
-    - {title: "github", link: "https://github.com/treschenhofer"}
-    - {title: "user", link: "https://wwwmatthes.in.tum.de/pages/gbocu2jbwx6a/Thomas-Reschenhofer"}
--
   id: 2
   name: "Felix Michel"
   pic: "fmi"
