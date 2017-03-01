@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "description": "SocioCortex REST API",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "title": "SocioCortex REST API",
     "contact": {
       "name": "SC API support",
@@ -22,6 +22,49 @@
     }
   },
   "paths": {
+    "/forgotPassword": {
+      "put": {
+        "tags": [
+          "forgotPassword"
+        ],
+        "summary": "Restores a password",
+        "description": "Sends an email for password recovery when the user forgets the password",
+        "operationId": "forgotPassword",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "login",
+            "description": "User email",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/person"
+            }
+          }
+        ],
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Login invalid",
+            "schema": {
+              "$ref": "#/definitions/error"
+            }
+          },
+          "404": {
+            "description": "Not found"
+          }
+        }
+      }
+    },
     "/workspaces": {
       "get": {
         "tags": [
@@ -44,7 +87,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -82,7 +125,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -136,7 +179,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -190,7 +233,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -235,7 +278,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -308,7 +351,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -360,7 +403,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -409,7 +452,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -461,7 +504,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -510,7 +553,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -562,7 +605,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -605,7 +648,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -729,7 +772,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -774,7 +817,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -826,7 +869,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -883,7 +926,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -932,7 +975,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1035,7 +1078,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1080,7 +1123,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1132,7 +1175,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1190,7 +1233,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1239,7 +1282,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1342,7 +1385,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1387,7 +1430,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1433,7 +1476,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1481,7 +1524,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1535,7 +1578,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1580,7 +1623,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1653,7 +1696,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1711,7 +1754,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1766,7 +1809,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1824,7 +1867,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1882,7 +1925,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1940,7 +1983,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -1998,7 +2041,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -2056,7 +2099,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -2108,7 +2151,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -2156,7 +2199,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -2210,7 +2253,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -2296,7 +2339,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -2344,7 +2387,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -2398,7 +2441,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -2482,7 +2525,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -2520,7 +2563,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -2568,7 +2611,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -2622,7 +2665,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -2706,7 +2749,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -2744,7 +2787,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -2810,7 +2853,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -2876,7 +2919,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -2933,7 +2976,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -2989,7 +3032,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -3027,7 +3070,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -3130,7 +3173,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -3175,7 +3218,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -3222,7 +3265,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -3277,7 +3320,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -3336,7 +3379,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -3394,7 +3437,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -3441,7 +3484,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -3518,7 +3561,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -3597,7 +3640,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -3682,7 +3725,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -3767,7 +3810,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -3816,7 +3859,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -3867,7 +3910,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -3924,7 +3967,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -3981,7 +4024,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4028,7 +4071,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4077,7 +4120,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4132,7 +4175,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4187,7 +4230,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4224,7 +4267,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4261,7 +4304,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4301,7 +4344,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4345,7 +4388,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4383,7 +4426,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4414,7 +4457,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4451,7 +4494,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4491,7 +4534,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4535,7 +4578,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4573,7 +4616,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4614,7 +4657,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4652,7 +4695,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4680,7 +4723,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4717,7 +4760,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4757,7 +4800,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4801,7 +4844,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4839,7 +4882,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4881,7 +4924,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4921,7 +4964,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -4965,7 +5008,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -5003,7 +5046,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -5044,7 +5087,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -5082,7 +5125,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -5120,7 +5163,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -5165,7 +5208,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -5213,7 +5256,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -5256,7 +5299,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -5383,7 +5426,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -5570,7 +5613,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -5637,7 +5680,7 @@
         ],
         "security": [
           {
-            "basicAuth": [ ]
+            "basicAuth": []
           }
         ],
         "responses": {
@@ -5658,6 +5701,14 @@
     }
   },
   "definitions": {
+    "person": {
+      "type": "object",
+      "properties": {
+        "login": {
+          "type": "string"
+        }
+      }
+    },
     "attribute": {
       "type": "object",
       "properties": {
@@ -5677,7 +5728,7 @@
         },
         "values": {
           "type": "array",
-          "items": { }
+          "items": {}
         },
         "conversionErrors": {
           "type": "array",
@@ -5717,7 +5768,6 @@
           "items": {
             "type": "object"
           }
-
         },
         "history": {
           "type": "array",
@@ -5768,12 +5818,8 @@
               "name": {
                 "type": "string"
               },
-              "from": {
-
-              },
-              "to": {
-
-              }
+              "from": {},
+              "to": {}
             }
           }
         }
@@ -5808,7 +5854,6 @@
           "items": {
             "type": "object"
           }
-
         },
         "history": {
           "type": "array",
@@ -6014,7 +6059,7 @@
     "mxlResponse": {
       "type": "object",
       "properties": {
-        "value": { },
+        "value": {},
         "type": {
           "type": "object"
         },
@@ -6041,12 +6086,25 @@
         },
         "multiplicity": {
           "type": "string",
-          "enum": [ "any", "atLeastOne", "maxOne", "exacltyOne" ],
+          "enum": [
+            "any",
+            "atLeastOne",
+            "maxOne",
+            "exacltyOne"
+          ],
           "default": "any"
         },
         "attributeType": {
           "type": "string",
-          "enum": [ "boolean", "date", "enumeration", "link", "notype", "number", "text" ],
+          "enum": [
+            "boolean",
+            "date",
+            "enumeration",
+            "link",
+            "notype",
+            "number",
+            "text"
+          ],
           "default": "notype"
         },
         "entityType": {
@@ -6086,7 +6144,7 @@
         },
         "defaultValues": {
           "type": "array",
-          "items": { }
+          "items": {}
         },
         "history": {
           "type": "array",
@@ -6097,7 +6155,6 @@
         "mayEdit": {
           "type": "boolean",
           "readOnly": true
-
         }
       }
     },
@@ -6138,13 +6195,14 @@
         "mayEdit": {
           "type": "boolean",
           "readOnly": true
-
         }
       }
     },
     "customFunction": {
       "type": "object",
-      "required": [ "name" ],
+      "required": [
+        "name"
+      ],
       "properties": {
         "id": {
           "type": "string"
@@ -6336,7 +6394,6 @@
         }
       }
     },
-
     "workspace": {
       "type": "object",
       "properties": {
@@ -6578,7 +6635,6 @@
           }
         }
       }
-
     },
     "workspacePermissions": {
       "type": "object",
@@ -6608,7 +6664,6 @@
           }
         }
       }
-
     },
     "filePermissions": {
       "type": "object",
@@ -6632,7 +6687,6 @@
           }
         }
       }
-
     }
   }
 }
