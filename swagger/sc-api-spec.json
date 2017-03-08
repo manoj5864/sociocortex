@@ -3444,7 +3444,7 @@
                     }
                 }
             },
-            "put": {
+            "post": {
                 "tags": [
                     "user"
                 ],
@@ -3463,13 +3463,11 @@
                         "type": "string"
                     },
                     {
-                        "in": "body",
-                        "name": "Picture",
-                        "description": "Link to profile picture of the user that is fetched",
+                        "in": "formData",
+                        "name": "picture",
+                        "description": "Profile picture",
                         "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/picture"
-                        }
+                        "type": "file"
                     }
                 ],
                 "security": [
