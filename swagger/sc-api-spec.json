@@ -2324,10 +2324,10 @@
                 }
             }
         },
-        "/attributeDefinition/{attributeDefinitionId}": {
+        "/attributeDefinitions/{attributeDefinitionId}": {
             "get": {
                 "tags": [
-                    "attributeDefinition"
+                    "attributeDefinitions"
                 ],
                 "summary": "Returns the attribute definition with the given ID",
                 "description": "Returns the attribute definition with the given ID",
@@ -2379,7 +2379,7 @@
             },
             "put": {
                 "tags": [
-                    "attributeDefinition"
+                    "attributeDefinitions"
                 ],
                 "summary": "Does an incremental update of the attribute definition with the given ID",
                 "description": "Does an incremental update of the attribute definition with the given ID",
@@ -2433,7 +2433,7 @@
             },
             "delete": {
                 "tags": [
-                    "attributeDefinition"
+                    "attributeDefinitions"
                 ],
                 "summary": "Deletes the attribute definition with the given ID",
                 "description": "Deletes the attribute definition with the given ID",
@@ -3444,7 +3444,7 @@
                     }
                 }
             },
-            "put": {
+            "post": {
                 "tags": [
                     "user"
                 ],
@@ -3463,13 +3463,11 @@
                         "type": "string"
                     },
                     {
-                        "in": "body",
-                        "name": "Picture",
-                        "description": "Link to profile picture of the user that is fetched",
+                        "in": "formData",
+                        "name": "picture",
+                        "description": "Profile picture",
                         "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/picture"
-                        }
+                        "type": "file"
                     }
                 ],
                 "security": [
