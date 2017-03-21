@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "description": "SocioCortex REST API",
-        "version": "1.0.2",
+        "version": "1.0.3",
         "title": "SocioCortex REST API",
         "contact": {
             "name": "SC API support",
@@ -5875,6 +5875,10 @@
                     "readOnly": true
                 },
                 "attributeDefinition": {
+                    "$ref": "#/definitions/link",
+                    "readOnly": true
+                },
+                "ownerEntity": {
                     "$ref": "#/definitions/link",
                     "readOnly": true
                 },
